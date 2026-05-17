@@ -1,0 +1,38 @@
+{
+  "name": "meditation",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm exec concurrently --kill-others --kill-signal SIGKILL -n web,server -c blue,green \"pnpm --filter mini-app dev:web\" \"pnpm --filter server dev\"",
+    "dev:web": "pnpm --filter mini-app dev:web",
+    "dev:server": "pnpm --filter server dev",
+    "build": "pnpm -r build",
+    "build:server": "pnpm --filter server build",
+    "dev:weapp": "pnpm --filter mini-app dev:weapp",
+    "build:weapp": "pnpm --filter mini-app build:weapp",
+    "build:web": "pnpm --filter mini-app build:web",
+    "dev:mobile": "pnpm --filter mobile-app dev",
+    "start:mobile": "pnpm --filter mobile-app start",
+    "build:mobile:android": "pnpm --filter mobile-app build:android",
+    "build:mobile:ios": "pnpm --filter mobile-app build:ios",
+    "prebuild:mobile": "pnpm --filter mobile-app prebuild",
+    "seed": "pnpm --filter server seed",
+    "seed:media": "pnpm --filter server seed:media",
+    "lint": "pnpm --filter mini-app lint",
+    "lint:fix": "pnpm --filter mini-app lint:fix",
+    "validate": "pnpm exec concurrently --kill-others-on-fail --kill-signal SIGKILL -n lint,tsc -c red,blue \"pnpm --filter mini-app lint:build\" \"pnpm --filter mini-app tsc\"",
+    "kill:all": "pkill -9 -f 'concurrently' 2>/dev/null || true; pkill -9 -f 'nest start' 2>/dev/null || true; pkill -9 -f 'taro build' 2>/dev/null || true; pkill -9 -f 'node.*dev' 2>/dev/null || true; echo 'All dev processes cleaned'"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "pnpm": ">=9.0.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@tarojs/plugin-mini-ci@4.1.9": "mini-app/patches/@tarojs__plugin-mini-ci@4.1.9.patch"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

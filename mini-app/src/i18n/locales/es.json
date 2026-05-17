@@ -1,0 +1,138 @@
+{
+  "app": { "navbarTitle": "ZenMind - Meditación" },
+  "tabbar": { "home": "Inicio", "discover": "Descubrir", "player": "Reproducir", "profile": "Perfil" },
+  "common": {
+    "cancel": "Cancelar", "confirm": "Confirmar", "done": "Hecho", "save": "Guardar", "next": "Siguiente",
+    "close": "Cerrar", "back": "Volver", "settings": "Ajustes", "dailyReminder": "Recordatorio diario",
+    "stats": "Estadísticas", "totalMinutes": "Total de minutos", "streak": "Racha de días",
+    "minutes": "minutos", "days": "días",
+    "weekdays": ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+    "timeOfDay": {"morning": "Mañana", "noon": "Mediodía", "afternoon": "Tarde", "evening": "Atardecer", "night": "Noche"},
+    "category": {"beginner": "Principiante", "sleep": "Sueño", "relax": "Relajación", "focus": "Enfoque"},
+    "level": {"beginner": "Principiante", "intermediate": "Intermedio", "advanced": "Avanzado"},
+    "instructor": {"fallback": "ZenMind"},
+    "duration": "{{duration}} min"
+  },
+  "home": {
+    "greeting": {"lateNight": "Es tarde", "morning": "Buenos días", "afternoon": "Buenas tardes", "evening": "Buenas noches"},
+    "subtitle": "Hoy es un buen día para meditar",
+    "checkin": {
+      "completed": "Completado hoy", "title": "Meditación de hoy",
+      "duration": "Has meditado {{duration}} min", "startPrompt": "Comienza tu viaje de calma"
+    },
+    "streak": {"days": "{{streak}} días"},
+    "quizBanner": {
+      "title": "Configura tus preferencias", "subtitle": "Recibe recomendaciones personalizadas", "cta": "Configurar ahora"
+    },
+    "recommendation": {"title": "Recomendación de hoy", "viewAll": "Ver todo", "start": "Empezar meditación"},
+    "quickStart": {"title": "Inicio rápido"},
+    "backgroundSounds": {"title": "Sonidos de fondo", "subtitle": "Dormir / Enfocar"},
+    "weeklyStats": {"title": "Esta semana", "totalMinutes": "Total minutos", "streak": "Racha", "meditationDays": "Días de meditación"}
+  },
+  "discover": {
+    "category": {"all": "Todo", "beginner": "Principiante", "sleep": "Sueño", "relax": "Relajación", "focus": "Enfoque"},
+    "search": {"placeholder": "Buscar cursos de meditación..."},
+    "whiteNoise": {"title": "Ruido blanco", "subtitle": "Sonidos de fondo para concentrarse"},
+    "courses": {"title": "Cursos de meditación", "count": "{{count}} cursos", "empty": "No hay cursos que coincidan"}
+  },
+  "player": {
+    "header": {"whiteNoise": "Ruido blanco", "meditationCourse": "Curso de meditación"},
+    "subtitle": {"whiteNoise": "{{name}} - Sonido de fondo", "selectMusic": "Elige música para empezar a meditar"},
+    "title": {"selectMusic": "Elegir música"},
+    "loop": "Repetir",
+    "sleepTimer": {
+      "title": "Temporizador", "minutes": "{{value}} min", "minuteOption": "{{m}} min",
+      "confirm": "Confirmar", "toastTitle": "Temporizador",
+      "scheduled": "Se apagará en {{value}} min",
+      "active": "Apagado en {{sleepTimer}} min"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "Problemas de sueño", "anxiety": "Necesito relajarme",
+      "focus": "Mejorar concentración", "placeholder": "Configura tus preferencias"
+    },
+    "streak": "{{streak}} días seguidos",
+    "stats": {"totalMinutes": "Total de minutos", "completedCourses": "Cursos completados"},
+    "calendar": {"title": "Registro del mes", "daysCount": "{{count}} días"},
+    "menu": {
+      "stats": "Estadísticas", "setPreferences": "Preferencias", "preferencesSubtitle": "Recibe recomendaciones personalizadas",
+      "newBadge": "Nuevo", "reminder": "Recordatorio diario", "reminderSubtitle": "Configura recordatorios de meditación",
+      "settings": "Ajustes", "help": "Ayuda y comentarios"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {"title": "¿Cuál es tu principal preocupación?", "subtitle": "Te recomendaremos cursos según tu situación"},
+    "option": {
+      "sleep": {"label": "Dificultad para dormir", "desc": "Insomnio / sueño ligero"},
+      "anxiety": {"label": "Estrés y ansiedad", "desc": "Estrés laboral / vida diaria"},
+      "focus": {"label": "Quiero concentrarme mejor", "desc": "Mejorar eficiencia / atención"}
+    },
+    "error": {"noSelection": "Selecciona una opción"},
+    "success": "Preferencia guardada",
+    "button": {"next": "Siguiente", "finish": "Finalizar"}
+  },
+  "reminder": {
+    "title": "Recordatorio diario",
+    "switch": {"title": "Activar recordatorio", "subtitle": "Te recordaremos meditar a diario"},
+    "section": {"slots": "Horarios recomendados", "customTime": "Hora personalizada", "quickSelect": "Selección rápida", "messageTemplates": "Mensajes"},
+    "slot": {
+      "morning": {"label": "Mañana", "desc": "Empieza el día con energía"},
+      "noon": {"label": "Mediodía", "desc": "Relájate en la pausa del trabajo"},
+      "afternoon": {"label": "Tarde", "desc": "Alivia la fatiga laboral"},
+      "evening": {"label": "Atardecer", "desc": "Relaja cuerpo y mente"},
+      "night": {"label": "Noche", "desc": "Ayuda a conciliar el sueño"}
+    },
+    "customTime": {"pick": "Elegir hora", "inputTitle": "Introduce hora personalizada", "placeholder": "Formato HH:mm, ej. 21:30"},
+    "button": {"cancel": "Cancelar", "confirm": "Confirmar"},
+    "message": {"template1": "Es hora de meditar", "template2": "Relájate, medita 5 minutos", "template3": "Date un momento de tranquilidad"},
+    "save": {
+      "enabled": "Recordatorio a las {{time}}", "disabled": "Recordatorio desactivado",
+      "buttonEnabled": "Guardar recordatorio a las {{time}}", "buttonDisabled": "Guardar ajustes"
+    },
+    "error": {"timeFormat": "Introduce un formato de hora válido"}
+  },
+  "settings": {
+    "title": "Ajustes",
+    "name": {
+      "editHint": "Toca para cambiar el nombre", "inputTitle": "Introduce un nuevo nombre",
+      "placeholder": "Introduce tu nombre", "saveSuccess": "Nombre actualizado"
+    },
+    "button": {"cancel": "Cancelar", "save": "Guardar"},
+    "section": {"notifications": "Notificaciones", "playback": "Reproducción", "appearance": "Apariencia", "other": "Otros"},
+    "notifications": {"label": "Recordatorio diario"},
+    "reminderTime": {"label": "Hora del recordatorio", "value": "Todos los días 22:00"},
+    "playback": {"soundEffects": "Efectos de sonido", "autoPlay": "Reproducción automática"},
+    "appearance": {"darkMode": "Modo oscuro"},
+    "other": {
+      "language": "Idioma", "languageValue": "Español",
+      "about": "Sobre nosotros", "version": "Versión", "versionValue": "v1.0.0"
+    },
+    "language": {"title": "Seleccionar idioma"},
+    "logout": {
+      "title": "Aviso", "content": "¿Seguro que quieres cerrar sesión?",
+      "button": "Cerrar sesión", "success": "Sesión cerrada"
+    }
+  },
+  "stats": {
+    "title": "Estadísticas", "subtitle": "Registra tu viaje de meditación",
+    "totalMinutes": "Total de minutos", "currentStreak": "Racha actual",
+    "avgMinutes": "Promedio min/sesión", "longestStreak": "Racha más larga",
+    "weeklyTrend": {"title": "Tendencia semanal", "total": "{{minutes}} min"},
+    "achievements": {"title": "Logros", "beginner": "Principiante", "streak3": "3 días seguidos", "streak7": "7 días seguidos", "minutes100": "100 minutos"},
+    "bestTime": {"title": "Mejor hora para meditar", "description": "Sueles meditar a las {{time}}"}
+  },
+  "course": {
+    "breathingBasics": {"title": "Respiración básica", "description": "Aprende respiración abdominal para relajar cuerpo y mente", "tags": ["Respiración", "Principiante"]},
+    "bodyScan": {"title": "Escáner corporal", "description": "Escanea tu cuerpo de la cabeza a los pies, libera la tensión", "tags": ["Escáner corporal", "Relajación"]},
+    "sleepJourney": {"title": "Sueño profundo guiado", "description": "Ayuda a conciliar el sueño rápidamente", "tags": ["Sueño", "Buenas noches"]},
+    "sleepBreathing": {"title": "Respiración antes de dormir", "description": "Técnica 4-7-8 para ayudarte a dormir", "tags": ["Respiración", "Sueño"]},
+    "anxietyRelief": {"title": "Meditación anti-ansiedad", "description": "Libera la ansiedad, recupera la paz interior", "tags": ["Ansiedad", "Relajación"]},
+    "stressRelease": {"title": "Liberación de estrés", "description": "Alivia el estrés del trabajo y la vida", "tags": ["Estrés", "Relajación"]},
+    "morningFocus": {"title": "Enfoque matutino", "description": "La forma correcta de empezar el día", "tags": ["Enfoque", "Mañana"]},
+    "deepFocus": {"title": "Concentración profunda", "description": "Mejora la atención y la eficiencia laboral", "tags": ["Enfoque", "Profundo"]}
+  },
+  "whitenoise": {"rain": "Lluvia", "waves": "Olas", "forest": "Bosque", "fire": "Fogata"},
+  "store": {"defaultUsername": "Meditador"}
+}

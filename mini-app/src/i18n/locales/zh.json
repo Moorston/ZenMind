@@ -1,0 +1,406 @@
+{
+  "app": {
+    "navbarTitle": "尘间静-静心冥想"
+  },
+  "tabbar": {
+    "home": "首页",
+    "discover": "发现",
+    "player": "播放",
+    "profile": "我的"
+  },
+  "common": {
+    "cancel": "取消",
+    "confirm": "确定",
+    "done": "完成",
+    "save": "保存",
+    "next": "下一步",
+    "close": "关闭",
+    "back": "返回",
+    "settings": "设置",
+    "dailyReminder": "每日提醒",
+    "stats": "数据统计",
+    "totalMinutes": "总冥想分钟",
+    "streak": "连续天数",
+    "minutes": "分钟",
+    "days": "天",
+    "weekdays": ["日", "一", "二", "三", "四", "五", "六"],
+    "timeOfDay": {
+      "morning": "清晨",
+      "noon": "午间",
+      "afternoon": "午后",
+      "evening": "傍晚",
+      "night": "夜间"
+    },
+    "category": {
+      "beginner": "入门",
+      "sleep": "睡眠",
+      "relax": "减压",
+      "focus": "专注"
+    },
+    "level": {
+      "beginner": "入门",
+      "intermediate": "进阶",
+      "advanced": "高级"
+    },
+    "instructor": {
+      "fallback": "静心"
+    },
+    "duration": "{{duration}}分钟"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "夜深了",
+      "morning": "早上好",
+      "afternoon": "下午好",
+      "evening": "晚上好"
+    },
+    "subtitle": "今天是适合冥想的一天",
+    "checkin": {
+      "completed": "今日已完成",
+      "title": "今日冥想",
+      "duration": "已冥想 {{duration}} 分钟",
+      "startPrompt": "开始你的静心之旅"
+    },
+    "streak": {
+      "days": "{{streak}} 天"
+    },
+    "quizBanner": {
+      "title": "设置你的冥想偏好",
+      "subtitle": "获得个性化课程推荐",
+      "cta": "立即设置"
+    },
+    "recommendation": {
+      "title": "今日推荐",
+      "viewAll": "查看全部",
+      "start": "开始冥想"
+    },
+    "quickStart": {
+      "title": "快速开始"
+    },
+    "backgroundSounds": {
+      "title": "背景音",
+      "subtitle": "助眠 / 专注"
+    },
+    "weeklyStats": {
+      "title": "本周数据",
+      "totalMinutes": "总分钟",
+      "streak": "连续天数",
+      "meditationDays": "冥想天数"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "全部",
+      "beginner": "入门",
+      "sleep": "睡眠",
+      "relax": "减压",
+      "focus": "专注"
+    },
+    "search": {
+      "placeholder": "搜索冥想课程..."
+    },
+    "whiteNoise": {
+      "title": "白噪音",
+      "subtitle": "背景音助专注"
+    },
+    "courses": {
+      "title": "冥想课程",
+      "count": "共 {{count}} 个",
+      "empty": "暂无符合条件的课程"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "白噪音",
+      "meditationCourse": "冥想课程"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - 背景音",
+      "selectMusic": "选择音乐开始冥想"
+    },
+    "title": {
+      "selectMusic": "选择音乐"
+    },
+    "loop": "循环",
+    "sleepTimer": {
+      "title": "定时关闭",
+      "minutes": "{{value}}分钟",
+      "minuteOption": "{{m}}分钟",
+      "confirm": "确认",
+      "toastTitle": "定时关闭",
+      "scheduled": "将在 {{value}} 分钟后关闭",
+      "active": "{{sleepTimer}}分钟后关闭"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "睡眠困扰",
+      "anxiety": "需要减压",
+      "focus": "提升专注",
+      "placeholder": "设置你的偏好"
+    },
+    "streak": "{{streak}} 天连续",
+    "stats": {
+      "totalMinutes": "总冥想分钟",
+      "completedCourses": "已完成课程"
+    },
+    "calendar": {
+      "title": "本月打卡",
+      "daysCount": "{{count}} 天"
+    },
+    "menu": {
+      "stats": "数据统计",
+      "setPreferences": "设置偏好",
+      "preferencesSubtitle": "获得个性化推荐",
+      "newBadge": "新",
+      "reminder": "每日提醒",
+      "reminderSubtitle": "设置冥想提醒时间",
+      "settings": "设置",
+      "help": "帮助与反馈"
+    },
+    "version": "尘间静 v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "你目前的困扰是什么？",
+      "subtitle": "我们会根据你的情况推荐合适的课程"
+    },
+    "option": {
+      "sleep": {
+        "label": "睡眠不好",
+        "desc": "难以入睡/睡眠浅"
+      },
+      "anxiety": {
+        "label": "焦虑压力大",
+        "desc": "工作/生活压力"
+      },
+      "focus": {
+        "label": "想提升专注",
+        "desc": "提高效率/集中注意力"
+      }
+    },
+    "error": {
+      "noSelection": "请选择一个选项"
+    },
+    "success": "设置成功",
+    "button": {
+      "next": "下一步",
+      "finish": "完成"
+    }
+  },
+  "reminder": {
+    "title": "每日提醒",
+    "switch": {
+      "title": "开启每日提醒",
+      "subtitle": "定时提醒您进行冥想"
+    },
+    "section": {
+      "slots": "推荐时段",
+      "customTime": "自定义时间",
+      "quickSelect": "快捷选择",
+      "messageTemplates": "提醒文案"
+    },
+    "slot": {
+      "morning": {
+        "label": "清晨",
+        "desc": "开启美好的一天"
+      },
+      "noon": {
+        "label": "午间",
+        "desc": "工作间隙放松一下"
+      },
+      "afternoon": {
+        "label": "下午",
+        "desc": "缓解工作疲劳"
+      },
+      "evening": {
+        "label": "傍晚",
+        "desc": "放松身心"
+      },
+      "night": {
+        "label": "睡前",
+        "desc": "帮助入睡"
+      }
+    },
+    "customTime": {
+      "pick": "选择时间",
+      "inputTitle": "输入自定义时间",
+      "placeholder": "HH:mm 格式，如 21:30"
+    },
+    "button": {
+      "cancel": "取消",
+      "confirm": "确定"
+    },
+    "message": {
+      "template1": "是时候冥想了",
+      "template2": "放松一下，冥想5分钟",
+      "template3": "给自己一个安静的时刻"
+    },
+    "save": {
+      "enabled": "已设置 {{time}} 提醒",
+      "disabled": "已关闭提醒",
+      "buttonEnabled": "保存 {{time}} 的提醒",
+      "buttonDisabled": "保存设置"
+    },
+    "error": {
+      "timeFormat": "请输入正确的时间格式"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "name": {
+      "editHint": "点击修改昵称",
+      "inputTitle": "输入新昵称",
+      "placeholder": "请输入昵称",
+      "saveSuccess": "修改成功"
+    },
+    "button": {
+      "cancel": "取消",
+      "save": "保存"
+    },
+    "section": {
+      "notifications": "提醒设置",
+      "playback": "播放设置",
+      "appearance": "外观设置",
+      "other": "其他"
+    },
+    "notifications": {
+      "label": "每日提醒"
+    },
+    "reminderTime": {
+      "label": "提醒时间",
+      "value": "每天 22:00"
+    },
+    "playback": {
+      "soundEffects": "音效",
+      "autoPlay": "自动播放"
+    },
+    "appearance": {
+      "darkMode": "深色模式"
+    },
+    "other": {
+      "language": "语言",
+      "languageValue": "简体中文",
+      "about": "关于我们",
+      "version": "版本信息",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "选择语言"
+    },
+    "logout": {
+      "title": "提示",
+      "content": "确定要退出登录吗？",
+      "button": "退出登录",
+      "success": "退出成功"
+    }
+  },
+  "stats": {
+    "title": "数据统计",
+    "subtitle": "记录你的冥想之旅",
+    "totalMinutes": "总冥想分钟",
+    "currentStreak": "当前连续天数",
+    "avgMinutes": "平均分钟/次",
+    "longestStreak": "最长连续天数",
+    "weeklyTrend": {
+      "title": "本周趋势",
+      "total": "{{minutes}} 分钟"
+    },
+    "achievements": {
+      "title": "成就",
+      "beginner": "初学者",
+      "streak3": "连续3天",
+      "streak7": "连续7天",
+      "minutes100": "100分钟"
+    },
+    "bestTime": {
+      "title": "最佳冥想时间",
+      "description": "你最常在 {{time}} 进行冥想"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "呼吸基础练习",
+      "description": "学习腹式呼吸，让身心放松",
+      "tags": ["呼吸", "入门"]
+    },
+    "bodyScan": {
+      "title": "身体扫描冥想",
+      "description": "从头到脚扫描身体，释放紧张",
+      "tags": ["身体扫描", "放松"]
+    },
+    "sleepJourney": {
+      "title": "深度睡眠引导",
+      "description": "帮助您快速进入深度睡眠",
+      "tags": ["睡眠", "晚安"]
+    },
+    "sleepBreathing": {
+      "title": "睡前呼吸练习",
+      "description": "4-7-8 呼吸法，帮助入眠",
+      "tags": ["呼吸", "睡眠"]
+    },
+    "anxietyRelief": {
+      "title": "焦虑缓解冥想",
+      "description": "释放焦虑，找回内心平静",
+      "tags": ["焦虑", "减压"]
+    },
+    "stressRelease": {
+      "title": "压力释放练习",
+      "description": "缓解工作和生活中的压力",
+      "tags": ["压力", "放松"]
+    },
+    "morningFocus": {
+      "title": "清晨专注力",
+      "description": "开启一天的正确方式",
+      "tags": ["专注", "清晨"]
+    },
+    "deepFocus": {
+      "title": "深度专注训练",
+      "description": "提升注意力和工作效率",
+      "tags": ["专注", "深度"]
+    }
+  },
+  "whitenoise": {
+    "rain": "雨声",
+    "waves": "海浪",
+    "forest": "森林",
+    "fire": "篝火"
+  },
+  "auth": {
+    "welcome": "欢迎来到尘间静",
+    "subtitle": "登录以同步你的冥想数据",
+    "tab": {
+      "login": "手机登录",
+      "email": "邮箱登录",
+      "register": "注册"
+    },
+    "phone": "手机号",
+    "phonePlaceholder": "请输入手机号",
+    "email": "邮箱",
+    "emailPlaceholder": "请输入邮箱地址",
+    "password": "密码",
+    "passwordPlaceholder": "请输入密码",
+    "nickname": "昵称",
+    "nicknamePlaceholder": "请输入昵称",
+    "verifyCode": "验证码",
+    "codePlaceholder": "请输入验证码",
+    "sendCode": "获取验证码",
+    "codeSent": "验证码已发送",
+    "login": "登录",
+    "register": "注册",
+    "thirdParty": "第三方登录",
+    "wechatLoginBtn": "微信一键登录",
+    "wechatLogin": "微信登录中...",
+    "accountRequired": "请填写账号",
+    "passwordRequired": "请填写密码",
+    "nicknameRequired": "请填写昵称",
+    "loginSuccess": "登录成功",
+    "registerSuccess": "注册成功",
+    "logout": "退出登录",
+    "logoutConfirm": "确定要退出登录吗？",
+    "logoutSuccess": "已退出登录"
+  },
+  "store": {
+    "defaultUsername": "冥想者"
+  }
+}

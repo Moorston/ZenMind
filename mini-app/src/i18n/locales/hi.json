@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "ज़ेनमाइंड - ध्यान"
+  },
+  "tabbar": {
+    "home": "होम",
+    "discover": "खोजें",
+    "player": "प्लेयर",
+    "profile": "प्रोफ़ाइल"
+  },
+  "common": {
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "done": "पूर्ण",
+    "save": "सहेजें",
+    "next": "अगला",
+    "close": "बंद करें",
+    "back": "वापस",
+    "settings": "सेटिंग्स",
+    "dailyReminder": "दैनिक अनुस्मारक",
+    "stats": "आँकड़े",
+    "totalMinutes": "कुल ध्यान मिनट",
+    "streak": "लगातार दिन",
+    "minutes": "मिनट",
+    "days": "दिन",
+    "weekdays": ["रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"],
+    "timeOfDay": {
+      "morning": "सुबह",
+      "noon": "दोपहर",
+      "afternoon": "अपराह्न",
+      "evening": "शाम",
+      "night": "रात"
+    },
+    "category": {
+      "beginner": "शुरुआती",
+      "sleep": "नींद",
+      "relax": "तनावमुक्ति",
+      "focus": "एकाग्रता"
+    },
+    "level": {
+      "beginner": "शुरुआती",
+      "intermediate": "मध्यवर्ती",
+      "advanced": "उन्नत"
+    },
+    "instructor": {
+      "fallback": "ध्यान गाइड"
+    },
+    "duration": "{{duration}} मिनट"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "रात बहुत हो गई",
+      "morning": "सुप्रभात",
+      "afternoon": "नमस्कार",
+      "evening": "शुभ संध्या"
+    },
+    "subtitle": "आज ध्यान के लिए एक अच्छा दिन है",
+    "checkin": {
+      "completed": "आज पूर्ण हुआ",
+      "title": "आज का ध्यान",
+      "duration": "{{duration}} मिनट ध्यान किया",
+      "startPrompt": "अपनी शांति यात्रा शुरू करें"
+    },
+    "streak": {
+      "days": "{{streak}} दिन"
+    },
+    "quizBanner": {
+      "title": "अपनी ध्यान प्राथमिकताएँ सेट करें",
+      "subtitle": "व्यक्तिगत पाठ्यक्रम अनुशंसाएँ प्राप्त करें",
+      "cta": "अभी सेट करें"
+    },
+    "recommendation": {
+      "title": "आज की अनुशंसा",
+      "viewAll": "सभी देखें",
+      "start": "ध्यान शुरू करें"
+    },
+    "quickStart": {
+      "title": "त्वरित शुरुआत"
+    },
+    "backgroundSounds": {
+      "title": "पृष्ठभूमि ध्वनि",
+      "subtitle": "नींद / एकाग्रता"
+    },
+    "weeklyStats": {
+      "title": "सप्ताह के आँकड़े",
+      "totalMinutes": "कुल मिनट",
+      "streak": "लगातार दिन",
+      "meditationDays": "ध्यान के दिन"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "सभी",
+      "beginner": "शुरुआती",
+      "sleep": "नींद",
+      "relax": "तनावमुक्ति",
+      "focus": "एकाग्रता"
+    },
+    "search": {
+      "placeholder": "ध्यान पाठ्यक्रम खोजें..."
+    },
+    "whiteNoise": {
+      "title": "श्वेत रव",
+      "subtitle": "एकाग्रता के लिए पृष्ठभूमि ध्वनि"
+    },
+    "courses": {
+      "title": "ध्यान पाठ्यक्रम",
+      "count": "कुल {{count}}",
+      "empty": "कोई पाठ्यक्रम नहीं मिला"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "श्वेत रव",
+      "meditationCourse": "ध्यान पाठ्यक्रम"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - पृष्ठभूमि ध्वनि",
+      "selectMusic": "ध्यान शुरू करने के लिए संगीत चुनें"
+    },
+    "title": {
+      "selectMusic": "संगीत चुनें"
+    },
+    "loop": "दोहराएँ",
+    "sleepTimer": {
+      "title": "टाइमर बंद करें",
+      "minutes": "{{value}} मिनट",
+      "minuteOption": "{{m}} मिनट",
+      "confirm": "पुष्टि करें",
+      "toastTitle": "टाइमर बंद करें",
+      "scheduled": "{{value}} मिनट में बंद होगा",
+      "active": "{{sleepTimer}} मिनट में बंद होगा"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "नींद की समस्या",
+      "anxiety": "तनाव कम करना",
+      "focus": "एकाग्रता बढ़ाना",
+      "placeholder": "अपनी प्राथमिकताएँ सेट करें"
+    },
+    "streak": "{{streak}} दिन लगातार",
+    "stats": {
+      "totalMinutes": "कुल ध्यान मिनट",
+      "completedCourses": "पूर्ण पाठ्यक्रम"
+    },
+    "calendar": {
+      "title": "इस महीने का रिकॉर्ड",
+      "daysCount": "{{count}} दिन"
+    },
+    "menu": {
+      "stats": "आँकड़े",
+      "setPreferences": "प्राथमिकताएँ सेट करें",
+      "preferencesSubtitle": "व्यक्तिगत अनुशंसाएँ प्राप्त करें",
+      "newBadge": "नया",
+      "reminder": "दैनिक अनुस्मारक",
+      "reminderSubtitle": "ध्यान अनुस्मारक समय सेट करें",
+      "settings": "सेटिंग्स",
+      "help": "सहायता और प्रतिक्रिया"
+    },
+    "version": "ज़ेनमाइंड v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "आपकी वर्तमान चिंता क्या है?",
+      "subtitle": "हम आपकी स्थिति के अनुसार उपयुक्त पाठ्यक्रम सुझाएँगे"
+    },
+    "option": {
+      "sleep": {
+        "label": "नींद की समस्या",
+        "desc": "सोने में कठिनाई / हल्की नींद"
+      },
+      "anxiety": {
+        "label": "चिंता और तनाव",
+        "desc": "काम / जीवन का दबाव"
+      },
+      "focus": {
+        "label": "एकाग्रता बढ़ाना",
+        "desc": "दक्षता बढ़ाएँ / ध्यान केंद्रित करें"
+      }
+    },
+    "error": {
+      "noSelection": "कृपया एक विकल्प चुनें"
+    },
+    "success": "सेटिंग सफल",
+    "button": {
+      "next": "अगला",
+      "finish": "पूर्ण"
+    }
+  },
+  "reminder": {
+    "title": "दैनिक अनुस्मारक",
+    "switch": {
+      "title": "दैनिक अनुस्मारक चालू करें",
+      "subtitle": "ध्यान के लिए नियमित रूप से याद दिलाएँ"
+    },
+    "section": {
+      "slots": "अनुशंसित समय",
+      "customTime": "कस्टम समय",
+      "quickSelect": "त्वरित चयन",
+      "messageTemplates": "अनुस्मारक संदेश"
+    },
+    "slot": {
+      "morning": {
+        "label": "सुबह",
+        "desc": "दिन की अच्छी शुरुआत करें"
+      },
+      "noon": {
+        "label": "दोपहर",
+        "desc": "काम के बीच आराम"
+      },
+      "afternoon": {
+        "label": "अपराह्न",
+        "desc": "काम की थकान दूर करें"
+      },
+      "evening": {
+        "label": "शाम",
+        "desc": "मन और शरीर को आराम दें"
+      },
+      "night": {
+        "label": "सोने से पहले",
+        "desc": "नींद में मदद"
+      }
+    },
+    "customTime": {
+      "pick": "समय चुनें",
+      "inputTitle": "कस्टम समय दर्ज करें",
+      "placeholder": "HH:mm प्रारूप, जैसे 21:30"
+    },
+    "button": {
+      "cancel": "रद्द करें",
+      "confirm": "पुष्टि करें"
+    },
+    "message": {
+      "template1": "ध्यान करने का समय",
+      "template2": "आराम करें, 5 मिनट ध्यान करें",
+      "template3": "अपने आप को एक शांत पल दें"
+    },
+    "save": {
+      "enabled": "{{time}} के लिए अनुस्मारक सेट किया गया",
+      "disabled": "अनुस्मारक बंद किया गया",
+      "buttonEnabled": "{{time}} के लिए अनुस्मारक सहेजें",
+      "buttonDisabled": "सेटिंग सहेजें"
+    },
+    "error": {
+      "timeFormat": "कृपया सही समय प्रारूप दर्ज करें"
+    }
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "name": {
+      "editHint": "उपनाम बदलने के लिए क्लिक करें",
+      "inputTitle": "नया उपनाम दर्ज करें",
+      "placeholder": "कृपया उपनाम दर्ज करें",
+      "saveSuccess": "सफलतापूर्वक बदला गया"
+    },
+    "button": {
+      "cancel": "रद्द करें",
+      "save": "सहेजें"
+    },
+    "section": {
+      "notifications": "सूचना सेटिंग्स",
+      "playback": "प्लेबैक सेटिंग्स",
+      "appearance": "दृश्य सेटिंग्स",
+      "other": "अन्य"
+    },
+    "notifications": {
+      "label": "दैनिक अनुस्मारक"
+    },
+    "reminderTime": {
+      "label": "अनुस्मारक समय",
+      "value": "प्रतिदिन 22:00"
+    },
+    "playback": {
+      "soundEffects": "ध्वनि प्रभाव",
+      "autoPlay": "ऑटो प्ले"
+    },
+    "appearance": {
+      "darkMode": "डार्क मोड"
+    },
+    "other": {
+      "language": "भाषा",
+      "languageValue": "हिन्दी",
+      "about": "हमारे बारे में",
+      "version": "संस्करण जानकारी",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "भाषा चुनें"
+    },
+    "logout": {
+      "title": "सूचना",
+      "content": "क्या आप लॉग आउट करना चाहते हैं?",
+      "button": "लॉग आउट",
+      "success": "लॉग आउट सफल"
+    }
+  },
+  "stats": {
+    "title": "आँकड़े",
+    "subtitle": "अपनी ध्यान यात्रा रिकॉर्ड करें",
+    "totalMinutes": "कुल ध्यान मिनट",
+    "currentStreak": "वर्तमान लगातार दिन",
+    "avgMinutes": "औसत मिनट/सत्र",
+    "longestStreak": "सबसे लंबा लगातार दिन",
+    "weeklyTrend": {
+      "title": "सप्ताह का रुझान",
+      "total": "{{minutes}} मिनट"
+    },
+    "achievements": {
+      "title": "उपलब्धियाँ",
+      "beginner": "शुरुआती",
+      "streak3": "लगातार 3 दिन",
+      "streak7": "लगातार 7 दिन",
+      "minutes100": "100 मिनट"
+    },
+    "bestTime": {
+      "title": "सबसे अच्छा ध्यान समय",
+      "description": "आप अक्सर {{time}} पर ध्यान करते हैं"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "श्वास की मूल बातें",
+      "description": "पेट से साँस लेना सीखें, शरीर और मन को आराम दें",
+      "tags": ["श्वास", "शुरुआती"]
+    },
+    "bodyScan": {
+      "title": "बॉडी स्कैन ध्यान",
+      "description": "सिर से पैर तक शरीर को स्कैन करें, तनाव मुक्त करें",
+      "tags": ["बॉडी स्कैन", "आराम"]
+    },
+    "sleepJourney": {
+      "title": "गहरी नींद मार्गदर्शन",
+      "description": "आपको जल्दी गहरी नींद में जाने में मदद करें",
+      "tags": ["नींद", "शुभ रात्रि"]
+    },
+    "sleepBreathing": {
+      "title": "सोने से पहले श्वास व्यायाम",
+      "description": "4-7-8 श्वास विधि, नींद में मदद",
+      "tags": ["श्वास", "नींद"]
+    },
+    "anxietyRelief": {
+      "title": "चिंता मुक्ति ध्यान",
+      "description": "चिंता मुक्त करें, आंतरिक शांति पाएँ",
+      "tags": ["चिंता", "तनावमुक्ति"]
+    },
+    "stressRelease": {
+      "title": "तनाव मुक्ति व्यायाम",
+      "description": "काम और जीवन के तनाव को कम करें",
+      "tags": ["तनाव", "आराम"]
+    },
+    "morningFocus": {
+      "title": "सुबह की एकाग्रता",
+      "description": "दिन की सही शुरुआत करें",
+      "tags": ["एकाग्रता", "सुबह"]
+    },
+    "deepFocus": {
+      "title": "गहन एकाग्रता प्रशिक्षण",
+      "description": "ध्यान और कार्य क्षमता बढ़ाएँ",
+      "tags": ["एकाग्रता", "गहन"]
+    }
+  },
+  "whitenoise": {
+    "rain": "बारिश",
+    "waves": "लहरें",
+    "forest": "जंगल",
+    "fire": "आग"
+  },
+  "store": {
+    "defaultUsername": "ध्यानी"
+  }
+}

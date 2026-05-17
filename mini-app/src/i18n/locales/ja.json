@@ -1,0 +1,138 @@
+{
+  "app": { "navbarTitle": "ZenMind - 静寂の瞑想" },
+  "tabbar": { "home": "ホーム", "discover": "発見", "player": "再生", "profile": "マイページ" },
+  "common": {
+    "cancel": "キャンセル", "confirm": "確認", "done": "完了", "save": "保存", "next": "次へ",
+    "close": "閉じる", "back": "戻る", "settings": "設定", "dailyReminder": "毎日のリマインダー",
+    "stats": "統計", "totalMinutes": "総瞑想時間", "streak": "連続日数",
+    "minutes": "分", "days": "日",
+    "weekdays": ["日", "月", "火", "水", "木", "金", "土"],
+    "timeOfDay": {"morning": "朝", "noon": "昼", "afternoon": "午後", "evening": "夕方", "night": "夜"},
+    "category": {"beginner": "初心者", "sleep": "睡眠", "relax": "リラックス", "focus": "集中"},
+    "level": {"beginner": "初心者", "intermediate": "中級", "advanced": "上級"},
+    "instructor": {"fallback": "静寂"},
+    "duration": "{{duration}}分"
+  },
+  "home": {
+    "greeting": {"lateNight": "夜更けですね", "morning": "おはようございます", "afternoon": "こんにちは", "evening": "こんばんは"},
+    "subtitle": "今日は瞑想にぴったりの日です",
+    "checkin": {
+      "completed": "今日完了しました", "title": "今日の瞑想",
+      "duration": "{{duration}}分瞑想しました", "startPrompt": "静寂の旅を始めましょう"
+    },
+    "streak": {"days": "{{streak}}日"},
+    "quizBanner": {
+      "title": "瞑想の好みを設定", "subtitle": "パーソナライズされたコースを提案", "cta": "今すぐ設定"
+    },
+    "recommendation": {"title": "今日のおすすめ", "viewAll": "すべて見る", "start": "瞑想を始める"},
+    "quickStart": {"title": "クイックスタート"},
+    "backgroundSounds": {"title": "背景音", "subtitle": "睡眠 / 集中"},
+    "weeklyStats": {"title": "今週のデータ", "totalMinutes": "合計時間", "streak": "連続日数", "meditationDays": "瞑想日数"}
+  },
+  "discover": {
+    "category": {"all": "すべて", "beginner": "初心者", "sleep": "睡眠", "relax": "リラックス", "focus": "集中"},
+    "search": {"placeholder": "瞑想コースを検索..."},
+    "whiteNoise": {"title": "ホワイトノイズ", "subtitle": "集中力を高める背景音"},
+    "courses": {"title": "瞑想コース", "count": "全{{count}}コース", "empty": "該当するコースはありません"}
+  },
+  "player": {
+    "header": {"whiteNoise": "ホワイトノイズ", "meditationCourse": "瞑想コース"},
+    "subtitle": {"whiteNoise": "{{name}} - 背景音", "selectMusic": "音楽を選んで瞑想を始めましょう"},
+    "title": {"selectMusic": "音楽を選択"},
+    "loop": "ループ",
+    "sleepTimer": {
+      "title": "タイマー", "minutes": "{{value}}分", "minuteOption": "{{m}}分",
+      "confirm": "確認", "toastTitle": "タイマー",
+      "scheduled": "{{value}}分後に停止します",
+      "active": "あと{{sleepTimer}}分で停止"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "睡眠のお悩み", "anxiety": "リラックスが必要",
+      "focus": "集中力向上", "placeholder": "あなたの好みを設定"
+    },
+    "streak": "{{streak}}日連続",
+    "stats": {"totalMinutes": "総瞑想時間", "completedCourses": "完了したコース"},
+    "calendar": {"title": "今月の記録", "daysCount": "{{count}}日"},
+    "menu": {
+      "stats": "統計", "setPreferences": "好みを設定", "preferencesSubtitle": "パーソナライズされたおすすめを取得",
+      "newBadge": "新", "reminder": "毎日のリマインダー", "reminderSubtitle": "瞑想のリマインダーを設定",
+      "settings": "設定", "help": "ヘルプとフィードバック"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {"title": "現在のお悩みは何ですか？", "subtitle": "状況に合わせて最適なコースをご提案します"},
+    "option": {
+      "sleep": {"label": "睡眠がうまくいかない", "desc": "入眠が難しい／眠りが浅い"},
+      "anxiety": {"label": "不安やストレスを感じる", "desc": "仕事や生活のプレッシャー"},
+      "focus": {"label": "集中力を高めたい", "desc": "効率アップ／注意力向上"}
+    },
+    "error": {"noSelection": "オプションを選択してください"},
+    "success": "設定完了",
+    "button": {"next": "次へ", "finish": "完了"}
+  },
+  "reminder": {
+    "title": "毎日のリマインダー",
+    "switch": {"title": "リマインダーを有効にする", "subtitle": "定期的に瞑想をお知らせします"},
+    "section": {"slots": "おすすめの時間帯", "customTime": "カスタム時間", "quickSelect": "クイック選択", "messageTemplates": "メッセージ"},
+    "slot": {
+      "morning": {"label": "朝", "desc": "素敵な一日を始めよう"},
+      "noon": {"label": "昼", "desc": "仕事の合間にリラックス"},
+      "afternoon": {"label": "午後", "desc": "疲れを癒す"},
+      "evening": {"label": "夕方", "desc": "心と体をリラックス"},
+      "night": {"label": "就寝前", "desc": "眠りにつくのを助ける"}
+    },
+    "customTime": {"pick": "時間を選択", "inputTitle": "カスタム時間を入力", "placeholder": "HH:mm形式（例：21:30）"},
+    "button": {"cancel": "キャンセル", "confirm": "確認"},
+    "message": {"template1": "瞑想の時間です", "template2": "リラックスして5分間瞑想しましょう", "template3": "静かなひとときを自分に"},
+    "save": {
+      "enabled": "{{time}}にリマインダー設定済み", "disabled": "リマインダーオフ",
+      "buttonEnabled": "{{time}}のリマインダーを保存", "buttonDisabled": "設定を保存"
+    },
+    "error": {"timeFormat": "正しい時刻形式を入力してください"}
+  },
+  "settings": {
+    "title": "設定",
+    "name": {
+      "editHint": "タップして名前を変更", "inputTitle": "新しい名前を入力",
+      "placeholder": "名前を入力してください", "saveSuccess": "名前を更新しました"
+    },
+    "button": {"cancel": "キャンセル", "save": "保存"},
+    "section": {"notifications": "通知設定", "playback": "再生設定", "appearance": "表示設定", "other": "その他"},
+    "notifications": {"label": "毎日のリマインダー"},
+    "reminderTime": {"label": "リマインダー時間", "value": "毎日 22:00"},
+    "playback": {"soundEffects": "効果音", "autoPlay": "自動再生"},
+    "appearance": {"darkMode": "ダークモード"},
+    "other": {
+      "language": "言語", "languageValue": "日本語",
+      "about": "私たちについて", "version": "バージョン情報", "versionValue": "v1.0.0"
+    },
+    "language": {"title": "言語を選択"},
+    "logout": {
+      "title": "確認", "content": "ログアウトしてもよろしいですか？",
+      "button": "ログアウト", "success": "ログアウトしました"
+    }
+  },
+  "stats": {
+    "title": "統計", "subtitle": "あなたの瞑想の記録",
+    "totalMinutes": "総瞑想時間", "currentStreak": "現在の連続日数",
+    "avgMinutes": "平均分数/回", "longestStreak": "最長連続日数",
+    "weeklyTrend": {"title": "今週の傾向", "total": "{{minutes}}分"},
+    "achievements": {"title": "実績", "beginner": "ビギナー", "streak3": "3日連続", "streak7": "7日連続", "minutes100": "100分"},
+    "bestTime": {"title": "ベスト瞑想時間", "description": "あなたは主に{{time}}に瞑想しています"}
+  },
+  "course": {
+    "breathingBasics": {"title": "呼吸の基本練習", "description": "腹式呼吸を学び、心身をリラックスさせましょう", "tags": ["呼吸", "初心者"]},
+    "bodyScan": {"title": "ボディスキャン瞑想", "description": "頭からつま先までスキャンして緊張を解放", "tags": ["ボディスキャン", "リラックス"]},
+    "sleepJourney": {"title": "深い眠りへの誘い", "description": "ぐっすり眠れるように導きます", "tags": ["睡眠", "おやすみ"]},
+    "sleepBreathing": {"title": "寝る前の呼吸法", "description": "4-7-8呼吸法で入眠を促進", "tags": ["呼吸", "睡眠"]},
+    "anxietyRelief": {"title": "不安緩和の瞑想", "description": "不安を手放し、心の平穏を取り戻す", "tags": ["不安", "リラックス"]},
+    "stressRelease": {"title": "ストレス解消法", "description": "仕事や生活のストレスを和らげる", "tags": ["ストレス", "リラックス"]},
+    "morningFocus": {"title": "朝の集中力", "description": "一日を正しく始める方法", "tags": ["集中", "朝"]},
+    "deepFocus": {"title": "ディープフォーカス", "description": "注意力と作業効率を向上させる", "tags": ["集中", "深層"]}
+  },
+  "whitenoise": {"rain": "雨音", "waves": "波の音", "forest": "森", "fire": "焚き火"},
+  "store": {"defaultUsername": "瞑想者"}
+}

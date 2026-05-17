@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "ZenMind - Achtsamkeitsmeditation"
+  },
+  "tabbar": {
+    "home": "Start",
+    "discover": "Entdecken",
+    "player": "Player",
+    "profile": "Profil"
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "done": "Fertig",
+    "save": "Speichern",
+    "next": "Weiter",
+    "close": "Schließen",
+    "back": "Zurück",
+    "settings": "Einstellungen",
+    "dailyReminder": "Tägliche Erinnerung",
+    "stats": "Statistiken",
+    "totalMinutes": "Meditationsminuten gesamt",
+    "streak": "Tage in Folge",
+    "minutes": "Minuten",
+    "days": "Tage",
+    "weekdays": ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+    "timeOfDay": {
+      "morning": "Morgen",
+      "noon": "Mittag",
+      "afternoon": "Nachmittag",
+      "evening": "Abend",
+      "night": "Nacht"
+    },
+    "category": {
+      "beginner": "Anfänger",
+      "sleep": "Schlaf",
+      "relax": "Entspannung",
+      "focus": "Konzentration"
+    },
+    "level": {
+      "beginner": "Anfänger",
+      "intermediate": "Fortgeschritten",
+      "advanced": "Profi"
+    },
+    "instructor": {
+      "fallback": "ZenMind"
+    },
+    "duration": "{{duration}} Minuten"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "Es ist spät",
+      "morning": "Guten Morgen",
+      "afternoon": "Guten Nachmittag",
+      "evening": "Guten Abend"
+    },
+    "subtitle": "Heute ist ein guter Tag zum Meditieren",
+    "checkin": {
+      "completed": "Heute abgeschlossen",
+      "title": "Meditation heute",
+      "duration": "{{duration}} Minuten meditiert",
+      "startPrompt": "Beginne deine Achtsamkeitsreise"
+    },
+    "streak": {
+      "days": "{{streak}} Tage"
+    },
+    "quizBanner": {
+      "title": "Lege deine Meditationspräferenzen fest",
+      "subtitle": "Erhalte personalisierte Kursempfehlungen",
+      "cta": "Jetzt einrichten"
+    },
+    "recommendation": {
+      "title": "Heutige Empfehlung",
+      "viewAll": "Alle anzeigen",
+      "start": "Meditation starten"
+    },
+    "quickStart": {
+      "title": "Schnellstart"
+    },
+    "backgroundSounds": {
+      "title": "Hintergrundgeräusche",
+      "subtitle": "Schlaf / Konzentration"
+    },
+    "weeklyStats": {
+      "title": "Diese Woche",
+      "totalMinutes": "Minuten gesamt",
+      "streak": "Tage in Folge",
+      "meditationDays": "Meditationstage"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "Alle",
+      "beginner": "Anfänger",
+      "sleep": "Schlaf",
+      "relax": "Entspannung",
+      "focus": "Konzentration"
+    },
+    "search": {
+      "placeholder": "Meditationskurse suchen..."
+    },
+    "whiteNoise": {
+      "title": "Weißes Rauschen",
+      "subtitle": "Hintergrundgeräusche für Konzentration"
+    },
+    "courses": {
+      "title": "Meditationskurse",
+      "count": "Insgesamt {{count}}",
+      "empty": "Keine passenden Kurse gefunden"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "Weißes Rauschen",
+      "meditationCourse": "Meditationskurs"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - Hintergrundklang",
+      "selectMusic": "Wähle Musik zum Meditieren"
+    },
+    "title": {
+      "selectMusic": "Musik auswählen"
+    },
+    "loop": "Wiederholen",
+    "sleepTimer": {
+      "title": "Schlaf-Timer",
+      "minutes": "{{value}} Minuten",
+      "minuteOption": "{{m}} Min",
+      "confirm": "Bestätigen",
+      "toastTitle": "Schlaf-Timer",
+      "scheduled": "Wird in {{value}} Minuten beendet",
+      "active": "Endet in {{sleepTimer}} Minuten"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "Schlafprobleme",
+      "anxiety": "Stressabbau nötig",
+      "focus": "Konzentration verbessern",
+      "placeholder": "Lege deine Präferenzen fest"
+    },
+    "streak": "{{streak}} Tage in Folge",
+    "stats": {
+      "totalMinutes": "Meditationsminuten gesamt",
+      "completedCourses": "Abgeschlossene Kurse"
+    },
+    "calendar": {
+      "title": "Diesen Monat",
+      "daysCount": "{{count}} Tage"
+    },
+    "menu": {
+      "stats": "Statistiken",
+      "setPreferences": "Präferenzen",
+      "preferencesSubtitle": "Erhalte personalisierte Empfehlungen",
+      "newBadge": "Neu",
+      "reminder": "Tägliche Erinnerung",
+      "reminderSubtitle": "Erinnerungszeit für Meditation festlegen",
+      "settings": "Einstellungen",
+      "help": "Hilfe & Feedback"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "Was beschäftigt dich derzeit?",
+      "subtitle": "Wir empfehlen dir passende Kurse basierend auf deiner Situation"
+    },
+    "option": {
+      "sleep": {
+        "label": "Schlafstörungen",
+        "desc": "Einschlafschwierigkeiten / leichter Schlaf"
+      },
+      "anxiety": {
+        "label": "Angst und Stress",
+        "desc": "Arbeits- / Lebensstress"
+      },
+      "focus": {
+        "label": "Konzentration verbessern",
+        "desc": "Effizienz steigern / Aufmerksamkeit bündeln"
+      }
+    },
+    "error": {
+      "noSelection": "Bitte wähle eine Option"
+    },
+    "success": "Einrichtung erfolgreich",
+    "button": {
+      "next": "Weiter",
+      "finish": "Fertig"
+    }
+  },
+  "reminder": {
+    "title": "Tägliche Erinnerung",
+    "switch": {
+      "title": "Tägliche Erinnerung aktivieren",
+      "subtitle": "Regelmäßige Erinnerung zum Meditieren"
+    },
+    "section": {
+      "slots": "Empfohlene Zeiten",
+      "customTime": "Benutzerdefinierte Zeit",
+      "quickSelect": "Schnellauswahl",
+      "messageTemplates": "Erinnerungstext"
+    },
+    "slot": {
+      "morning": {
+        "label": "Morgen",
+        "desc": "Starte gut in den Tag"
+      },
+      "noon": {
+        "label": "Mittag",
+        "desc": "Eine kurze Pause bei der Arbeit"
+      },
+      "afternoon": {
+        "label": "Nachmittag",
+        "desc": "Arbeitsmüdigkeit lindern"
+      },
+      "evening": {
+        "label": "Abend",
+        "desc": "Körper und Geist entspannen"
+      },
+      "night": {
+        "label": "Vor dem Schlafen",
+        "desc": "Hilft beim Einschlafen"
+      }
+    },
+    "customTime": {
+      "pick": "Zeit auswählen",
+      "inputTitle": "Benutzerdefinierte Zeit eingeben",
+      "placeholder": "HH:mm Format, z.B. 21:30"
+    },
+    "button": {
+      "cancel": "Abbrechen",
+      "confirm": "Bestätigen"
+    },
+    "message": {
+      "template1": "Zeit zum Meditieren",
+      "template2": "Entspann dich, meditiere 5 Minuten",
+      "template3": "Gönn dir einen ruhigen Moment"
+    },
+    "save": {
+      "enabled": "Erinnerung um {{time}} aktiviert",
+      "disabled": "Erinnerung deaktiviert",
+      "buttonEnabled": "Erinnerung um {{time}} speichern",
+      "buttonDisabled": "Einstellungen speichern"
+    },
+    "error": {
+      "timeFormat": "Bitte gib ein gültiges Zeitformat ein"
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "name": {
+      "editHint": "Klicken zum Ändern des Namens",
+      "inputTitle": "Neuen Namen eingeben",
+      "placeholder": "Bitte Namen eingeben",
+      "saveSuccess": "Erfolgreich geändert"
+    },
+    "button": {
+      "cancel": "Abbrechen",
+      "save": "Speichern"
+    },
+    "section": {
+      "notifications": "Benachrichtigungen",
+      "playback": "Wiedergabe",
+      "appearance": "Darstellung",
+      "other": "Sonstiges"
+    },
+    "notifications": {
+      "label": "Tägliche Erinnerung"
+    },
+    "reminderTime": {
+      "label": "Erinnerungszeit",
+      "value": "Täglich um 22:00"
+    },
+    "playback": {
+      "soundEffects": "Soundeffekte",
+      "autoPlay": "Automatische Wiedergabe"
+    },
+    "appearance": {
+      "darkMode": "Dunkelmodus"
+    },
+    "other": {
+      "language": "Sprache",
+      "languageValue": "Deutsch",
+      "about": "Über uns",
+      "version": "Version",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "Sprache auswählen"
+    },
+    "logout": {
+      "title": "Hinweis",
+      "content": "Bist du sicher, dass du dich abmelden möchtest?",
+      "button": "Abmelden",
+      "success": "Erfolgreich abgemeldet"
+    }
+  },
+  "stats": {
+    "title": "Statistiken",
+    "subtitle": "Verfolge deine Meditationsreise",
+    "totalMinutes": "Meditationsminuten gesamt",
+    "currentStreak": "Aktuelle Serie",
+    "avgMinutes": "Durchschnitt Min./Sitzung",
+    "longestStreak": "Längste Serie",
+    "weeklyTrend": {
+      "title": "Wöchentlicher Trend",
+      "total": "{{minutes}} Minuten"
+    },
+    "achievements": {
+      "title": "Erfolge",
+      "beginner": "Anfänger",
+      "streak3": "3 Tage in Folge",
+      "streak7": "7 Tage in Folge",
+      "minutes100": "100 Minuten"
+    },
+    "bestTime": {
+      "title": "Beste Meditationszeit",
+      "description": "Du meditierst am häufigsten {{time}}"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "Grundlegende Atemübungen",
+      "description": "Lerne die Bauchatmung zur Entspannung von Körper und Geist",
+      "tags": ["Atmung", "Anfänger"]
+    },
+    "bodyScan": {
+      "title": "Body-Scan Meditation",
+      "description": "Scanne deinen Körper von Kopf bis Fuß und löse Verspannungen",
+      "tags": ["Body-Scan", "Entspannung"]
+    },
+    "sleepJourney": {
+      "title": "Tiefschlaf-Anleitung",
+      "description": "Hilft dir, schnell in den Tiefschlaf zu finden",
+      "tags": ["Schlaf", "Gute Nacht"]
+    },
+    "sleepBreathing": {
+      "title": "Atemübung vor dem Schlafen",
+      "description": "4-7-8 Atemtechnik zur Schlafförderung",
+      "tags": ["Atmung", "Schlaf"]
+    },
+    "anxietyRelief": {
+      "title": "Angstlösende Meditation",
+      "description": "Befreie dich von Ängsten und finde innere Ruhe",
+      "tags": ["Angst", "Entspannung"]
+    },
+    "stressRelease": {
+      "title": "Stressabbau-Übung",
+      "description": "Baue Arbeits- und Alltagsstress ab",
+      "tags": ["Stress", "Entspannung"]
+    },
+    "morningFocus": {
+      "title": "Morgendliche Konzentration",
+      "description": "Der richtige Start in den Tag",
+      "tags": ["Konzentration", "Morgen"]
+    },
+    "deepFocus": {
+      "title": "Tiefenkonzentrationstraining",
+      "description": "Verbessere deine Aufmerksamkeit und Arbeitsleistung",
+      "tags": ["Konzentration", "Tiefe"]
+    }
+  },
+  "whitenoise": {
+    "rain": "Regen",
+    "waves": "Wellen",
+    "forest": "Wald",
+    "fire": "Lagerfeuer"
+  },
+  "store": {
+    "defaultUsername": "Meditierender"
+  }
+}

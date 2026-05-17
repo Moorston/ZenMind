@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "塵間靜-靜心冥想"
+  },
+  "tabbar": {
+    "home": "首頁",
+    "discover": "發現",
+    "player": "播放",
+    "profile": "我的"
+  },
+  "common": {
+    "cancel": "取消",
+    "confirm": "確定",
+    "done": "完成",
+    "save": "儲存",
+    "next": "下一步",
+    "close": "關閉",
+    "back": "返回",
+    "settings": "設定",
+    "dailyReminder": "每日提醒",
+    "stats": "數據統計",
+    "totalMinutes": "總冥想分鐘",
+    "streak": "連續天數",
+    "minutes": "分鐘",
+    "days": "天",
+    "weekdays": ["日", "一", "二", "三", "四", "五", "六"],
+    "timeOfDay": {
+      "morning": "清晨",
+      "noon": "午間",
+      "afternoon": "午後",
+      "evening": "傍晚",
+      "night": "夜間"
+    },
+    "category": {
+      "beginner": "入門",
+      "sleep": "睡眠",
+      "relax": "減壓",
+      "focus": "專注"
+    },
+    "level": {
+      "beginner": "入門",
+      "intermediate": "進階",
+      "advanced": "高級"
+    },
+    "instructor": {
+      "fallback": "靜心"
+    },
+    "duration": "{{duration}}分鐘"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "夜深了",
+      "morning": "早上好",
+      "afternoon": "下午好",
+      "evening": "晚上好"
+    },
+    "subtitle": "今天是適合冥想的一天",
+    "checkin": {
+      "completed": "今日已完成",
+      "title": "今日冥想",
+      "duration": "已冥想 {{duration}} 分鐘",
+      "startPrompt": "開始你的靜心之旅"
+    },
+    "streak": {
+      "days": "{{streak}} 天"
+    },
+    "quizBanner": {
+      "title": "設定你的冥想偏好",
+      "subtitle": "獲得個性化課程推薦",
+      "cta": "立即設定"
+    },
+    "recommendation": {
+      "title": "今日推薦",
+      "viewAll": "查看全部",
+      "start": "開始冥想"
+    },
+    "quickStart": {
+      "title": "快速開始"
+    },
+    "backgroundSounds": {
+      "title": "背景音",
+      "subtitle": "助眠 / 專注"
+    },
+    "weeklyStats": {
+      "title": "本週數據",
+      "totalMinutes": "總分鐘",
+      "streak": "連續天數",
+      "meditationDays": "冥想天數"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "全部",
+      "beginner": "入門",
+      "sleep": "睡眠",
+      "relax": "減壓",
+      "focus": "專注"
+    },
+    "search": {
+      "placeholder": "搜尋冥想課程..."
+    },
+    "whiteNoise": {
+      "title": "白噪音",
+      "subtitle": "背景音助專注"
+    },
+    "courses": {
+      "title": "冥想課程",
+      "count": "共 {{count}} 個",
+      "empty": "暫無符合條件的課程"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "白噪音",
+      "meditationCourse": "冥想課程"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - 背景音",
+      "selectMusic": "選擇音樂開始冥想"
+    },
+    "title": {
+      "selectMusic": "選擇音樂"
+    },
+    "loop": "循環",
+    "sleepTimer": {
+      "title": "定時關閉",
+      "minutes": "{{value}}分鐘",
+      "minuteOption": "{{m}}分鐘",
+      "confirm": "確認",
+      "toastTitle": "定時關閉",
+      "scheduled": "將在 {{value}} 分鐘後關閉",
+      "active": "{{sleepTimer}}分鐘後關閉"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "睡眠困擾",
+      "anxiety": "需要減壓",
+      "focus": "提升專注",
+      "placeholder": "設定你的偏好"
+    },
+    "streak": "{{streak}} 天連續",
+    "stats": {
+      "totalMinutes": "總冥想分鐘",
+      "completedCourses": "已完成課程"
+    },
+    "calendar": {
+      "title": "本月打卡",
+      "daysCount": "{{count}} 天"
+    },
+    "menu": {
+      "stats": "數據統計",
+      "setPreferences": "設定偏好",
+      "preferencesSubtitle": "獲得個性化推薦",
+      "newBadge": "新",
+      "reminder": "每日提醒",
+      "reminderSubtitle": "設定冥想提醒時間",
+      "settings": "設定",
+      "help": "幫助與反饋"
+    },
+    "version": "塵間靜 v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "你目前的困擾是什麼？",
+      "subtitle": "我們會根據你的情況推薦合適的課程"
+    },
+    "option": {
+      "sleep": {
+        "label": "睡眠不好",
+        "desc": "難以入睡/睡眠淺"
+      },
+      "anxiety": {
+        "label": "焦慮壓力大",
+        "desc": "工作/生活壓力"
+      },
+      "focus": {
+        "label": "想提升專注",
+        "desc": "提高效率/集中注意力"
+      }
+    },
+    "error": {
+      "noSelection": "請選擇一個選項"
+    },
+    "success": "設定成功",
+    "button": {
+      "next": "下一步",
+      "finish": "完成"
+    }
+  },
+  "reminder": {
+    "title": "每日提醒",
+    "switch": {
+      "title": "開啟每日提醒",
+      "subtitle": "定時提醒您進行冥想"
+    },
+    "section": {
+      "slots": "推薦時段",
+      "customTime": "自定義時間",
+      "quickSelect": "快捷選擇",
+      "messageTemplates": "提醒文案"
+    },
+    "slot": {
+      "morning": {
+        "label": "清晨",
+        "desc": "開啟美好的一天"
+      },
+      "noon": {
+        "label": "午間",
+        "desc": "工作間隙放鬆一下"
+      },
+      "afternoon": {
+        "label": "下午",
+        "desc": "緩解工作疲勞"
+      },
+      "evening": {
+        "label": "傍晚",
+        "desc": "放鬆身心"
+      },
+      "night": {
+        "label": "睡前",
+        "desc": "幫助入睡"
+      }
+    },
+    "customTime": {
+      "pick": "選擇時間",
+      "inputTitle": "輸入自定義時間",
+      "placeholder": "HH:mm 格式，如 21:30"
+    },
+    "button": {
+      "cancel": "取消",
+      "confirm": "確定"
+    },
+    "message": {
+      "template1": "是時候冥想了",
+      "template2": "放鬆一下，冥想5分鐘",
+      "template3": "給自己一個安靜的時刻"
+    },
+    "save": {
+      "enabled": "已設定 {{time}} 提醒",
+      "disabled": "已關閉提醒",
+      "buttonEnabled": "儲存 {{time}} 的提醒",
+      "buttonDisabled": "儲存設定"
+    },
+    "error": {
+      "timeFormat": "請輸入正確的時間格式"
+    }
+  },
+  "settings": {
+    "title": "設定",
+    "name": {
+      "editHint": "點擊修改暱稱",
+      "inputTitle": "輸入新暱稱",
+      "placeholder": "請輸入暱稱",
+      "saveSuccess": "修改成功"
+    },
+    "button": {
+      "cancel": "取消",
+      "save": "儲存"
+    },
+    "section": {
+      "notifications": "提醒設定",
+      "playback": "播放設定",
+      "appearance": "外觀設定",
+      "other": "其他"
+    },
+    "notifications": {
+      "label": "每日提醒"
+    },
+    "reminderTime": {
+      "label": "提醒時間",
+      "value": "每天 22:00"
+    },
+    "playback": {
+      "soundEffects": "音效",
+      "autoPlay": "自動播放"
+    },
+    "appearance": {
+      "darkMode": "深色模式"
+    },
+    "other": {
+      "language": "語言",
+      "languageValue": "繁體中文",
+      "about": "關於我們",
+      "version": "版本信息",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "選擇語言"
+    },
+    "logout": {
+      "title": "提示",
+      "content": "確定要退出登錄嗎？",
+      "button": "退出登錄",
+      "success": "退出成功"
+    }
+  },
+  "stats": {
+    "title": "數據統計",
+    "subtitle": "記錄你的冥想之旅",
+    "totalMinutes": "總冥想分鐘",
+    "currentStreak": "當前連續天數",
+    "avgMinutes": "平均分鐘/次",
+    "longestStreak": "最長連續天數",
+    "weeklyTrend": {
+      "title": "本週趨勢",
+      "total": "{{minutes}} 分鐘"
+    },
+    "achievements": {
+      "title": "成就",
+      "beginner": "初學者",
+      "streak3": "連續3天",
+      "streak7": "連續7天",
+      "minutes100": "100分鐘"
+    },
+    "bestTime": {
+      "title": "最佳冥想時間",
+      "description": "你最常在 {{time}} 進行冥想"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "呼吸基礎練習",
+      "description": "學習腹式呼吸，讓身心放鬆",
+      "tags": ["呼吸", "入門"]
+    },
+    "bodyScan": {
+      "title": "身體掃描冥想",
+      "description": "從頭到腳掃描身體，釋放緊張",
+      "tags": ["身體掃描", "放鬆"]
+    },
+    "sleepJourney": {
+      "title": "深度睡眠引導",
+      "description": "幫助您快速進入深度睡眠",
+      "tags": ["睡眠", "晚安"]
+    },
+    "sleepBreathing": {
+      "title": "睡前呼吸練習",
+      "description": "4-7-8 呼吸法，幫助入眠",
+      "tags": ["呼吸", "睡眠"]
+    },
+    "anxietyRelief": {
+      "title": "焦慮緩解冥想",
+      "description": "釋放焦慮，找回內心平靜",
+      "tags": ["焦慮", "減壓"]
+    },
+    "stressRelease": {
+      "title": "壓力釋放練習",
+      "description": "緩解工作和生活中的壓力",
+      "tags": ["壓力", "放鬆"]
+    },
+    "morningFocus": {
+      "title": "清晨專注力",
+      "description": "開啟一天的正確方式",
+      "tags": ["專注", "清晨"]
+    },
+    "deepFocus": {
+      "title": "深度專注訓練",
+      "description": "提升注意力和工作效率",
+      "tags": ["專注", "深度"]
+    }
+  },
+  "whitenoise": {
+    "rain": "雨聲",
+    "waves": "海浪",
+    "forest": "森林",
+    "fire": "篝火"
+  },
+  "store": {
+    "defaultUsername": "冥想者"
+  }
+}

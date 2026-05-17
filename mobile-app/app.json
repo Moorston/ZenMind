@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "尘间静",
+    "slug": "zenmind",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0a0a1a",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zenmind.app",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"]
+      }
+    },
+    "android": {
+      "package": "com.zenmind.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0a1a"
+      },
+      "enableProguardInRelease": true
+    },
+    "plugins": [
+      "expo-av",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInRelease": true,
+            "extraProguardRules": "-keep class com.zenmind.app.** { *; }\n-dontwarn com.google.**\n-keep class * extends com.facebook.react.bridge.JavaScriptModule { *; }"
+          },
+          "ios": {}
+        }
+      ],
+      "expo-splash-screen"
+    ]
+  }
+}

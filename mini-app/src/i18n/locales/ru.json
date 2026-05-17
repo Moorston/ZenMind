@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "ZenMind - Медитация"
+  },
+  "tabbar": {
+    "home": "Главная",
+    "discover": "Обзор",
+    "player": "Плеер",
+    "profile": "Профиль"
+  },
+  "common": {
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "done": "Готово",
+    "save": "Сохранить",
+    "next": "Далее",
+    "close": "Закрыть",
+    "back": "Назад",
+    "settings": "Настройки",
+    "dailyReminder": "Ежедневное напоминание",
+    "stats": "Статистика",
+    "totalMinutes": "Всего минут",
+    "streak": "Дней подряд",
+    "minutes": "мин",
+    "days": "дн",
+    "weekdays": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    "timeOfDay": {
+      "morning": "Утро",
+      "noon": "Полдень",
+      "afternoon": "День",
+      "evening": "Вечер",
+      "night": "Ночь"
+    },
+    "category": {
+      "beginner": "Для начинающих",
+      "sleep": "Сон",
+      "relax": "Расслабление",
+      "focus": "Концентрация"
+    },
+    "level": {
+      "beginner": "Начальный",
+      "intermediate": "Средний",
+      "advanced": "Продвинутый"
+    },
+    "instructor": {
+      "fallback": "Инструктор"
+    },
+    "duration": "{{duration}} мин"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "Уже поздно",
+      "morning": "Доброе утро",
+      "afternoon": "Добрый день",
+      "evening": "Добрый вечер"
+    },
+    "subtitle": "Сегодня отличный день для медитации",
+    "checkin": {
+      "completed": "На сегодня завершено",
+      "title": "Медитация сегодня",
+      "duration": "Медитировали {{duration}} мин",
+      "startPrompt": "Начните свой путь осознанности"
+    },
+    "streak": {
+      "days": "{{streak}} дн"
+    },
+    "quizBanner": {
+      "title": "Настройте предпочтения",
+      "subtitle": "Получайте персонализированные рекомендации",
+      "cta": "Настроить"
+    },
+    "recommendation": {
+      "title": "Рекомендуем сегодня",
+      "viewAll": "Смотреть всё",
+      "start": "Начать медитацию"
+    },
+    "quickStart": {
+      "title": "Быстрый старт"
+    },
+    "backgroundSounds": {
+      "title": "Фоновые звуки",
+      "subtitle": "Сон / Концентрация"
+    },
+    "weeklyStats": {
+      "title": "На этой неделе",
+      "totalMinutes": "Всего минут",
+      "streak": "Серия",
+      "meditationDays": "Дни медитации"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "Все",
+      "beginner": "Для начинающих",
+      "sleep": "Сон",
+      "relax": "Расслабление",
+      "focus": "Концентрация"
+    },
+    "search": {
+      "placeholder": "Поиск курсов медитации..."
+    },
+    "whiteNoise": {
+      "title": "Белый шум",
+      "subtitle": "Фоновые звуки для концентрации"
+    },
+    "courses": {
+      "title": "Курсы медитации",
+      "count": "Всего {{count}}",
+      "empty": "Курсы не найдены"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "Белый шум",
+      "meditationCourse": "Курс"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - Фон",
+      "selectMusic": "Выберите музыку для начала"
+    },
+    "title": {
+      "selectMusic": "Выбрать музыку"
+    },
+    "loop": "Повтор",
+    "sleepTimer": {
+      "title": "Таймер сна",
+      "minutes": "{{value}} мин",
+      "minuteOption": "{{m}} мин",
+      "confirm": "Установить",
+      "toastTitle": "Таймер сна",
+      "scheduled": "Выключится через {{value}} мин",
+      "active": "Выкл. через {{sleepTimer}} мин"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "Проблемы со сном",
+      "anxiety": "Нужно расслабиться",
+      "focus": "Повысить концентрацию",
+      "placeholder": "Укажите ваши предпочтения"
+    },
+    "streak": "{{streak}} дн подряд",
+    "stats": {
+      "totalMinutes": "Всего минут",
+      "completedCourses": "Пройдено курсов"
+    },
+    "calendar": {
+      "title": "Календарь",
+      "daysCount": "{{count}} дн"
+    },
+    "menu": {
+      "stats": "Статистика",
+      "setPreferences": "Настройка предпочтений",
+      "preferencesSubtitle": "Получайте персонализированные рекомендации",
+      "newBadge": "Новое",
+      "reminder": "Ежедневное напоминание",
+      "reminderSubtitle": "Настройка напоминаний о медитации",
+      "settings": "Настройки",
+      "help": "Помощь и обратная связь"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "Что вас беспокоит?",
+      "subtitle": "Мы порекомендуем курсы на основе вашего ответа"
+    },
+    "option": {
+      "sleep": {
+        "label": "Проблемы со сном",
+        "desc": "Трудно заснуть"
+      },
+      "anxiety": {
+        "label": "Стресс и тревога",
+        "desc": "Рабочее/жизненное давление"
+      },
+      "focus": {
+        "label": "Повысить концентрацию",
+        "desc": "Быть продуктивнее"
+      }
+    },
+    "error": {
+      "noSelection": "Пожалуйста, выберите вариант"
+    },
+    "success": "Предпочтения сохранены!",
+    "button": {
+      "next": "Далее",
+      "finish": "Готово"
+    }
+  },
+  "reminder": {
+    "title": "Ежедневное напоминание",
+    "switch": {
+      "title": "Включить напоминание",
+      "subtitle": "Получайте напоминание медитировать ежедневно"
+    },
+    "section": {
+      "slots": "Рекомендуемое время",
+      "customTime": "Своё время",
+      "quickSelect": "Быстрый выбор",
+      "messageTemplates": "Сообщения"
+    },
+    "slot": {
+      "morning": {
+        "label": "Утро",
+        "desc": "Начните день правильно"
+      },
+      "noon": {
+        "label": "Полдень",
+        "desc": "Расслабьтесь в перерыве"
+      },
+      "afternoon": {
+        "label": "День",
+        "desc": "Снимите усталость"
+      },
+      "evening": {
+        "label": "Вечер",
+        "desc": "Расслабьтесь"
+      },
+      "night": {
+        "label": "Перед сном",
+        "desc": "Усните легче"
+      }
+    },
+    "customTime": {
+      "pick": "Выбрать время",
+      "inputTitle": "Укажите своё время",
+      "placeholder": "Формат ЧЧ:ММ, напр. 21:30"
+    },
+    "button": {
+      "cancel": "Отмена",
+      "confirm": "Подтвердить"
+    },
+    "message": {
+      "template1": "Время медитировать",
+      "template2": "Расслабьтесь, медитируйте 5 минут",
+      "template3": "Подарите себе минуту тишины"
+    },
+    "save": {
+      "enabled": "Напоминание установлено на {{time}}",
+      "disabled": "Напоминание отключено",
+      "buttonEnabled": "Сохранить напоминание на {{time}}",
+      "buttonDisabled": "Сохранить настройки"
+    },
+    "error": {
+      "timeFormat": "Введите корректное время"
+    }
+  },
+  "settings": {
+    "title": "Настройки",
+    "name": {
+      "editHint": "Нажмите, чтобы изменить имя",
+      "inputTitle": "Введите новое имя",
+      "placeholder": "Введите ваше имя",
+      "saveSuccess": "Имя обновлено"
+    },
+    "button": {
+      "cancel": "Отмена",
+      "save": "Сохранить"
+    },
+    "section": {
+      "notifications": "Уведомления",
+      "playback": "Воспроизведение",
+      "appearance": "Внешний вид",
+      "other": "Прочее"
+    },
+    "notifications": {
+      "label": "Ежедневное напоминание"
+    },
+    "reminderTime": {
+      "label": "Время напоминания",
+      "value": "Ежедневно в 22:00"
+    },
+    "playback": {
+      "soundEffects": "Звуковые эффекты",
+      "autoPlay": "Автовоспроизведение"
+    },
+    "appearance": {
+      "darkMode": "Тёмная тема"
+    },
+    "other": {
+      "language": "Язык",
+      "languageValue": "Русский",
+      "about": "О нас",
+      "version": "Версия",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "Выберите язык"
+    },
+    "logout": {
+      "title": "Выход",
+      "content": "Вы уверены, что хотите выйти?",
+      "button": "Выйти",
+      "success": "Выход выполнен"
+    }
+  },
+  "stats": {
+    "title": "Статистика",
+    "subtitle": "Отслеживайте свой путь медитации",
+    "totalMinutes": "Всего минут",
+    "currentStreak": "Текущая серия",
+    "avgMinutes": "Среднее мин/сессия",
+    "longestStreak": "Максимальная серия",
+    "weeklyTrend": {
+      "title": "Тренд недели",
+      "total": "{{minutes}} мин"
+    },
+    "achievements": {
+      "title": "Достижения",
+      "beginner": "Новичок",
+      "streak3": "3 дня подряд",
+      "streak7": "7 дней подряд",
+      "minutes100": "100 минут"
+    },
+    "bestTime": {
+      "title": "Лучшее время для медитации",
+      "description": "Вы чаще всего медитируете {{time}}"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "Основы дыхания",
+      "description": "Научитесь диафрагмальному дыханию для расслабления",
+      "tags": ["Дыхание", "Начальный"]
+    },
+    "bodyScan": {
+      "title": "Сканирование тела",
+      "description": "Сканируйте тело с головы до ног, снимая напряжение",
+      "tags": ["Сканирование тела", "Расслабление"]
+    },
+    "sleepJourney": {
+      "title": "Глубокий сон",
+      "description": "Быстро погрузитесь в глубокий сон",
+      "tags": ["Сон", "Ночь"]
+    },
+    "sleepBreathing": {
+      "title": "Дыхание перед сном",
+      "description": "Техника 4-7-8 для улучшения сна",
+      "tags": ["Дыхание", "Сон"]
+    },
+    "anxietyRelief": {
+      "title": "Снятие тревоги",
+      "description": "Освободитесь от тревоги, обретите внутренний покой",
+      "tags": ["Тревога", "Расслабление"]
+    },
+    "stressRelease": {
+      "title": "Снятие стресса",
+      "description": "Снимите рабочий и жизненный стресс",
+      "tags": ["Стресс", "Расслабление"]
+    },
+    "morningFocus": {
+      "title": "Утренняя концентрация",
+      "description": "Начните день правильно",
+      "tags": ["Концентрация", "Утро"]
+    },
+    "deepFocus": {
+      "title": "Глубокая концентрация",
+      "description": "Улучшите концентрацию и продуктивность",
+      "tags": ["Концентрация", "Глубокий"]
+    }
+  },
+  "whitenoise": {
+    "rain": "Дождь",
+    "waves": "Морские волны",
+    "forest": "Лес",
+    "fire": "Костер"
+  },
+  "store": {
+    "defaultUsername": "Медитирующий"
+  }
+}

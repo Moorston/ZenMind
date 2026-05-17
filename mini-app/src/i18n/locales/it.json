@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "ZenMind - Meditazione"
+  },
+  "tabbar": {
+    "home": "Home",
+    "discover": "Scopri",
+    "player": "Play",
+    "profile": "Profilo"
+  },
+  "common": {
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "done": "Fatto",
+    "save": "Salva",
+    "next": "Avanti",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "settings": "Impostazioni",
+    "dailyReminder": "Promemoria Giornaliero",
+    "stats": "Statistiche",
+    "totalMinutes": "Minuti Totali",
+    "streak": "Giorni Consecutivi",
+    "minutes": "min",
+    "days": "giorni",
+    "weekdays": ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+    "timeOfDay": {
+      "morning": "Mattino",
+      "noon": "Mezzogiorno",
+      "afternoon": "Pomeriggio",
+      "evening": "Sera",
+      "night": "Notte"
+    },
+    "category": {
+      "beginner": "Principianti",
+      "sleep": "Sonno",
+      "relax": "Rilassamento",
+      "focus": "Concentrazione"
+    },
+    "level": {
+      "beginner": "Base",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzato"
+    },
+    "instructor": {
+      "fallback": "Istruttore"
+    },
+    "duration": "{{duration}} min"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "Notte fonda",
+      "morning": "Buongiorno",
+      "afternoon": "Buon pomeriggio",
+      "evening": "Buonasera"
+    },
+    "subtitle": "Oggi è una giornata perfetta per meditare",
+    "checkin": {
+      "completed": "Completato oggi",
+      "title": "Meditazione di oggi",
+      "duration": "Meditato {{duration}} min",
+      "startPrompt": "Inizia il tuo viaggio di consapevolezza"
+    },
+    "streak": {
+      "days": "{{streak}} giorni"
+    },
+    "quizBanner": {
+      "title": "Imposta le tue preferenze",
+      "subtitle": "Ricevi raccomandazioni personalizzate",
+      "cta": "Imposta ora"
+    },
+    "recommendation": {
+      "title": "Consigliato oggi",
+      "viewAll": "Vedi tutto",
+      "start": "Inizia la meditazione"
+    },
+    "quickStart": {
+      "title": "Avvio rapido"
+    },
+    "backgroundSounds": {
+      "title": "Suoni",
+      "subtitle": "Sonno / Concentrazione"
+    },
+    "weeklyStats": {
+      "title": "Questa settimana",
+      "totalMinutes": "Minuti totali",
+      "streak": "Serie",
+      "meditationDays": "Giorni di meditazione"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "Tutti",
+      "beginner": "Principianti",
+      "sleep": "Sonno",
+      "relax": "Rilassamento",
+      "focus": "Concentrazione"
+    },
+    "search": {
+      "placeholder": "Cerca corsi di meditazione..."
+    },
+    "whiteNoise": {
+      "title": "Rumore Bianco",
+      "subtitle": "Suoni di sottofondo per concentrarsi"
+    },
+    "courses": {
+      "title": "Corsi di Meditazione",
+      "count": "{{count}} totali",
+      "empty": "Nessun corso trovato"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "Rumore Bianco",
+      "meditationCourse": "Corso"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - Sottofondo",
+      "selectMusic": "Scegli la musica per iniziare"
+    },
+    "title": {
+      "selectMusic": "Scegli la Musica"
+    },
+    "loop": "Ripeti",
+    "sleepTimer": {
+      "title": "Timer Spegnimento",
+      "minutes": "{{value}} min",
+      "minuteOption": "{{m}} min",
+      "confirm": "Imposta",
+      "toastTitle": "Timer Spegnimento",
+      "scheduled": "Si fermerà tra {{value}} min",
+      "active": "Si ferma tra {{sleepTimer}} min"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "Problemi di Sonno",
+      "anxiety": "Bisogno di Rilassarsi",
+      "focus": "Migliorare la Concentrazione",
+      "placeholder": "Imposta le tue preferenze"
+    },
+    "streak": "{{streak}} giorni consecutivi",
+    "stats": {
+      "totalMinutes": "Minuti Totali",
+      "completedCourses": "Corsi Completati"
+    },
+    "calendar": {
+      "title": "Check-in Mensile",
+      "daysCount": "{{count}} giorni"
+    },
+    "menu": {
+      "stats": "Statistiche",
+      "setPreferences": "Imposta Preferenze",
+      "preferencesSubtitle": "Ricevi raccomandazioni personalizzate",
+      "newBadge": "Nuovo",
+      "reminder": "Promemoria Giornaliero",
+      "reminderSubtitle": "Imposta promemoria di meditazione",
+      "settings": "Impostazioni",
+      "help": "Aiuto e Feedback"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "Cosa ti porta qui?",
+      "subtitle": "Ti consiglieremo corsi in base alla tua risposta"
+    },
+    "option": {
+      "sleep": {
+        "label": "Dormire Meglio",
+        "desc": "Difficoltà ad addormentarsi"
+      },
+      "anxiety": {
+        "label": "Ridurre lo Stress",
+        "desc": "Pressione lavoro/vita"
+      },
+      "focus": {
+        "label": "Migliorare la Concentrazione",
+        "desc": "Essere più produttivo"
+      }
+    },
+    "error": {
+      "noSelection": "Seleziona un'opzione"
+    },
+    "success": "Preferenze salvate!",
+    "button": {
+      "next": "Avanti",
+      "finish": "Fatto"
+    }
+  },
+  "reminder": {
+    "title": "Promemoria Giornaliero",
+    "switch": {
+      "title": "Attiva Promemoria",
+      "subtitle": "Ricevi un promemoria per meditare ogni giorno"
+    },
+    "section": {
+      "slots": "Orari Consigliati",
+      "customTime": "Orario Personalizzato",
+      "quickSelect": "Selezione Rapida",
+      "messageTemplates": "Messaggi"
+    },
+    "slot": {
+      "morning": {
+        "label": "Mattino",
+        "desc": "Inizia bene la giornata"
+      },
+      "noon": {
+        "label": "Mezzogiorno",
+        "desc": "Rilassati durante la pausa"
+      },
+      "afternoon": {
+        "label": "Pomeriggio",
+        "desc": "Supera la stanchezza"
+      },
+      "evening": {
+        "label": "Sera",
+        "desc": "Rilassati"
+      },
+      "night": {
+        "label": "Notte",
+        "desc": "Addormentati più facilmente"
+      }
+    },
+    "customTime": {
+      "pick": "Scegli Orario",
+      "inputTitle": "Inserisci Orario Personalizzato",
+      "placeholder": "Formato HH:MM, es. 21:30"
+    },
+    "button": {
+      "cancel": "Annulla",
+      "confirm": "Conferma"
+    },
+    "message": {
+      "template1": "È ora di meditare",
+      "template2": "Rilassati, medita per 5 minuti",
+      "template3": "Concediti un momento di tranquillità"
+    },
+    "save": {
+      "enabled": "Promemoria impostato alle {{time}}",
+      "disabled": "Promemoria disattivato",
+      "buttonEnabled": "Salva promemoria alle {{time}}",
+      "buttonDisabled": "Salva Impostazioni"
+    },
+    "error": {
+      "timeFormat": "Inserisci un orario valido"
+    }
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "name": {
+      "editHint": "Tocca per modificare il nome",
+      "inputTitle": "Inserisci nuovo nome",
+      "placeholder": "Inserisci il tuo nome",
+      "saveSuccess": "Nome aggiornato"
+    },
+    "button": {
+      "cancel": "Annulla",
+      "save": "Salva"
+    },
+    "section": {
+      "notifications": "Notifiche",
+      "playback": "Riproduzione",
+      "appearance": "Aspetto",
+      "other": "Altro"
+    },
+    "notifications": {
+      "label": "Promemoria Giornaliero"
+    },
+    "reminderTime": {
+      "label": "Orario Promemoria",
+      "value": "Ogni giorno alle 22:00"
+    },
+    "playback": {
+      "soundEffects": "Effetti Sonori",
+      "autoPlay": "Riproduzione Automatica"
+    },
+    "appearance": {
+      "darkMode": "Modalità Scura"
+    },
+    "other": {
+      "language": "Lingua",
+      "languageValue": "Italiano",
+      "about": "Chi Siamo",
+      "version": "Versione",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "Seleziona Lingua"
+    },
+    "logout": {
+      "title": "Esci",
+      "content": "Sei sicuro di voler uscire?",
+      "button": "Esci",
+      "success": "Uscito"
+    }
+  },
+  "stats": {
+    "title": "Statistiche",
+    "subtitle": "Registra il tuo percorso di meditazione",
+    "totalMinutes": "Minuti Totali",
+    "currentStreak": "Serie Attuale",
+    "avgMinutes": "Media Min/Sessione",
+    "longestStreak": "Serie Più Lunga",
+    "weeklyTrend": {
+      "title": "Andamento Settimanale",
+      "total": "{{minutes}} min"
+    },
+    "achievements": {
+      "title": "Obiettivi",
+      "beginner": "Principiante",
+      "streak3": "3 Giorni Consecutivi",
+      "streak7": "7 Giorni Consecutivi",
+      "minutes100": "100 Minuti"
+    },
+    "bestTime": {
+      "title": "Miglior Orario per Meditare",
+      "description": "Mediti più spesso di {{time}}"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "Respirazione di Base",
+      "description": "Impara la respirazione diaframmatica per rilassarti",
+      "tags": ["Respirazione", "Base"]
+    },
+    "bodyScan": {
+      "title": "Scansione Corporea",
+      "description": "Scansiona il corpo dalla testa ai piedi, libera la tensione",
+      "tags": ["Scansione Corporea", "Rilassamento"]
+    },
+    "sleepJourney": {
+      "title": "Guida al Sonno Profondo",
+      "description": "Addormentati rapidamente in un sonno profondo",
+      "tags": ["Sonno", "Notte"]
+    },
+    "sleepBreathing": {
+      "title": "Respirazione Prima di Dormire",
+      "description": "Tecnica 4-7-8 per favorire il sonno",
+      "tags": ["Respirazione", "Sonno"]
+    },
+    "anxietyRelief": {
+      "title": "Sollievo dall'Ansia",
+      "description": "Libera l'ansia, trova la pace interiore",
+      "tags": ["Ansia", "Rilassamento"]
+    },
+    "stressRelease": {
+      "title": "Rilascio dello Stress",
+      "description": "Allevia lo stress lavorativo e quotidiano",
+      "tags": ["Stress", "Rilassamento"]
+    },
+    "morningFocus": {
+      "title": "Concentrazione Mattutina",
+      "description": "Inizia la giornata nel modo giusto",
+      "tags": ["Concentrazione", "Mattino"]
+    },
+    "deepFocus": {
+      "title": "Concentrazione Profonda",
+      "description": "Migliora concentrazione e produttività",
+      "tags": ["Concentrazione", "Profondo"]
+    }
+  },
+  "whitenoise": {
+    "rain": "Pioggia",
+    "waves": "Onde del Mare",
+    "forest": "Foresta",
+    "fire": "Falò"
+  },
+  "store": {
+    "defaultUsername": "Meditante"
+  }
+}

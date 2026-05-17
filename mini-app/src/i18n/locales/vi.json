@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "ZenMind - Thiền Định"
+  },
+  "tabbar": {
+    "home": "Trang chủ",
+    "discover": "Khám phá",
+    "player": "Phát",
+    "profile": "Cá nhân"
+  },
+  "common": {
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "done": "Hoàn tất",
+    "save": "Lưu",
+    "next": "Tiếp theo",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "settings": "Cài đặt",
+    "dailyReminder": "Nhắc nhở hàng ngày",
+    "stats": "Thống kê",
+    "totalMinutes": "Tổng số phút thiền",
+    "streak": "Số ngày liên tiếp",
+    "minutes": "phút",
+    "days": "ngày",
+    "weekdays": ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+    "timeOfDay": {
+      "morning": "Sáng sớm",
+      "noon": "Buổi trưa",
+      "afternoon": "Buổi chiều",
+      "evening": "Buổi tối",
+      "night": "Ban đêm"
+    },
+    "category": {
+      "beginner": "Cơ bản",
+      "sleep": "Ngủ",
+      "relax": "Giảm căng thẳng",
+      "focus": "Tập trung"
+    },
+    "level": {
+      "beginner": "Cơ bản",
+      "intermediate": "Trung cấp",
+      "advanced": "Nâng cao"
+    },
+    "instructor": {
+      "fallback": "Thiền"
+    },
+    "duration": "{{duration}} phút"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "Đêm muộn rồi",
+      "morning": "Chào buổi sáng",
+      "afternoon": "Chào buổi chiều",
+      "evening": "Chào buổi tối"
+    },
+    "subtitle": "Hôm nay là một ngày tuyệt vời để thiền",
+    "checkin": {
+      "completed": "Hôm nay đã hoàn thành",
+      "title": "Thiền hôm nay",
+      "duration": "Đã thiền {{duration}} phút",
+      "startPrompt": "Bắt đầu hành trình tĩnh lặng của bạn"
+    },
+    "streak": {
+      "days": "{{streak}} ngày"
+    },
+    "quizBanner": {
+      "title": "Thiết lập sở thích thiền của bạn",
+      "subtitle": "Nhận đề xuất khóa học cá nhân hóa",
+      "cta": "Thiết lập ngay"
+    },
+    "recommendation": {
+      "title": "Gợi ý hôm nay",
+      "viewAll": "Xem tất cả",
+      "start": "Bắt đầu thiền"
+    },
+    "quickStart": {
+      "title": "Bắt đầu nhanh"
+    },
+    "backgroundSounds": {
+      "title": "Âm thanh nền",
+      "subtitle": "Hỗ trợ ngủ / Tập trung"
+    },
+    "weeklyStats": {
+      "title": "Thống kê tuần này",
+      "totalMinutes": "Tổng số phút",
+      "streak": "Số ngày liên tiếp",
+      "meditationDays": "Ngày thiền"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "Tất cả",
+      "beginner": "Cơ bản",
+      "sleep": "Ngủ",
+      "relax": "Giảm căng thẳng",
+      "focus": "Tập trung"
+    },
+    "search": {
+      "placeholder": "Tìm khóa học thiền..."
+    },
+    "whiteNoise": {
+      "title": "Tiếng ồn trắng",
+      "subtitle": "Âm thanh nền giúp tập trung"
+    },
+    "courses": {
+      "title": "Khóa học thiền",
+      "count": "Tổng cộng {{count}}",
+      "empty": "Không có khóa học phù hợp"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "Tiếng ồn trắng",
+      "meditationCourse": "Khóa học thiền"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - Âm thanh nền",
+      "selectMusic": "Chọn nhạc để bắt đầu thiền"
+    },
+    "title": {
+      "selectMusic": "Chọn nhạc"
+    },
+    "loop": "Lặp lại",
+    "sleepTimer": {
+      "title": "Hẹn giờ tắt",
+      "minutes": "{{value}} phút",
+      "minuteOption": "{{m}} phút",
+      "confirm": "Xác nhận",
+      "toastTitle": "Hẹn giờ tắt",
+      "scheduled": "Sẽ tắt sau {{value}} phút",
+      "active": "Tắt sau {{sleepTimer}} phút"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "Khó ngủ",
+      "anxiety": "Cần giảm căng thẳng",
+      "focus": "Tăng cường tập trung",
+      "placeholder": "Thiết lập sở thích của bạn"
+    },
+    "streak": "{{streak}} ngày liên tiếp",
+    "stats": {
+      "totalMinutes": "Tổng số phút thiền",
+      "completedCourses": "Khóa học đã hoàn thành"
+    },
+    "calendar": {
+      "title": "Nhật ký tháng này",
+      "daysCount": "{{count}} ngày"
+    },
+    "menu": {
+      "stats": "Thống kê",
+      "setPreferences": "Thiết lập sở thích",
+      "preferencesSubtitle": "Nhận đề xuất cá nhân hóa",
+      "newBadge": "Mới",
+      "reminder": "Nhắc nhở hàng ngày",
+      "reminderSubtitle": "Đặt thời gian nhắc nhở thiền",
+      "settings": "Cài đặt",
+      "help": "Trợ giúp & Phản hồi"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "Bạn đang gặp vấn đề gì?",
+      "subtitle": "Chúng tôi sẽ đề xuất khóa học phù hợp với bạn"
+    },
+    "option": {
+      "sleep": {
+        "label": "Khó ngủ",
+        "desc": "Khó vào giấc / Ngủ không sâu"
+      },
+      "anxiety": {
+        "label": "Lo âu, căng thẳng",
+        "desc": "Áp lực công việc / cuộc sống"
+      },
+      "focus": {
+        "label": "Muốn tăng tập trung",
+        "desc": "Nâng cao hiệu suất / Tập trung"
+      }
+    },
+    "error": {
+      "noSelection": "Vui lòng chọn một tùy chọn"
+    },
+    "success": "Thiết lập thành công",
+    "button": {
+      "next": "Tiếp theo",
+      "finish": "Hoàn tất"
+    }
+  },
+  "reminder": {
+    "title": "Nhắc nhở hàng ngày",
+    "switch": {
+      "title": "Bật nhắc nhở hàng ngày",
+      "subtitle": "Nhắc bạn thiền định đều đặn"
+    },
+    "section": {
+      "slots": "Khung giờ đề xuất",
+      "customTime": "Thời gian tùy chỉnh",
+      "quickSelect": "Chọn nhanh",
+      "messageTemplates": "Tin nhắn nhắc nhở"
+    },
+    "slot": {
+      "morning": {
+        "label": "Sáng sớm",
+        "desc": "Bắt đầu ngày mới tuyệt vời"
+      },
+      "noon": {
+        "label": "Buổi trưa",
+        "desc": "Thư giãn giữa giờ làm"
+      },
+      "afternoon": {
+        "label": "Buổi chiều",
+        "desc": "Giảm mệt mỏi sau làm việc"
+      },
+      "evening": {
+        "label": "Buổi tối",
+        "desc": "Thư giãn tinh thần và cơ thể"
+      },
+      "night": {
+        "label": "Trước khi ngủ",
+        "desc": "Hỗ trợ giấc ngủ"
+      }
+    },
+    "customTime": {
+      "pick": "Chọn thời gian",
+      "inputTitle": "Nhập thời gian tùy chỉnh",
+      "placeholder": "Định dạng HH:mm, ví dụ 21:30"
+    },
+    "button": {
+      "cancel": "Hủy",
+      "confirm": "Xác nhận"
+    },
+    "message": {
+      "template1": "Đã đến lúc thiền",
+      "template2": "Thư giãn, thiền 5 phút",
+      "template3": "Dành cho mình một khoảnh khắc yên tĩnh"
+    },
+    "save": {
+      "enabled": "Đã đặt nhắc nhở lúc {{time}}",
+      "disabled": "Đã tắt nhắc nhở",
+      "buttonEnabled": "Lưu nhắc nhở lúc {{time}}",
+      "buttonDisabled": "Lưu cài đặt"
+    },
+    "error": {
+      "timeFormat": "Vui lòng nhập đúng định dạng thời gian"
+    }
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "name": {
+      "editHint": "Nhấp để sửa biệt danh",
+      "inputTitle": "Nhập biệt danh mới",
+      "placeholder": "Vui lòng nhập biệt danh",
+      "saveSuccess": "Sửa thành công"
+    },
+    "button": {
+      "cancel": "Hủy",
+      "save": "Lưu"
+    },
+    "section": {
+      "notifications": "Cài đặt thông báo",
+      "playback": "Cài đặt phát lại",
+      "appearance": "Cài đặt giao diện",
+      "other": "Khác"
+    },
+    "notifications": {
+      "label": "Nhắc nhở hàng ngày"
+    },
+    "reminderTime": {
+      "label": "Thời gian nhắc nhở",
+      "value": "Hàng ngày 22:00"
+    },
+    "playback": {
+      "soundEffects": "Hiệu ứng âm thanh",
+      "autoPlay": "Tự động phát"
+    },
+    "appearance": {
+      "darkMode": "Chế độ tối"
+    },
+    "other": {
+      "language": "Ngôn ngữ",
+      "languageValue": "Tiếng Việt",
+      "about": "Về chúng tôi",
+      "version": "Thông tin phiên bản",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "Chọn ngôn ngữ"
+    },
+    "logout": {
+      "title": "Thông báo",
+      "content": "Bạn có chắc chắn muốn đăng xuất?",
+      "button": "Đăng xuất",
+      "success": "Đăng xuất thành công"
+    }
+  },
+  "stats": {
+    "title": "Thống kê",
+    "subtitle": "Ghi lại hành trình thiền của bạn",
+    "totalMinutes": "Tổng số phút thiền",
+    "currentStreak": "Số ngày liên tiếp hiện tại",
+    "avgMinutes": "Phút trung bình/buổi",
+    "longestStreak": "Chuỗi ngày dài nhất",
+    "weeklyTrend": {
+      "title": "Xu hướng tuần này",
+      "total": "{{minutes}} phút"
+    },
+    "achievements": {
+      "title": "Thành tựu",
+      "beginner": "Người mới bắt đầu",
+      "streak3": "3 ngày liên tiếp",
+      "streak7": "7 ngày liên tiếp",
+      "minutes100": "100 phút"
+    },
+    "bestTime": {
+      "title": "Thời gian thiền tốt nhất",
+      "description": "Bạn thường thiền vào {{time}}"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "Bài tập thở cơ bản",
+      "description": "Học thở bằng bụng, thư giãn cơ thể và tâm trí",
+      "tags": ["Thở", "Cơ bản"]
+    },
+    "bodyScan": {
+      "title": "Thiền quét cơ thể",
+      "description": "Quét cơ thể từ đầu đến chân, giải phóng căng thẳng",
+      "tags": ["Quét cơ thể", "Thư giãn"]
+    },
+    "sleepJourney": {
+      "title": "Hướng dẫn ngủ sâu",
+      "description": "Giúp bạn nhanh chóng đi vào giấc ngủ sâu",
+      "tags": ["Ngủ", "Chúc ngủ ngon"]
+    },
+    "sleepBreathing": {
+      "title": "Bài tập thở trước khi ngủ",
+      "description": "Phương pháp thở 4-7-8, giúp dễ ngủ",
+      "tags": ["Thở", "Ngủ"]
+    },
+    "anxietyRelief": {
+      "title": "Thiền giảm lo âu",
+      "description": "Giải phóng lo lắng, tìm lại bình yên nội tâm",
+      "tags": ["Lo âu", "Giảm căng thẳng"]
+    },
+    "stressRelease": {
+      "title": "Bài tập giải tỏa căng thẳng",
+      "description": "Giảm áp lực trong công việc và cuộc sống",
+      "tags": ["Căng thẳng", "Thư giãn"]
+    },
+    "morningFocus": {
+      "title": "Tập trung buổi sáng",
+      "description": "Bắt đầu ngày mới đúng cách",
+      "tags": ["Tập trung", "Buổi sáng"]
+    },
+    "deepFocus": {
+      "title": "Luyện tập tập trung sâu",
+      "description": "Nâng cao khả năng chú ý và hiệu suất làm việc",
+      "tags": ["Tập trung", "Sâu"]
+    }
+  },
+  "whitenoise": {
+    "rain": "Mưa",
+    "waves": "Sóng biển",
+    "forest": "Rừng",
+    "fire": "Lửa"
+  },
+  "store": {
+    "defaultUsername": "Người thiền"
+  }
+}

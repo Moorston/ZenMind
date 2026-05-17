@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "ZenMind - تأمل ووعي ذهني"
+  },
+  "tabbar": {
+    "home": "الرئيسية",
+    "discover": "استكشف",
+    "player": "تشغيل",
+    "profile": "حسابي"
+  },
+  "common": {
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "done": "تم",
+    "save": "حفظ",
+    "next": "التالي",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "settings": "الإعدادات",
+    "dailyReminder": "تذكير يومي",
+    "stats": "الإحصائيات",
+    "totalMinutes": "إجمالي الدقائق",
+    "streak": "الأيام المتتالية",
+    "minutes": "دق",
+    "days": "أيام",
+    "weekdays": ["أحد", "إثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"],
+    "timeOfDay": {
+      "morning": "صباح",
+      "noon": "ظهر",
+      "afternoon": "بعد الظهر",
+      "evening": "مساء",
+      "night": "ليل"
+    },
+    "category": {
+      "beginner": "مبتدئ",
+      "sleep": "نوم",
+      "relax": "استرخاء",
+      "focus": "تركيز"
+    },
+    "level": {
+      "beginner": "مبتدئ",
+      "intermediate": "متوسط",
+      "advanced": "متقدم"
+    },
+    "instructor": {
+      "fallback": "مدرب"
+    },
+    "duration": "{{duration}} دق"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "الليل متأخر",
+      "morning": "صباح الخير",
+      "afternoon": "مساء الخير",
+      "evening": "مساء الخير"
+    },
+    "subtitle": "اليوم يوم رائع للتأمل",
+    "checkin": {
+      "completed": "أكملت اليوم",
+      "title": "تأمل اليوم",
+      "duration": "تأملت {{duration}} دق",
+      "startPrompt": "ابدأ رحلتك في اليقظة الذهنية"
+    },
+    "streak": {
+      "days": "{{streak}} أيام"
+    },
+    "quizBanner": {
+      "title": "اضبط تفضيلاتك",
+      "subtitle": "احصل على توصيات مخصصة",
+      "cta": "اضبط الآن"
+    },
+    "recommendation": {
+      "title": "اقتراح اليوم",
+      "viewAll": "عرض الكل",
+      "start": "ابدأ التأمل"
+    },
+    "quickStart": {
+      "title": "بداية سريعة"
+    },
+    "backgroundSounds": {
+      "title": "أصوات خلفية",
+      "subtitle": "نوم / تركيز"
+    },
+    "weeklyStats": {
+      "title": "هذا الأسبوع",
+      "totalMinutes": "إجمالي الدقائق",
+      "streak": "تتابع",
+      "meditationDays": "أيام التأمل"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "الكل",
+      "beginner": "مبتدئ",
+      "sleep": "نوم",
+      "relax": "استرخاء",
+      "focus": "تركيز"
+    },
+    "search": {
+      "placeholder": "ابحث عن دورات التأمل..."
+    },
+    "whiteNoise": {
+      "title": "ضجيج أبيض",
+      "subtitle": "أصوات خلفية للتركيز"
+    },
+    "courses": {
+      "title": "دورات التأمل",
+      "count": "{{count}} إجمالاً",
+      "empty": "لا توجد دورات مطابقة"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "ضجيج أبيض",
+      "meditationCourse": "دورة"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - خلفية",
+      "selectMusic": "اختر موسيقى للبدء"
+    },
+    "title": {
+      "selectMusic": "اختر موسيقى"
+    },
+    "loop": "تكرار",
+    "sleepTimer": {
+      "title": "مؤقت النوم",
+      "minutes": "{{value}} دق",
+      "minuteOption": "{{m}} دق",
+      "confirm": "تعيين",
+      "toastTitle": "مؤقت النوم",
+      "scheduled": "سيتم الإيقاف بعد {{value}} دق",
+      "active": "يتوقف بعد {{sleepTimer}} دق"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "مشاكل النوم",
+      "anxiety": "بحاجة للاسترخاء",
+      "focus": "تحسين التركيز",
+      "placeholder": "اضبط تفضيلاتك"
+    },
+    "streak": "{{streak}} يوماً متتالياً",
+    "stats": {
+      "totalMinutes": "إجمالي الدقائق",
+      "completedCourses": "الدورات المكتملة"
+    },
+    "calendar": {
+      "title": "التسجيل الشهري",
+      "daysCount": "{{count}} أيام"
+    },
+    "menu": {
+      "stats": "الإحصائيات",
+      "setPreferences": "ضبط التفضيلات",
+      "preferencesSubtitle": "احصل على توصيات مخصصة",
+      "newBadge": "جديد",
+      "reminder": "تذكير يومي",
+      "reminderSubtitle": "اضبط تذكير التأمل",
+      "settings": "الإعدادات",
+      "help": "مساعدة وملاحظات"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "ما الذي تشغل بالك؟",
+      "subtitle": "سنرشح لك دورات بناءً على إجابتك"
+    },
+    "option": {
+      "sleep": {
+        "label": "نوم أفضل",
+        "desc": "صعوبة في النوم"
+      },
+      "anxiety": {
+        "label": "تقليل التوتر",
+        "desc": "ضغط العمل/الحياة"
+      },
+      "focus": {
+        "label": "تحسين التركيز",
+        "desc": "زيادة الإنتاجية"
+      }
+    },
+    "error": {
+      "noSelection": "يرجى اختيار خيار"
+    },
+    "success": "تم حفظ التفضيلات!",
+    "button": {
+      "next": "التالي",
+      "finish": "تم"
+    }
+  },
+  "reminder": {
+    "title": "تذكير يومي",
+    "switch": {
+      "title": "تفعيل التذكير",
+      "subtitle": "احصل على تذكير يومي للتأمل"
+    },
+    "section": {
+      "slots": "الأوقات الموصى بها",
+      "customTime": "وقت مخصص",
+      "quickSelect": "اختيار سريع",
+      "messageTemplates": "الرسائل"
+    },
+    "slot": {
+      "morning": {
+        "label": "صباح",
+        "desc": "ابدأ يومك بشكل صحيح"
+      },
+      "noon": {
+        "label": "ظهر",
+        "desc": "استرخِ في فترة الاستراحة"
+      },
+      "afternoon": {
+        "label": "بعد الظهر",
+        "desc": "تغلب على إرهاق العمل"
+      },
+      "evening": {
+        "label": "مساء",
+        "desc": "استرخِ واستعد"
+      },
+      "night": {
+        "label": "قبل النوم",
+        "desc": "نم بهدوء"
+      }
+    },
+    "customTime": {
+      "pick": "اختر وقتاً",
+      "inputTitle": "أدخل وقتاً مخصصاً",
+      "placeholder": "صيغة HH:MM، مثال 21:30"
+    },
+    "button": {
+      "cancel": "إلغاء",
+      "confirm": "تأكيد"
+    },
+    "message": {
+      "template1": "حان وقت التأمل",
+      "template2": "استرخِ، تأمل لمدة 5 دقائق",
+      "template3": "امنح نفسك لحظة هدوء"
+    },
+    "save": {
+      "enabled": "تم تعيين التذكير الساعة {{time}}",
+      "disabled": "تم إيقاف التذكير",
+      "buttonEnabled": "حفظ التذكير الساعة {{time}}",
+      "buttonDisabled": "حفظ الإعدادات"
+    },
+    "error": {
+      "timeFormat": "يرجى إدخال وقت صحيح"
+    }
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "name": {
+      "editHint": "اضغط لتعديل الاسم",
+      "inputTitle": "أدخل اسماً جديداً",
+      "placeholder": "أدخل اسمك",
+      "saveSuccess": "تم تحديث الاسم"
+    },
+    "button": {
+      "cancel": "إلغاء",
+      "save": "حفظ"
+    },
+    "section": {
+      "notifications": "الإشعارات",
+      "playback": "التشغيل",
+      "appearance": "المظهر",
+      "other": "أخرى"
+    },
+    "notifications": {
+      "label": "تذكير يومي"
+    },
+    "reminderTime": {
+      "label": "وقت التذكير",
+      "value": "يومياً الساعة 22:00"
+    },
+    "playback": {
+      "soundEffects": "المؤثرات الصوتية",
+      "autoPlay": "تشغيل تلقائي"
+    },
+    "appearance": {
+      "darkMode": "الوضع الداكن"
+    },
+    "other": {
+      "language": "اللغة",
+      "languageValue": "العربية",
+      "about": "معلومات عنا",
+      "version": "الإصدار",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "اختر اللغة"
+    },
+    "logout": {
+      "title": "تسجيل الخروج",
+      "content": "هل أنت متأكد من تسجيل الخروج؟",
+      "button": "تسجيل الخروج",
+      "success": "تم تسجيل الخروج"
+    }
+  },
+  "stats": {
+    "title": "الإحصائيات",
+    "subtitle": "تتبع رحلتك في التأمل",
+    "totalMinutes": "إجمالي الدقائق",
+    "currentStreak": "التتابع الحالي",
+    "avgMinutes": "متوسط الدقائق/الجلسة",
+    "longestStreak": "أطول تتابع",
+    "weeklyTrend": {
+      "title": "اتجاه الأسبوع",
+      "total": "{{minutes}} دق"
+    },
+    "achievements": {
+      "title": "الإنجازات",
+      "beginner": "مبتدئ",
+      "streak3": "3 أيام متتالية",
+      "streak7": "7 أيام متتالية",
+      "minutes100": "100 دقيقة"
+    },
+    "bestTime": {
+      "title": "أفضل وقت للتأمل",
+      "description": "غالباً ما تتأمل في {{time}}"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "أساسيات التنفس",
+      "description": "تعلم التنفس البطني للاسترخاء",
+      "tags": ["تنفس", "مبتدئ"]
+    },
+    "bodyScan": {
+      "title": "مسح الجسد",
+      "description": "امسح جسدك من الرأس إلى القدمين، تخلص من التوتر",
+      "tags": ["مسح الجسد", "استرخاء"]
+    },
+    "sleepJourney": {
+      "title": "دليل النوم العميق",
+      "description": "ادخل في نوم عميق بسرعة",
+      "tags": ["نوم", "ليل"]
+    },
+    "sleepBreathing": {
+      "title": "التنفس قبل النوم",
+      "description": "تقنية 4-7-8 لتحسين النوم",
+      "tags": ["تنفس", "نوم"]
+    },
+    "anxietyRelief": {
+      "title": "تخفيف القلق",
+      "description": "تخلص من القلق، واستعد سلامك الداخلي",
+      "tags": ["قلق", "استرخاء"]
+    },
+    "stressRelease": {
+      "title": "التخلص من التوتر",
+      "description": "خفف ضغوط العمل والحياة",
+      "tags": ["توتر", "استرخاء"]
+    },
+    "morningFocus": {
+      "title": "تركيز الصباح",
+      "description": "ابدأ يومك بالطريقة الصحيحة",
+      "tags": ["تركيز", "صباح"]
+    },
+    "deepFocus": {
+      "title": "التركيز العميق",
+      "description": "حسِّن تركيزك وإنتاجيتك",
+      "tags": ["تركيز", "عميق"]
+    }
+  },
+  "whitenoise": {
+    "rain": "مطر",
+    "waves": "أمواج البحر",
+    "forest": "غابة",
+    "fire": "نار المخيم"
+  },
+  "store": {
+    "defaultUsername": "متأمل"
+  }
+}

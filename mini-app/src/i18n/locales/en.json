@@ -1,0 +1,372 @@
+{
+  "app": {
+    "navbarTitle": "ZenMind - Meditation"
+  },
+  "tabbar": {
+    "home": "Home",
+    "discover": "Discover",
+    "player": "Play",
+    "profile": "Profile"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "done": "Done",
+    "save": "Save",
+    "next": "Next",
+    "close": "Close",
+    "back": "Back",
+    "settings": "Settings",
+    "dailyReminder": "Daily Reminder",
+    "stats": "Statistics",
+    "totalMinutes": "Total Minutes",
+    "streak": "Day Streak",
+    "minutes": "min",
+    "days": "days",
+    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "timeOfDay": {
+      "morning": "Morning",
+      "noon": "Noon",
+      "afternoon": "Afternoon",
+      "evening": "Evening",
+      "night": "Night"
+    },
+    "category": {
+      "beginner": "Beginner",
+      "sleep": "Sleep",
+      "relax": "Relax",
+      "focus": "Focus"
+    },
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "instructor": {
+      "fallback": "Instructor"
+    },
+    "duration": "{{duration}} min"
+  },
+  "home": {
+    "greeting": {
+      "lateNight": "Late Night",
+      "morning": "Good Morning",
+      "afternoon": "Good Afternoon",
+      "evening": "Good Evening"
+    },
+    "subtitle": "A perfect day for meditation",
+    "checkin": {
+      "completed": "Done for Today",
+      "title": "Today's Meditation",
+      "duration": "Meditated {{duration}} min",
+      "startPrompt": "Start your mindfulness journey"
+    },
+    "streak": {
+      "days": "{{streak}} days"
+    },
+    "quizBanner": {
+      "title": "Set Your Preferences",
+      "subtitle": "Get personalized recommendations",
+      "cta": "Set Now"
+    },
+    "recommendation": {
+      "title": "Today's Pick",
+      "viewAll": "View All",
+      "start": "Start Meditation"
+    },
+    "quickStart": {
+      "title": "Quick Start"
+    },
+    "backgroundSounds": {
+      "title": "Sounds",
+      "subtitle": "Sleep / Focus"
+    },
+    "weeklyStats": {
+      "title": "This Week",
+      "totalMinutes": "Total Min",
+      "streak": "Streak",
+      "meditationDays": "Meditation Days"
+    }
+  },
+  "discover": {
+    "category": {
+      "all": "All",
+      "beginner": "Beginner",
+      "sleep": "Sleep",
+      "relax": "Relax",
+      "focus": "Focus"
+    },
+    "search": {
+      "placeholder": "Search courses..."
+    },
+    "whiteNoise": {
+      "title": "White Noise",
+      "subtitle": "Background sounds for focus"
+    },
+    "courses": {
+      "title": "Courses",
+      "count": "{{count}} total",
+      "empty": "No courses found"
+    }
+  },
+  "player": {
+    "header": {
+      "whiteNoise": "White Noise",
+      "meditationCourse": "Course"
+    },
+    "subtitle": {
+      "whiteNoise": "{{name}} - Background",
+      "selectMusic": "Select music to begin"
+    },
+    "title": {
+      "selectMusic": "Select Music"
+    },
+    "loop": "Loop",
+    "sleepTimer": {
+      "title": "Sleep Timer",
+      "minutes": "{{value}} min",
+      "minuteOption": "{{m}} min",
+      "confirm": "Set",
+      "toastTitle": "Sleep Timer",
+      "scheduled": "Stopping in {{value}} min",
+      "active": "Stops in {{sleepTimer}} min"
+    }
+  },
+  "profile": {
+    "preference": {
+      "sleep": "Sleep Issues",
+      "anxiety": "Need to Relax",
+      "focus": "Improve Focus",
+      "placeholder": "Set your preference"
+    },
+    "streak": "{{streak}}-day streak",
+    "stats": {
+      "totalMinutes": "Total Minutes",
+      "completedCourses": "Courses Completed"
+    },
+    "calendar": {
+      "title": "Monthly Check-in",
+      "daysCount": "{{count}} days"
+    },
+    "menu": {
+      "stats": "Statistics",
+      "setPreferences": "Set Preferences",
+      "preferencesSubtitle": "Get personalized recommendations",
+      "newBadge": "New",
+      "reminder": "Daily Reminder",
+      "reminderSubtitle": "Set meditation reminders",
+      "settings": "Settings",
+      "help": "Help & Feedback"
+    },
+    "version": "ZenMind v1.0.0"
+  },
+  "quiz": {
+    "question": {
+      "title": "What brings you here?",
+      "subtitle": "We'll recommend courses based on your answer"
+    },
+    "option": {
+      "sleep": {
+        "label": "Sleep Better",
+        "desc": "Difficulty falling asleep"
+      },
+      "anxiety": {
+        "label": "Reduce Stress",
+        "desc": "Work/Life pressure"
+      },
+      "focus": {
+        "label": "Improve Focus",
+        "desc": "Be more productive"
+      }
+    },
+    "error": {
+      "noSelection": "Please select an option"
+    },
+    "success": "Preferences saved!",
+    "button": {
+      "next": "Next",
+      "finish": "Done"
+    }
+  },
+  "reminder": {
+    "title": "Daily Reminder",
+    "switch": {
+      "title": "Enable Reminder",
+      "subtitle": "Get reminded to meditate daily"
+    },
+    "section": {
+      "slots": "Recommended Times",
+      "customTime": "Custom Time",
+      "quickSelect": "Quick Select",
+      "messageTemplates": "Messages"
+    },
+    "slot": {
+      "morning": {
+        "label": "Morning",
+        "desc": "Start your day right"
+      },
+      "noon": {
+        "label": "Noon",
+        "desc": "Relax during break"
+      },
+      "afternoon": {
+        "label": "Afternoon",
+        "desc": "Beat work fatigue"
+      },
+      "evening": {
+        "label": "Evening",
+        "desc": "Wind down"
+      },
+      "night": {
+        "label": "Night",
+        "desc": "Fall asleep easier"
+      }
+    },
+    "customTime": {
+      "pick": "Pick Time",
+      "inputTitle": "Enter Custom Time",
+      "placeholder": "HH:MM format, e.g. 21:30"
+    },
+    "button": {
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "message": {
+      "template1": "Time to meditate",
+      "template2": "Relax, meditate for 5 min",
+      "template3": "Give yourself a quiet moment"
+    },
+    "save": {
+      "enabled": "Reminder set at {{time}}",
+      "disabled": "Reminder turned off",
+      "buttonEnabled": "Save reminder at {{time}}",
+      "buttonDisabled": "Save Settings"
+    },
+    "error": {
+      "timeFormat": "Please enter a valid time"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "name": {
+      "editHint": "Tap to edit name",
+      "inputTitle": "Enter new name",
+      "placeholder": "Enter your name",
+      "saveSuccess": "Name updated"
+    },
+    "button": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "section": {
+      "notifications": "Notifications",
+      "playback": "Playback",
+      "appearance": "Appearance",
+      "other": "Other"
+    },
+    "notifications": {
+      "label": "Daily Reminder"
+    },
+    "reminderTime": {
+      "label": "Reminder Time",
+      "value": "Daily at 22:00"
+    },
+    "playback": {
+      "soundEffects": "Sound Effects",
+      "autoPlay": "Auto Play"
+    },
+    "appearance": {
+      "darkMode": "Dark Mode"
+    },
+    "other": {
+      "language": "Language",
+      "languageValue": "English",
+      "about": "About Us",
+      "version": "Version",
+      "versionValue": "v1.0.0"
+    },
+    "language": {
+      "title": "Select Language"
+    },
+    "logout": {
+      "title": "Log Out",
+      "content": "Are you sure you want to log out?",
+      "button": "Log Out",
+      "success": "Logged out"
+    }
+  },
+  "stats": {
+    "title": "Statistics",
+    "subtitle": "Track your meditation journey",
+    "totalMinutes": "Total Minutes",
+    "currentStreak": "Current Streak",
+    "avgMinutes": "Avg Min/Session",
+    "longestStreak": "Longest Streak",
+    "weeklyTrend": {
+      "title": "Weekly Trend",
+      "total": "{{minutes}} min"
+    },
+    "achievements": {
+      "title": "Achievements",
+      "beginner": "Beginner",
+      "streak3": "3-Day Streak",
+      "streak7": "7-Day Streak",
+      "minutes100": "100 Minutes"
+    },
+    "bestTime": {
+      "title": "Best Time to Meditate",
+      "description": "You mostly meditate in the {{time}}"
+    }
+  },
+  "course": {
+    "breathingBasics": {
+      "title": "Breathing Basics",
+      "description": "Learn belly breathing to relax",
+      "tags": ["Breathing", "Beginner"]
+    },
+    "bodyScan": {
+      "title": "Body Scan",
+      "description": "Scan from head to toe, release tension",
+      "tags": ["Body Scan", "Relax"]
+    },
+    "sleepJourney": {
+      "title": "Deep Sleep Guide",
+      "description": "Fall into deep sleep quickly",
+      "tags": ["Sleep", "Night"]
+    },
+    "sleepBreathing": {
+      "title": "Bedtime Breathing",
+      "description": "4-7-8 breathing technique for sleep",
+      "tags": ["Breathing", "Sleep"]
+    },
+    "anxietyRelief": {
+      "title": "Anxiety Relief",
+      "description": "Release anxiety, find inner peace",
+      "tags": ["Anxiety", "Relax"]
+    },
+    "stressRelease": {
+      "title": "Stress Release",
+      "description": "Relieve work and life stress",
+      "tags": ["Stress", "Relax"]
+    },
+    "morningFocus": {
+      "title": "Morning Focus",
+      "description": "Start your day right",
+      "tags": ["Focus", "Morning"]
+    },
+    "deepFocus": {
+      "title": "Deep Focus",
+      "description": "Improve concentration and productivity",
+      "tags": ["Focus", "Deep"]
+    }
+  },
+  "whitenoise": {
+    "rain": "Rain",
+    "waves": "Ocean Waves",
+    "forest": "Forest",
+    "fire": "Campfire"
+  },
+  "store": {
+    "defaultUsername": "Meditator"
+  }
+}

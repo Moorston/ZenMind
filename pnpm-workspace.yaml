@@ -1,0 +1,4 @@
+packages:
+  - 'mini-app'
+  - 'server'
+  - 'mobile-app'

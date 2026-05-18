@@ -26,7 +26,7 @@
 ZenMind/
 ├── package.json              # 根工作空间编排
 ├── pnpm-workspace.yaml       # 工作空间定义
-├── AGENTS.md                 # AI 开发规范
+├── style-guide.md                 # 开发规范
 │
 ├── mini-app/                 # 前端 (Taro 4 + React)
 │   ├── src/

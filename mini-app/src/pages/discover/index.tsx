@@ -7,7 +7,8 @@ import { Search, Moon, Brain, Smile, Sparkles, Clock } from 'lucide-react-taro'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
-import { meditationCourses, whiteNoises, getNoiseEmoji, type MeditationCourse, type WhiteNoise } from '@/store/meditation'
+import { WhiteNoiseGrid } from '@/components/white-noise-grid'
+import { meditationCourses, whiteNoises, type MeditationCourse, type WhiteNoise } from '@/store/meditation'
 
 const categories = [
   { id: 'all', icon: Sparkles },
@@ -78,30 +79,13 @@ export default function Discover() {
         </ScrollView>
       </View>
 
-      <ScrollView scrollY className="flex-1 px-4 pb-8" style={{ height: '100%' }}>
+      <ScrollView scrollY className="flex-1 px-4 pb-8">
         <View className="mb-6">
           <View className="flex items-center justify-between mb-3">
             <Text className="block text-lg font-semibold text-foreground">{t('discover.whiteNoise.title')}</Text>
             <Text className="block text-sm text-muted-foreground">{t('discover.whiteNoise.subtitle')}</Text>
           </View>
-          <View className="grid grid-cols-4 gap-3">
-            {whiteNoises.map(noise => (
-              <View
-                key={noise.id}
-                onClick={() => handleWhiteNoiseClick(noise)}
-                className="flex flex-col items-center gap-2 p-3 rounded-2xl"
-                style={{ backgroundColor: `${noise.color}20` }}
-              >
-                <View
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: noise.color }}
-                >
-                  <Text className="block text-xl">{getNoiseEmoji(noise.id)}</Text>
-                </View>
-                <Text className="block text-xs text-foreground">{t('whitenoise.' + noise.id, noise.name)}</Text>
-              </View>
-            ))}
-          </View>
+          <WhiteNoiseGrid whiteNoises={whiteNoises} onSelect={(noise) => handleWhiteNoiseClick(noise)} />
         </View>
 
         <View>

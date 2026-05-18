@@ -208,8 +208,16 @@ export const H5NavBar = () => {
   return (
     <>
       <View
-        className="fixed top-0 left-0 right-0 h-11 flex items-center justify-center z-1000"
-        style={getBgStyle()}
+        style={{
+          position: 'fixed',
+          top: 0, left: 0, right: 0,
+          height: 44,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 1000,
+          ...getBgStyle(),
+        }}
       >
         {navState.leftIcon === LeftIcon.Back && (
           <View

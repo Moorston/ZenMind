@@ -10,12 +10,12 @@ import {
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { WhiteNoiseGrid } from '@/components/white-noise-grid'
 import {
   meditationCourses,
   whiteNoises,
   useUserStore,
   usePlayerStore,
-  getNoiseEmoji,
   type MeditationCourse
 } from '@/store/meditation'
 
@@ -76,7 +76,7 @@ export default function Index() {
 
   return (
     <View className="flex flex-col h-screen bg-background overflow-hidden">
-      <ScrollView scrollY className="flex-1 px-4 pb-24" style={{ height: '100%' }}>
+      <ScrollView scrollY className="flex-1 px-4 pb-24">
         <View className="pt-6 mb-6">
           <Text className="block text-2xl font-bold text-foreground">
             {greeting}，{userName}
@@ -187,24 +187,7 @@ export default function Index() {
             <Text className="block text-lg font-semibold text-foreground">{t('home.backgroundSounds.title')}</Text>
             <Text className="block text-sm text-muted-foreground">{t('home.backgroundSounds.subtitle')}</Text>
           </View>
-          <View className="grid grid-cols-4 gap-3">
-            {whiteNoises.map(noise => (
-              <View
-                key={noise.id}
-                onClick={() => handleWhiteNoise(noise.id)}
-                className="flex flex-col items-center gap-2 p-3 rounded-2xl"
-                style={{ backgroundColor: `${noise.color}15` }}
-              >
-                <View
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: noise.color + '30' }}
-                >
-                  <Text className="block text-xl">{getNoiseEmoji(noise.id)}</Text>
-                </View>
-                <Text className="block text-xs text-foreground">{t('whitenoise.' + noise.id, noise.name)}</Text>
-              </View>
-            ))}
-          </View>
+          <WhiteNoiseGrid whiteNoises={whiteNoises} onSelect={(noise) => handleWhiteNoise(noise.id)} />
         </View>
 
         <View className="mb-6">

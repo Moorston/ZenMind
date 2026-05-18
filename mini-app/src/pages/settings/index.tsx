@@ -11,6 +11,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
 import { Input } from '@/components/ui/input'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from '@/components/ui/sheet'
 import { useUserStore } from '@/store/meditation'
 import { useLanguageStore, LANGUAGE_LIST, type LanguageCode } from '@/store/language'
@@ -246,32 +247,34 @@ export default function Settings() {
       </Card>
 
       <Sheet open={showLanguagePicker} onOpenChange={(open) => setShowLanguagePicker(open)}>
-        <SheetContent side="bottom" className="max-h-[70vh] flex flex-col">
+        <SheetContent side="bottom" style={{ maxHeight: '70vh' }} className="flex flex-col">
           <SheetHeader className="pb-4">
             <SheetTitle>{t('settings.language.title')}</SheetTitle>
           </SheetHeader>
           <View className="flex-1 overflow-y-auto">
-            <View className="grid grid-cols-1 gap-2">
+            <RadioGroup value={language} onValueChange={(v) => handleSelectLanguage(v as LanguageCode)} className="gap-2">
               {LANGUAGE_LIST.map((lang) => (
                 <View
                   key={lang.code}
-                  onClick={() => handleSelectLanguage(lang.code)}
                   className={`flex items-center justify-between p-3 rounded-xl ${
                     language === lang.code ? 'bg-primary-20' : 'bg-muted'
                   }`}
                 >
-                  <View className="flex items-center gap-2">
-                    <Text className={`block text-foreground ${language === lang.code ? 'text-primary font-medium' : ''}`}>
-                      {lang.name}
-                    </Text>
-                    <Text className="block text-xs text-muted-foreground">{lang.englishName}</Text>
+                  <View className="flex items-center gap-2 flex-1" onClick={() => handleSelectLanguage(lang.code)}>
+                    <RadioGroupItem value={lang.code} />
+                    <View>
+                      <Text className={`block text-foreground ${language === lang.code ? 'text-primary font-medium' : ''}`}>
+                        {lang.name}
+                      </Text>
+                      <Text className="block text-xs text-muted-foreground">{lang.englishName}</Text>
+                    </View>
                   </View>
                   {language === lang.code && (
                     <Check size={16} color="#7c6aef" />
                   )}
                 </View>
               ))}
-            </View>
+            </RadioGroup>
           </View>
           <SheetClose className="w-full mt-3">
             <Button variant="outline" className="w-full">

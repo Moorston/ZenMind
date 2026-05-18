@@ -7,6 +7,7 @@ import { CoursesModule } from '@/modules/courses/courses.module'
 import { SeriesModule } from '@/modules/series/series.module'
 import { InstructorsModule } from '@/modules/instructors/instructors.module'
 import { ProgressModule } from '@/modules/progress/progress.module'
+import { AuthModule } from '@/modules/auth/auth.module'
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ProgressModule } from '@/modules/progress/progress.module'
     SeriesModule,
     InstructorsModule,
     ProgressModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

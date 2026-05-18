@@ -58,6 +58,23 @@ CREATE TABLE IF NOT EXISTS progress (
   updated_at TEXT NOT NULL DEFAULT (datetime('now')),
   PRIMARY KEY (user_id, course_id)
 );
+
+CREATE TABLE IF NOT EXISTS users (
+  id TEXT PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  password TEXT NOT NULL,
+  nickname TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS email_verification_codes (
+  id TEXT PRIMARY KEY,
+  email TEXT NOT NULL,
+  code TEXT NOT NULL,
+  expires_at TEXT NOT NULL,
+  used INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
 `
 
 async function seed() {
@@ -75,12 +92,20 @@ async function seed() {
 
   console.log('Seeding database...')
 
+  const force = process.argv.includes('--force')
+
   const existingInstructors = db.select({ id: schema.instructors.id }).from(schema.instructors).all()
 
   if (existingInstructors.length > 0) {
-    console.log('  Database already seeded, skipping...')
-    sqlite.close()
-    return
+    if (force) {
+      console.log('  Force re-seeding: clearing existing data...')
+      sqlite.exec('DELETE FROM progress; DELETE FROM series_courses; DELETE FROM courses; DELETE FROM series; DELETE FROM instructors;')
+    } else {
+      console.log('  Database already seeded, skipping...')
+      console.log('  Use --force to re-seed')
+      sqlite.close()
+      return
+    }
   }
 
   const instructorsResult = await db.insert(schema.instructors).values([

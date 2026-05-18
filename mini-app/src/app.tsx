@@ -78,7 +78,9 @@ const App = ({ children }: PropsWithChildren) => {
   return (
     <I18nextProvider i18n={i18n}>
       <LucideTaroProvider defaultColor="#000" defaultSize={24}>
-        <Preset>{children}</Preset>
+        <View className={isDarkMode ? 'dark' : ''}>
+          <Preset>{children}</Preset>
+        </View>
         <Toaster />
         {showSplash && (
           <View

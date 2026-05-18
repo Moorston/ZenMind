@@ -6,8 +6,9 @@ import {
   Settings, Bell, Moon, FileText, Info
 } from 'lucide-react-taro'
 import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { MenuItem } from '@/components/menu-item'
 import { useTranslation } from 'react-i18next'
 import { useUserStore } from '@/store/meditation'
 import { useAuthStore } from '@/store/auth'
@@ -189,66 +190,43 @@ export default function Profile() {
 
       <Card className="bg-card border-0 mb-6">
         <CardContent className="p-0 divide-y divide-border">
-          <View
+          <MenuItem
+            icon={<FileText size={20} color="#7c6aef" />}
+            label={t('profile.menu.stats')}
             onClick={handleViewStats}
-            className="flex items-center p-4"
-          >
-            <View className="w-10 h-10 rounded-xl bg-primary-20 flex items-center justify-center mr-3">
-              <FileText size={20} color="#7c6aef" />
-            </View>
-            <Text className="flex-1 text-foreground">{t('profile.menu.stats')}</Text>
-            <ChevronRight size={20} color="#9090a0" />
-          </View>
+          />
 
           {!hasCompletedQuiz && (
-            <View
+            <MenuItem
+              icon={<Moon size={20} color="#2dd4bf" />}
+              label={t('profile.menu.setPreferences')}
+              subtitle={t('profile.menu.preferencesSubtitle')}
+              iconBgClass="bg-secondary-20"
+              badge={<Badge className="bg-destructive text-white text-xs">{t('profile.menu.newBadge')}</Badge>}
               onClick={handleStartQuiz}
-              className="flex items-center p-4"
-            >
-              <View className="w-10 h-10 rounded-xl bg-secondary-20 flex items-center justify-center mr-3">
-                <Moon size={20} color="#2dd4bf" />
-              </View>
-              <View className="flex-1">
-                <Text className="block text-foreground">{t('profile.menu.setPreferences')}</Text>
-                <Text className="block text-xs text-muted-foreground">{t('profile.menu.preferencesSubtitle')}</Text>
-              </View>
-              <Badge className="bg-destructive text-white text-xs">{t('profile.menu.newBadge')}</Badge>
-              <ChevronRight size={20} color="#9090a0" className="ml-2" />
-            </View>
+            />
           )}
 
-          <View
+          <MenuItem
+            icon={<Bell size={20} color="#fbbf24" />}
+            label={t('profile.menu.reminder')}
+            subtitle={t('profile.menu.reminderSubtitle')}
+            iconBgClass="bg-warning-20"
             onClick={handleReminder}
-            className="flex items-center p-4"
-          >
-            <View className="w-10 h-10 rounded-xl bg-warning-20 flex items-center justify-center mr-3">
-              <Bell size={20} color="#fbbf24" />
-            </View>
-            <View className="flex-1">
-              <Text className="block text-foreground">{t('profile.menu.reminder')}</Text>
-              <Text className="block text-xs text-muted-foreground">{t('profile.menu.reminderSubtitle')}</Text>
-            </View>
-            <ChevronRight size={20} color="#9090a0" />
-          </View>
+          />
 
-          <View
+          <MenuItem
+            icon={<Settings size={20} color="#9090a0" />}
+            label={t('profile.menu.settings')}
+            iconBgClass="bg-muted-foreground-20"
             onClick={handleSettings}
-            className="flex items-center p-4"
-          >
-            <View className="w-10 h-10 rounded-xl bg-muted-foreground-20 flex items-center justify-center mr-3">
-              <Settings size={20} color="#9090a0" />
-            </View>
-            <Text className="flex-1 text-foreground">{t('profile.menu.settings')}</Text>
-            <ChevronRight size={20} color="#9090a0" />
-          </View>
+          />
 
-          <View className="flex items-center p-4">
-            <View className="w-10 h-10 rounded-xl bg-muted-foreground-20 flex items-center justify-center mr-3">
-              <Info size={20} color="#9090a0" />
-            </View>
-            <Text className="flex-1 text-foreground">{t('profile.menu.help')}</Text>
-            <ChevronRight size={20} color="#9090a0" />
-          </View>
+          <MenuItem
+            icon={<Info size={20} color="#9090a0" />}
+            label={t('profile.menu.help')}
+            iconBgClass="bg-muted-foreground-20"
+          />
         </CardContent>
       </Card>
 

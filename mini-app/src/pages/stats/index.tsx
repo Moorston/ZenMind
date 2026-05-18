@@ -88,7 +88,7 @@ export default function Stats() {
 
           <Card className="bg-card border-0">
             <CardContent className="p-4 text-center">
-              <View className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2" style={{ backgroundColor: 'rgba(244, 114, 182, 0.2)' }}>
+              <View className="w-12 h-12 rounded-full bg-destructive-20 flex items-center justify-center mx-auto mb-2">
                 <Award size={24} color="#f472b6" />
               </View>
               <Text className="block text-3xl font-bold text-foreground">{longestStreak}</Text>
@@ -115,8 +115,7 @@ export default function Stats() {
                 return (
                   <View key={i} className="flex-1 flex flex-col items-center">
                     <View
-                      className="w-full flex items-end justify-center"
-                      style={{ height: '96px' }}
+                      className="w-full h-24 flex items-end justify-center"
                     >
                       <View
                         className={`w-8 rounded-t-md transition-all ${
@@ -201,7 +200,7 @@ export default function Stats() {
           <Card className="bg-card border-0">
             <CardContent className="p-4">
               <View className="flex items-center gap-4">
-                <View className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(99, 102, 241, 0.2)' }}>
+                <View className="w-12 h-12 rounded-full bg-primary-20 flex items-center justify-center">
                   {bestTime.type === 'morning' ? (
                     <Sunrise size={24} color="#f59e0b" />
                   ) : bestTime.type === 'afternoon' ? (

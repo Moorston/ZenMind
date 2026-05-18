@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 import { View, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro'
-import { Moon, Brain, Smile, ChevronLeft, Check } from 'lucide-react-taro'
+import { Moon, Brain, Smile, ChevronLeft } from 'lucide-react-taro'
 import { Button } from '@/components/ui/button'
+import { Progress } from '@/components/ui/progress'
+import { SelectableCard, SelectableCardIcon, SelectableCardText } from '@/components/selectable-card'
 import { useTranslation } from 'react-i18next'
 import { useUserStore } from '@/store/meditation'
 
@@ -80,12 +82,7 @@ export default function Quiz() {
             <ChevronLeft size={24} color="#9090a0" />
           </Button>
           <View className="flex-1">
-            <View className="h-1 bg-muted rounded-full overflow-hidden">
-              <View
-                className="h-full bg-primary transition-all"
-                style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
-              />
-            </View>
+            <Progress value={((currentStep + 1) / questions.length) * 100} />
           </View>
           <Text className="block text-sm text-muted-foreground">
             {currentStep + 1}/{questions.length}
@@ -109,37 +106,16 @@ export default function Quiz() {
             const Icon = option.icon
 
             return (
-              <View
+              <SelectableCard
                 key={option.id}
-                onClick={() => handleOptionSelect(option.id)}
-                className={`p-4 rounded-2xl border-2 transition-all ${
-                  isSelected
-                    ? 'border-primary bg-primary-10'
-                    : 'border-muted bg-card'
-                }`}
+                selected={isSelected}
+                onSelect={() => handleOptionSelect(option.id)}
               >
-                <View className="flex items-center gap-4">
-                  <View
-                    className="w-14 h-14 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: `${option.color}20` }}
-                  >
-                    <Icon size={28} color={option.color} />
-                  </View>
-                  <View className="flex-1">
-                    <Text className="block text-lg font-medium text-foreground">
-                      {option.label}
-                    </Text>
-                    <Text className="block text-sm text-muted-foreground">
-                      {option.desc}
-                    </Text>
-                  </View>
-                  {isSelected && (
-                    <View className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-                      <Check size={14} color="#fff" />
-                    </View>
-                  )}
-                </View>
-              </View>
+                <SelectableCardIcon color={option.color}>
+                  <Icon size={28} color={option.color} />
+                </SelectableCardIcon>
+                <SelectableCardText label={option.label} desc={option.desc} />
+              </SelectableCard>
             )
           })}
         </View>

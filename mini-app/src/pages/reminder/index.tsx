@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
+import { SelectableCard } from '@/components/selectable-card'
 
 const timeSlots = [
   { id: 'morning', time: '07:00', icon: Sun, color: '#f59e0b' },
@@ -128,24 +129,22 @@ export default function Reminder() {
               const SlotIcon = slot.icon
               const isSelected = selectedSlot === slot.id
               return (
-                <View
+                <SelectableCard
                   key={slot.id}
-                  onClick={() => setSelectedSlot(slot.id)}
-                  className={`p-4 rounded-2xl border-2 transition-all ${
-                    isSelected
-                      ? 'border-primary bg-primary-10'
-                      : 'border-muted bg-card'
-                  }`}
+                  selected={isSelected}
+                  onSelect={() => setSelectedSlot(slot.id)}
                 >
-                  <View className="flex items-center gap-2 mb-2">
-                    <SlotIcon size={18} color={isSelected ? '#7c6aef' : slot.color} />
-                    <Text className={`font-medium ${isSelected ? 'text-primary' : 'text-foreground'}`}>
-                      {t(`reminder.slot.${slot.id}.label`)}
-                    </Text>
+                  <View className="flex flex-col gap-2 flex-1">
+                    <View className="flex items-center gap-2">
+                      <SlotIcon size={18} color={isSelected ? '#7c6aef' : slot.color} />
+                      <Text className={`font-medium ${isSelected ? 'text-primary' : 'text-foreground'}`}>
+                        {t(`reminder.slot.${slot.id}.label`)}
+                      </Text>
+                    </View>
+                    <Text className="block text-2xl font-bold text-foreground">{slot.time}</Text>
+                    <Text className="block text-xs text-muted-foreground">{t(`reminder.slot.${slot.id}.desc`)}</Text>
                   </View>
-                  <Text className="block text-2xl font-bold text-foreground mb-1">{slot.time}</Text>
-                  <Text className="block text-xs text-muted-foreground">{t(`reminder.slot.${slot.id}.desc`)}</Text>
-                </View>
+                </SelectableCard>
               )
             })}
           </View>

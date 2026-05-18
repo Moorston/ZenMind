@@ -366,6 +366,37 @@
     "forest": "森林",
     "fire": "篝火"
   },
+  "auth": {
+    "welcome": "Welcome to ZenMind",
+    "subtitle": "Sign in to sync your meditation data",
+    "tab": {
+      "login": "Email Login",
+      "register": "Register"
+    },
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "nickname": "Nickname",
+    "nicknamePlaceholder": "Enter your nickname",
+    "login": "Login",
+    "register": "Register",
+    "accountRequired": "Please enter your email",
+    "passwordRequired": "Please enter your password",
+    "nicknameRequired": "Please enter your nickname",
+    "verifyCode": "Verification Code",
+    "codePlaceholder": "Enter verification code",
+    "sendCode": "Send Code",
+    "codeSent": "Verification code sent",
+    "sendCodeFailed": "Failed to send code",
+    "codeRequired": "Please enter the verification code",
+    "requestFailed": "Request failed, please try again",
+    "loginSuccess": "Login successful",
+    "registerSuccess": "Registration successful",
+    "logout": "Log Out",
+    "logoutConfirm": "Are you sure you want to log out?",
+    "logoutSuccess": "Logged out"
+  },
   "store": {
     "defaultUsername": "冥想者"
   }

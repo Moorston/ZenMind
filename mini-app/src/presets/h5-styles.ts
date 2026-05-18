@@ -50,11 +50,6 @@ vite-error-overlay::part(window) {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* H5 导航栏页面自动添加顶部间距 */
-body.h5-navbar-visible .taro_page {
-  padding-top: 44px;
-}
-
 body.h5-navbar-visible .toaster[data-position^="top"] {
   top: 44px !important;
 }

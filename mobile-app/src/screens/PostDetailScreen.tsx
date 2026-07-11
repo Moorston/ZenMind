@@ -60,13 +60,37 @@ export function PostDetailScreen() {
 
   const handleSubmitComment = async () => {
     if (!isLoggedIn || !currentUserId || !commentText.trim() || submitting) return
+    const content = commentText.trim()
     setSubmitting(true)
+
+    // 乐观追加：先添加到列表
+    const optimisticComment: Comment = {
+      id: `temp-${Date.now()}`,
+      postId,
+      userId: currentUserId,
+      content,
+      createdAt: new Date().toISOString(),
+      authorNickname: user?.nickname || '我',
+    }
+    setComments(prev => [...prev, optimisticComment])
+    setCommentText('')
+    inputRef.current?.blur()
+
+    // 帖子评论数 +1
+    if (post) setPost({ ...post, commentsCount: post.commentsCount + 1 })
+
     try {
-      await CommunityAPI.addComment(postId, currentUserId, commentText.trim())
-      setCommentText('')
-      inputRef.current?.blur()
-      loadData()
+      const res = await CommunityAPI.addComment(postId, currentUserId, content)
+      // 用服务端返回的真实数据替换临时评论
+      if (res.data) {
+        setComments(prev => prev.map(c =>
+          c.id === optimisticComment.id ? res.data : c
+        ))
+      }
     } catch (err) {
+      // 失败回滚：移除临时评论，恢复评论数
+      setComments(prev => prev.filter(c => c.id !== optimisticComment.id))
+      if (post) setPost({ ...post, commentsCount: post.commentsCount - 1 })
       console.error('[PostDetail] comment failed:', err)
     } finally {
       setSubmitting(false)

@@ -25,9 +25,33 @@ export function CommunityFeedScreen() {
   const [initialized, setInitialized] = useState(false)
   const pageSize = 20
 
+  // Tab 数据缓存：key 为 tab 名，value 为 { posts, page, hasMore }
+  const tabCache = useRef<Record<TabKey, { posts: Post[]; page: number; hasMore: boolean }>>({
+    discover: { posts: [], page: 0, hasMore: true },
+    following: { posts: [], page: 0, hasMore: true },
+  })
+
+  const switchTab = (tab: TabKey) => {
+    if (tab === activeTab) return
+    // 保存当前 Tab 数据到缓存
+    tabCache.current[activeTab] = { posts, page, hasMore }
+    setActiveTab(tab)
+    // 恢复目标 Tab 缓存
+    const cached = tabCache.current[tab]
+    if (cached.posts.length > 0) {
+      setPosts(cached.posts)
+      setPage(cached.page)
+      setHasMore(cached.hasMore)
+      setLoading(false)
+    } else {
+      // 缓存为空，发起请求
+      fetchPosts(tab, 1)
+    }
+  }
+
   const fetchPosts = useCallback(async (tab: TabKey, pageNum: number, append = false) => {
     if (pageNum === 1) {
-      setPosts([]) // 清空旧数据，避免 Tab 切换时短暂显示错误内容
+      setPosts([])
       setLoading(true)
     } else {
       setLoadingMore(true)
@@ -54,8 +78,9 @@ export function CommunityFeedScreen() {
   }, [currentUserId])
 
   useEffect(() => {
-    fetchPosts(activeTab, 1)
-  }, [activeTab, fetchPosts])
+    // 仅首次加载，后续 Tab 切换由 switchTab 处理
+    fetchPosts('discover', 1)
+  }, [])
 
   const handleLoadMore = () => {
     if (!initialized || loadingMore || !hasMore) return
@@ -133,7 +158,7 @@ export function CommunityFeedScreen() {
       <View style={styles.tabBar}>
         <TouchableOpacity
           style={[styles.tab, activeTab === 'discover' && styles.tabActive]}
-          onPress={() => setActiveTab('discover')}
+          onPress={() => switchTab('discover')}
         >
           <Text style={[styles.tabText, activeTab === 'discover' && styles.tabTextActive]}>
             发现
@@ -146,7 +171,7 @@ export function CommunityFeedScreen() {
               Alert.alert('提示', '请先登录后查看关注动态')
               return
             }
-            setActiveTab('following')
+            switchTab('following')
           }}
         >
           <Text style={[styles.tabText, activeTab === 'following' && styles.tabTextActive]}>

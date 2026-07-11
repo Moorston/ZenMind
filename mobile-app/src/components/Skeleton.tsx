@@ -1,4 +1,4 @@
-import { View, StyleSheet, type ViewStyle } from 'react-native'
+import { View, Animated, StyleSheet, type ViewStyle } from 'react-native'
 import { useEffect, useRef } from 'react'
 
 interface SkeletonProps {
@@ -9,18 +9,39 @@ interface SkeletonProps {
 }
 
 /**
- * 简易骨架屏组件
- * 深灰色底 + 闪烁动画效果
+ * 骨架屏组件（带闪烁动画）
  */
 export function Skeleton({ width = '100%', height = 16, borderRadius = 8, style }: SkeletonProps) {
+  const opacity = useRef(new Animated.Value(0.3)).current
+
+  useEffect(() => {
+    const animation = Animated.loop(
+      Animated.sequence([
+        Animated.timing(opacity, {
+          toValue: 1,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+        Animated.timing(opacity, {
+          toValue: 0.3,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+      ])
+    )
+    animation.start()
+    return () => animation.stop()
+  }, [opacity])
+
   return (
-    <View
+    <Animated.View
       style={[
         styles.skeleton,
         {
           width: width as any,
           height,
           borderRadius,
+          opacity,
         },
         style,
       ]}

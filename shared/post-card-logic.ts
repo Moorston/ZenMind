@@ -19,9 +19,12 @@ export const TYPE_COLORS: Record<PostType, string> = {
 
 /**
  * 格式化时间为相对时间
+ * 兼容 ISO 8601（带/不带 Z 后缀）和普通日期字符串
  */
 export function formatRelativeTime(dateStr: string): string {
-  const date = new Date(dateStr)
+  if (!dateStr) return ''
+  // 统一解析：无后缀视为本地时间，有 Z 后缀视为 UTC
+  const date = new Date(dateStr.endsWith('Z') || dateStr.includes('+') ? dateStr : dateStr)
   if (isNaN(date.getTime())) return dateStr
   const now = new Date()
   const diffMs = now.getTime() - date.getTime()

@@ -78,7 +78,12 @@ export function CommunityFeedScreen() {
   }, [currentUserId])
 
   useEffect(() => {
-    // 仅首次加载
+    // 首次加载或用户切换时清空缓存并重新加载
+    tabCache.current = {
+      discover: { posts: [], page: 0, hasMore: true },
+      following: { posts: [], page: 0, hasMore: true },
+    }
+    setActiveTab('discover')
     fetchPosts('discover', 1)
 
     // 从 CreatePostScreen 返回时清除缓存并刷新
@@ -92,7 +97,7 @@ export function CommunityFeedScreen() {
       }
     })
     return unsubscribe
-  }, [])
+  }, [currentUserId])
 
   const handleLoadMore = () => {
     if (!initialized || loadingMore || !hasMore) return

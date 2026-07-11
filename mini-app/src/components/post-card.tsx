@@ -3,6 +3,7 @@ import Taro from '@tarojs/taro'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Heart, MessageCircle } from 'lucide-react-taro'
+import { TYPE_LABELS, formatRelativeTime } from '../../../shared/post-card-logic'
 
 interface PostCardProps {
   id: string
@@ -15,12 +16,6 @@ interface PostCardProps {
   authorNickname?: string
   authorAvatar?: string
   onLike?: (id: string) => void
-}
-
-const typeLabels: Record<string, string> = {
-  reflection: '心得',
-  checkin: '打卡',
-  share: '分享',
 }
 
 export function PostCard({
@@ -54,10 +49,10 @@ export function PostCard({
         {/* 帖子内容 */}
         <View className="flex items-center justify-between mb-2">
           <Badge className="bg-primary-20 text-primary text-xs">
-            {typeLabels[type] || '帖子'}
+            {TYPE_LABELS[type] || '帖子'}
           </Badge>
           <Text className="block text-xs text-muted-foreground">
-            {new Date(createdAt).toLocaleDateString()}
+            {formatRelativeTime(createdAt)}
           </Text>
         </View>
         <Text className="block text-sm text-foreground mb-3 line-clamp-3">

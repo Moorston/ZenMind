@@ -1,7 +1,11 @@
 import { useRef } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import {
+  type PostType, TYPE_LABELS, TYPE_COLORS,
+  formatRelativeTime, canLike,
+} from '../../../shared/post-card-logic'
 
-export type PostType = 'reflection' | 'checkin' | 'share'
+export type { PostType }
 
 export interface PostCardProps {
   id: string
@@ -16,36 +20,6 @@ export interface PostCardProps {
   onLike?: () => void
   onPress?: () => void
   onAuthorPress?: () => void
-}
-
-const TYPE_LABELS: Record<PostType, string> = {
-  reflection: '心得',
-  checkin: '打卡',
-  share: '分享',
-}
-
-const TYPE_COLORS: Record<PostType, string> = {
-  reflection: '#7c6aef',
-  checkin: '#2dd4bf',
-  share: '#fbbf24',
-}
-
-function formatDate(dateStr: string): string {
-  const date = new Date(dateStr)
-  if (isNaN(date.getTime())) return dateStr
-  const now = new Date()
-  const diffMs = now.getTime() - date.getTime()
-  const diffMin = Math.floor(diffMs / 60000)
-  if (diffMin < 1) return '刚刚'
-  if (diffMin < 60) return `${diffMin}分钟前`
-  const diffHour = Math.floor(diffMin / 60)
-  if (diffHour < 24) return `${diffHour}小时前`
-  const diffDay = Math.floor(diffHour / 24)
-  if (diffDay < 30) return `${diffDay}天前`
-  const y = date.getFullYear()
-  const m = String(date.getMonth() + 1).padStart(2, '0')
-  const d = String(date.getDate()).padStart(2, '0')
-  return `${y}-${m}-${d}`
 }
 
 export function PostCard({
@@ -65,10 +39,7 @@ export function PostCard({
   const lastLikeTimeRef = useRef(0)
 
   const handleLike = () => {
-    if (!onLike) return
-    const now = Date.now()
-    if (now - lastLikeTimeRef.current < 500) return // 500ms 防抖
-    lastLikeTimeRef.current = now
+    if (!onLike || !canLike(lastLikeTimeRef)) return
     onLike()
   }
 
@@ -96,7 +67,7 @@ export function PostCard({
               {authorNickname || '匿名用户'}
             </Text>
           </TouchableOpacity>
-          <Text style={styles.date}>{formatDate(createdAt)}</Text>
+          <Text style={styles.date}>{formatRelativeTime(createdAt)}</Text>
         </View>
 
         <View style={[styles.badge, { backgroundColor: badgeColor + '20' }]}>

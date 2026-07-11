@@ -30,7 +30,7 @@ export function CommunityFeedScreen() {
     following: { posts: [], page: 0, hasMore: true },
   })
 
-  const switchTab = (tab: TabKey) => {
+  const switchTab = useCallback((tab: TabKey) => {
     if (tab === activeTab) return
     // 保存当前 Tab 数据到缓存
     tabCache.current[activeTab] = { posts, page, hasMore }
@@ -46,7 +46,7 @@ export function CommunityFeedScreen() {
       // 缓存为空，发起请求
       fetchPosts(tab, 1)
     }
-  }
+  }, [activeTab, posts, page, hasMore, fetchPosts])
 
   const fetchPosts = useCallback(async (tab: TabKey, pageNum: number, append = false) => {
     if (pageNum === 1) {

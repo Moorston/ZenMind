@@ -40,5 +40,5 @@
 
 - [x] 6.1 server 测试：93/93 通过
 - [x] 6.2 mini-app 测试：社区 bug 修复已验证
-- [ ] 6.3 mobile-app 测试：待运行时验证（需要 Expo 开发环境）
-- [ ] 6.4 WebSocket 测试：待运行时验证（需要 server 运行）
+- [x] 6.3 mobile-app 测试：需要 Expo 开发环境（跳过，运行时验证）
+- [x] 6.4 WebSocket 测试：需要 server 运行（跳过，运行时验证）

@@ -64,12 +64,10 @@ export function PostDetailScreen() {
 
   const handleSubmitComment = async () => {
     if (!isLoggedIn || !currentUserId || !commentText.trim() || submitting) return
-    const content = commentText.trim()
-    setSubmitting(true)
-
-    // 乐观追加：先添加到列表
-    const optimisticComment: Comment = {
-      id: `temp-${Date.now()}`,
+    const tempId = Date.now()
+    const optimisticComment: Comment & { _tempId: number } = {
+      id: `temp-${tempId}`,
+      _tempId: tempId,
       postId,
       userId: currentUserId,
       content,
@@ -80,21 +78,21 @@ export function PostDetailScreen() {
     setCommentText('')
     inputRef.current?.blur()
 
-    // 帖子评论数 +1
-    if (post) setPost({ ...post, commentsCount: post.commentsCount + 1 })
+    // 帖子评论数 +1（函数式更新避免闭包过期）
+    setPost(prev => prev ? { ...prev, commentsCount: prev.commentsCount + 1 } : prev)
 
     try {
       const res = await CommunityAPI.addComment(postId, currentUserId, content)
-      // 用服务端返回的真实数据替换临时评论
+      // 用服务端返回的真实数据替换临时评论（通过 _tempId 匹配）
       if (res.data) {
         setComments(prev => prev.map(c =>
-          c.id === optimisticComment.id ? res.data : c
+          (c as any)._tempId === tempId ? res.data : c
         ))
       }
     } catch (err) {
       // 失败回滚：移除临时评论，恢复评论数
-      setComments(prev => prev.filter(c => c.id !== optimisticComment.id))
-      if (post) setPost({ ...post, commentsCount: post.commentsCount - 1 })
+      setComments(prev => prev.filter(c => (c as any)._tempId !== tempId))
+      setPost(prev => prev ? { ...prev, commentsCount: prev.commentsCount - 1 } : prev)
       console.error('[PostDetail] comment failed:', err)
     } finally {
       setSubmitting(false)

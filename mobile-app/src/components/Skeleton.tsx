@@ -38,7 +38,7 @@ export function Skeleton({ width = '100%', height = 16, borderRadius = 8, style 
       style={[
         styles.skeleton,
         {
-          width: width as any,
+          width: width as number | string,
           height,
           borderRadius,
           opacity,

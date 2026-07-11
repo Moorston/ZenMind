@@ -23,7 +23,11 @@ export function CommunityFeedScreen() {
   const [page, setPage] = useState(1)
   const [hasMore, setHasMore] = useState(true)
   const [initialized, setInitialized] = useState(false)
+  const activeTabRef = useRef(activeTab)
   const pageSize = 20
+
+  // 同步 ref 避免闭包过期
+  activeTabRef.current = activeTab
 
   // Tab 数据缓存：key 为 tab 名，value 为 { posts, page, hasMore }
   const tabCache = useRef<Record<TabKey, { posts: Post[]; page: number; hasMore: boolean }>>({
@@ -86,15 +90,13 @@ export function CommunityFeedScreen() {
     setActiveTab('discover')
     fetchPosts('discover', 1)
 
-    // 从 CreatePostScreen 返回时清除缓存并刷新
+    // 从 CreatePostScreen 返回时清空缓存并刷新当前 Tab
     const unsubscribe = navigation.addListener('focus', () => {
-      if (tabCache.current.discover.posts.length > 0) {
-        tabCache.current = {
-          discover: { posts: [], page: 0, hasMore: true },
-          following: { posts: [], page: 0, hasMore: true },
-        }
-        fetchPosts(activeTab, 1)
+      tabCache.current = {
+        discover: { posts: [], page: 0, hasMore: true },
+        following: { posts: [], page: 0, hasMore: true },
       }
+      fetchPosts(activeTabRef.current, 1)
     })
     return unsubscribe
   }, [currentUserId])

@@ -1,24 +1,29 @@
-import { Inject, Injectable } from '@nestjs/common'
-import { eq, asc } from 'drizzle-orm'
-import type { BetterSQLite3Database } from 'drizzle-orm/better-sqlite3/driver'
-import { DRIZZLE } from '@/modules/db/db.module'
-import { instructors } from '@/db/schema/instructors'
+import { Injectable } from '@nestjs/common'
+import { InstructorsRepository } from '@/repositories/instructors.repository'
+import type { CreateInstructorDto, UpdateInstructorDto } from './dto/create-instructor.dto'
 
 @Injectable()
 export class InstructorsService {
-  constructor(@Inject(DRIZZLE) private db: BetterSQLite3Database<any>) {}
+  constructor(private readonly instructorsRepo: InstructorsRepository) {}
 
   async findAll() {
-    return this.db.select()
-      .from(instructors)
-      .orderBy(asc(instructors.name))
+    return this.instructorsRepo.findAll()
   }
 
   async findById(id: string) {
-    const [instructor] = await this.db.select()
-      .from(instructors)
-      .where(eq(instructors.id, id))
-      .limit(1)
-    return instructor || null
+    return this.instructorsRepo.findById(id)
+  }
+
+  async create(data: CreateInstructorDto) {
+    return this.instructorsRepo.create(data as any)
+  }
+
+  async update(id: string, data: UpdateInstructorDto) {
+    return this.instructorsRepo.update(id, data as any)
+  }
+
+  async delete(id: string) {
+    const deleted = await this.instructorsRepo.delete(id)
+    return deleted
   }
 }

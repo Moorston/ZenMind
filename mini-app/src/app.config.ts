@@ -8,7 +8,16 @@ export default defineAppConfig({
     'pages/stats/index',
     'pages/settings/index',
     'pages/reminder/index',
-    'pages/auth/index'
+    'pages/auth/index',
+    'pages/community/index',
+    'pages/community/post-detail/index',
+    'pages/community/create-post/index',
+    'pages/community/user-profile/index',
+    'pages/rooms/index',
+    'pages/admin/index',
+    'pages/admin/users/index',
+    'pages/admin/courses/index',
+    'pages/admin/courses/edit'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -32,6 +41,12 @@ export default defineAppConfig({
       {
         pagePath: 'pages/discover/index',
         text: '发现',
+        iconPath: './assets/tabbar/compass.png',
+        selectedIconPath: './assets/tabbar/compass-active.png'
+      },
+      {
+        pagePath: 'pages/community/index',
+        text: '社区',
         iconPath: './assets/tabbar/compass.png',
         selectedIconPath: './assets/tabbar/compass-active.png'
       },

@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: ../Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=file:/data/zenmind.db
+      - TOS_ENDPOINT=${TOS_ENDPOINT:-}
+      - TOS_ACCESS_KEY=${TOS_ACCESS_KEY:-}
+      - TOS_SECRET_KEY=${TOS_SECRET_KEY:-}
+      - TOS_BUCKET=${TOS_BUCKET:-}
+      - TOS_PUBLIC_URL=${TOS_PUBLIC_URL:-}
+      - WECHAT_APPID=${WECHAT_APPID:-}
+      - WECHAT_APPSECRET=${WECHAT_APPSECRET:-}
+      - WECHAT_TEMPLATE_ID=${WECHAT_TEMPLATE_ID:-}
+    volumes:
+      - zenmind-data:/data
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - server
+    restart: unless-stopped
+
+volumes:
+  zenmind-data:
+  redis-data:

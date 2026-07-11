@@ -59,6 +59,51 @@ export default function Reminder() {
         key: 'reminder_time',
         data: reminderTime,
       })
+
+      // WeChat mini-program: 订阅模板消息
+      if (Taro.getEnv() === Taro.ENV_TYPE.WEAPP) {
+        try {
+          Taro.requestSubscribeMessage({
+            tmplIds: [], // 需要在微信公众平台配置模板消息后填入模板 ID
+            success: () => {
+              console.log('[Reminder] Subscribed to template messages')
+            },
+            fail: (err) => {
+              console.warn('[Reminder] Subscribe failed:', err)
+            },
+          })
+        } catch (err) {
+          console.warn('[Reminder] SubscribeMessage not available:', err)
+        }
+      }
+
+      // H5: 使用 Web Notification API
+      if (typeof window !== 'undefined' && 'Notification' in window && Notification.permission !== 'denied') {
+        Notification.requestPermission().then((permission) => {
+          if (permission === 'granted') {
+            // 清除之前的定时器
+            const existingKey = 'reminder_timeout_' + reminderTime
+            const existingId = Taro.getStorageSync(existingKey)
+            if (existingId) {
+              clearTimeout(Number(existingId))
+            }
+            // 计算到下次提醒的毫秒数
+            const [hours, minutes] = reminderTime.split(':').map(Number)
+            const now = new Date()
+            const next = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes, 0, 0)
+            if (next <= now) next.setDate(next.getDate() + 1)
+            const msUntilNext = next.getTime() - now.getTime()
+
+            const timeoutId = setTimeout(() => {
+              new Notification('尘间静 - 静心冥想', {
+                body: '是时候开始今天的冥想练习了 🧘',
+                icon: '/favicon.ico',
+              })
+            }, msUntilNext)
+            Taro.setStorage({ key: existingKey, data: String(timeoutId) })
+          }
+        })
+      }
     } else {
       Taro.setStorage({
         key: 'reminder_enabled',

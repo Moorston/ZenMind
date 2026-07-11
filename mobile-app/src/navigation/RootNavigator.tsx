@@ -14,12 +14,18 @@ import { ReminderScreen } from '@/screens/ReminderScreen'
 import { WelcomeScreen } from '@/screens/WelcomeScreen'
 import { LoginScreen } from '@/screens/LoginScreen'
 import { RegisterScreen } from '@/screens/RegisterScreen'
+import { CommunityFeedScreen } from '@/screens/CommunityFeedScreen'
+import { CreatePostScreen } from '@/screens/CreatePostScreen'
+import { PostDetailScreen } from '@/screens/PostDetailScreen'
+import { UserProfileScreen } from '@/screens/UserProfileScreen'
+import { RoomsListScreen } from '@/screens/RoomsListScreen'
 import { useAuthStore } from '@/store/useAuthStore'
 
 export type RootTabParamList = {
   Home: undefined
   Discover: undefined
-  Player: undefined
+  Community: undefined
+  Player: { courseId?: string; noiseId?: string }
   Profile: undefined
 }
 
@@ -28,10 +34,16 @@ export type RootStackParamList = {
   Login: undefined
   Register: undefined
   MainTabs: undefined
+  Player: { courseId?: string; noiseId?: string; roomId?: string }
   Quiz: undefined
   Stats: undefined
   Settings: undefined
   Reminder: undefined
+  Community: undefined
+  CreatePost: undefined
+  PostDetail: { postId: string }
+  UserProfile: { userId: string }
+  RoomsList: undefined
 }
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
@@ -55,6 +67,7 @@ const TabIcon = ({ name, focused }: { name: string; focused: boolean }) => {
   const icons: Record<string, string> = {
     Home: '🏠',
     Discover: '🔍',
+    Community: '👥',
     Player: '▶️',
     Profile: '👤',
   }
@@ -85,6 +98,7 @@ function MainTabs() {
     >
       <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarLabel: '首页' }} />
       <Tab.Screen name="Discover" component={DiscoverScreen} options={{ tabBarLabel: '发现' }} />
+      <Tab.Screen name="Community" component={CommunityFeedScreen} options={{ tabBarLabel: '社区' }} />
       <Tab.Screen name="Player" component={PlayerScreen} options={{ tabBarLabel: '播放' }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarLabel: '我的' }} />
     </Tab.Navigator>
@@ -107,6 +121,17 @@ function AuthFlow() {
       ) : (
         <>
           <Stack.Screen name="MainTabs" component={MainTabs} />
+          <Stack.Screen
+            name="Player"
+            component={PlayerScreen}
+            options={{
+              headerShown: true,
+              headerTitle: '播放器',
+              headerStyle: { backgroundColor: '#0a0a1a' },
+              headerTintColor: '#fff',
+              headerBackTitle: '返回',
+            }}
+          />
           <Stack.Screen name="Quiz" component={QuizScreen} />
           <Stack.Screen
             name="Stats"
@@ -137,6 +162,26 @@ function AuthFlow() {
               headerStyle: { backgroundColor: '#0a0a1a' },
               headerTintColor: '#fff',
             }}
+          />
+          <Stack.Screen
+            name="CreatePost"
+            component={CreatePostScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PostDetail"
+            component={PostDetailScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="UserProfile"
+            component={UserProfileScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RoomsList"
+            component={RoomsListScreen}
+            options={{ headerShown: false }}
           />
         </>
       )}

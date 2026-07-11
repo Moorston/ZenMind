@@ -5,6 +5,8 @@ import { AllExceptionsFilter } from './filters/all-exceptions.filter';
 import { resolve } from 'path';
 import { existsSync } from 'fs';
 import * as express from 'express';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { AuthService } from '@/modules/auth/auth.service';
 
 function parsePort(): number {
   const args = process.argv.slice(2);
@@ -26,6 +28,16 @@ async function bootstrap() {
     credentials: true,
   });
 
+  // Swagger API 文档
+  const swaggerConfig = new DocumentBuilder()
+    .setTitle('ZenMind API')
+    .setDescription('尘间静冥想应用 API 文档')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+  const document = SwaggerModule.createDocument(app, swaggerConfig);
+  SwaggerModule.setup('api/docs', app, document);
+
   // 开发环境: 本地提供媒体文件 (http://localhost:3000/media/*)
   // 生产环境: 通过 TOS CDN 分发，设置 TOS_PUBLIC_URL 后自动切换
   const mediaDir = resolve(__dirname, '..', 'media');
@@ -41,10 +53,19 @@ async function bootstrap() {
   app.useGlobalFilters(new AllExceptionsFilter());
   app.enableShutdownHooks();
 
+  // 启动时清理过期 session
+  try {
+    const authService = app.get(AuthService);
+    authService.cleanupSessions();
+  } catch (e) {
+    console.warn('[Auth] Session cleanup skipped:', e);
+  }
+
   const port = parsePort();
   try {
     await app.listen(port);
     console.log(`Server running on http://localhost:${port}`);
+    console.log(`📚 Swagger docs: http://localhost:${port}/api/docs`);
   } catch (err: any) {
     if (err.code === 'EADDRINUSE') {
       console.error(`❌ 端口 ${port} 被占用! 请运行 'npx kill-port ${port}' 然后重试。`);

@@ -23,5 +23,5 @@
     }
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["drizzle.config.ts", "node_modules", "dist"]
+  "exclude": ["drizzle.config.ts", "node_modules", "dist", "__tests__", "**/*.test.ts", "**/*.spec.ts"]
 }

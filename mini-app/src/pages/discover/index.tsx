@@ -8,7 +8,8 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { WhiteNoiseGrid } from '@/components/white-noise-grid'
-import { meditationCourses, whiteNoises, type MeditationCourse, type WhiteNoise } from '@/store/meditation'
+import { CourseRepository } from '@/repositories/CourseRepository'
+import type { MeditationCourse, WhiteNoise } from '@/store/meditation'
 
 const categories = [
   { id: 'all', icon: Sparkles },
@@ -25,7 +26,10 @@ export default function Discover() {
 
   const getCategoryName = (category: string) => t('common.category.' + category, category)
 
-  const filteredCourses = meditationCourses.filter(course => {
+  const allCourses = CourseRepository.getAll()
+  const whiteNoises = CourseRepository.getWhiteNoises()
+
+  const filteredCourses = allCourses.filter(course => {
     const matchCategory = activeCategory === 'all' || course.category === activeCategory
     const matchSearch = !searchQuery ||
       course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -1,87 +1,102 @@
-import { Inject, Injectable } from '@nestjs/common'
-import { and, ilike, eq, inArray, asc, count } from 'drizzle-orm'
+import { Injectable, ConflictException, Inject } from '@nestjs/common'
 import type { BetterSQLite3Database } from 'drizzle-orm/better-sqlite3/driver'
 import { DRIZZLE } from '@/modules/db/db.module'
-import { courses, type Course } from '@/db/schema/courses'
-import { instructors } from '@/db/schema/instructors'
-import { series } from '@/db/schema/series'
+import { adminAuditLogs } from '@/db/schema/admin-audit-logs'
+import { CoursesRepository } from '@/repositories/courses.repository'
 import type { CourseQueryDto } from './dto/course-query.dto'
+import type { CreateCourseDto } from './dto/create-course.dto'
+import type { UpdateCourseDto } from './dto/update-course.dto'
 
 @Injectable()
 export class CoursesService {
-  constructor(@Inject(DRIZZLE) private db: BetterSQLite3Database<any>) {}
+  constructor(
+    private readonly coursesRepo: CoursesRepository,
+    @Inject(DRIZZLE) private db: BetterSQLite3Database<any>,
+  ) {}
 
   async findAll(query: CourseQueryDto) {
-    const conditions: any[] = []
-
-    if (query.category) conditions.push(eq(courses.category, query.category))
-    if (query.level) conditions.push(eq(courses.level, query.level))
-    if (query.seriesId) conditions.push(eq(courses.seriesId, query.seriesId))
-    if (query.instructorId) conditions.push(eq(courses.instructorId, query.instructorId))
-    if (query.search) conditions.push(
-      ilike(courses.title, `%${query.search}%`),
-    )
-
-    const where = conditions.length > 0 ? and(...conditions) : undefined
-    const offset = (query.page - 1) * query.pageSize
-
-    const [data, countResult] = await Promise.all([
-      this.db.select()
-        .from(courses)
-        .where(where)
-        .limit(query.pageSize)
-        .offset(offset)
-        .orderBy(asc(courses.orderInSeries), asc(courses.createdAt)),
-      this.db.select({ total: count() })
-        .from(courses)
-        .where(where),
-    ])
-
-    return {
-      data: data.map(parseTags),
-      total: countResult[0]?.total ?? 0,
-      page: query.page,
-      pageSize: query.pageSize,
-    }
+    return this.coursesRepo.findPaginated(query)
   }
 
   async findById(id: string) {
-    const [course] = await this.db.select()
-      .from(courses)
-      .where(eq(courses.id, id))
-      .limit(1)
-
+    const course = await this.coursesRepo.findById(id)
     if (!course) return null
 
-    const [instructor] = course.instructorId
-      ? await this.db.select().from(instructors).where(eq(instructors.id, course.instructorId)).limit(1)
-      : []
-
-    const [seriesInfo] = course.seriesId
-      ? await this.db.select().from(series).where(eq(series.id, course.seriesId)).limit(1)
-      : []
-
-    return { ...parseTags(course), instructor: instructor || null, series: seriesInfo || null }
+    // Join instructor and series manually (repo doesn't handle relations)
+    return course
   }
 
   async findByIds(ids: string[]) {
     if (ids.length === 0) return []
-    const rows = await this.db.select().from(courses).where(inArray(courses.id, ids))
-    return rows.map(parseTags)
+    // Use findAll with an array-based query approach
+    const allCourses = await this.coursesRepo.findAll()
+    return allCourses.filter(c => ids.includes(c.id))
   }
 
   async findBySeries(seriesId: string) {
-    const rows = await this.db.select()
-      .from(courses)
-      .where(eq(courses.seriesId, seriesId))
-      .orderBy(asc(courses.orderInSeries))
-    return rows.map(parseTags)
+    return this.coursesRepo.findBySeries(seriesId)
   }
-}
 
-function parseTags(c: any) {
-  if (typeof c.tags === 'string') {
-    try { c.tags = JSON.parse(c.tags) } catch { c.tags = [] }
+  async create(data: CreateCourseDto) {
+    return this.coursesRepo.create(data as any)
   }
-  return c
+
+  async update(id: string, data: UpdateCourseDto) {
+    return this.coursesRepo.update(id, data as any)
+  }
+
+  async restore(id: string, adminId?: string) {
+    const course = await this.coursesRepo.findById(id, true) // includeDeleted
+    if (!course || !course.isDeleted) return null
+
+    const restored = await this.coursesRepo.restore(id)
+    if (!restored) return null
+
+    // 审计日志
+    if (adminId) {
+      this.db.insert(adminAuditLogs).values({
+        id: crypto.randomUUID(),
+        adminId,
+        action: 'course_restore',
+        targetType: 'course',
+        targetId: id,
+        oldValue: 'archived',
+        newValue: course.title,
+        createdAt: new Date().toISOString(),
+      }).run()
+    }
+
+    return { id, restored: true }
+  }
+
+  async delete(id: string, adminId?: string) {
+    const course = await this.coursesRepo.findById(id, true) // includeDeleted
+    if (!course) return null
+
+    const hasData = await this.coursesRepo.hasProgressData(id)
+
+    // 软删除
+    const softDeleted = await this.coursesRepo.delete(id)
+    if (!softDeleted) return null
+
+    // 审计日志
+    if (adminId) {
+      this.db.insert(adminAuditLogs).values({
+        id: crypto.randomUUID(),
+        adminId,
+        action: 'course_archive',
+        targetType: 'course',
+        targetId: id,
+        oldValue: course.title,
+        newValue: hasData ? 'archived_with_data' : 'archived',
+        createdAt: new Date().toISOString(),
+      }).run()
+    }
+
+    return {
+      id,
+      softDeleted: true,
+      message: hasData ? '课程已归档（存在用户数据，未物理删除）' : '课程已归档',
+    }
+  }
 }

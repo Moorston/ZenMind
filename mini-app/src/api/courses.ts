@@ -1,4 +1,5 @@
 import { Network } from '@/network'
+import type { ApiResponse, PaginatedResponse } from './types'
 
 export interface CourseDTO {
   id: string
@@ -60,6 +61,11 @@ export interface PaginatedResponse<T> {
   total: number
   page: number
   pageSize: number
+}
+
+export interface RecommendedCourseDTO extends CourseDTO {
+  reason: string
+  reasonType: 'collaborative' | 'time-based' | 'trending' | 'similar' | 'fallback'
 }
 
 export const CourseAPI = {
@@ -157,5 +163,39 @@ export const CourseAPI = {
       timeout: 10000,
     })
     return res.data.data
+  },
+
+  async getPersonalizedRecommendations(preference?: string): Promise<RecommendedCourseDTO[]> {
+    const qs = preference ? `?preference=${encodeURIComponent(preference)}` : ''
+    const res = await Network.request<{ status: string; data: RecommendedCourseDTO[] }>({
+      url: `/api/recommendations/personalized${qs}`,
+      timeout: 10000,
+    })
+    return res.data.data
+  },
+
+  async getSimilarCourses(courseId: string): Promise<RecommendedCourseDTO[]> {
+    const res = await Network.request<{ status: string; data: RecommendedCourseDTO[] }>({
+      url: `/api/recommendations/similar/${courseId}`,
+      timeout: 10000,
+    })
+    return res.data.data
+  },
+
+  async getTrendingCourses(): Promise<RecommendedCourseDTO[]> {
+    const res = await Network.request<{ status: string; data: RecommendedCourseDTO[] }>({
+      url: '/api/recommendations/trending',
+      timeout: 10000,
+    })
+    return res.data.data
+  },
+
+  async recordPlay(courseId: string, playedSeconds: number): Promise<void> {
+    await Network.request<{ status: string }>({
+      url: '/api/recommendations/play',
+      method: 'POST',
+      data: { courseId, playedSeconds },
+      timeout: 10000,
+    })
   },
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import Taro from '@tarojs/taro'
 import { usePlayerStore, useUserStore, meditationCourses, whiteNoises, type WhiteNoise } from '@/store/meditation'
+import { useAuthStore } from '@/store/auth'
 import { CourseAPI } from '@/api/courses'
 
 export function useAudioPlayer() {
@@ -12,9 +13,12 @@ export function useAudioPlayer() {
   } = usePlayerStore()
 
   const { addCheckIn, setSleepTimer: setSleepTimerStore, sleepTimer } = useUserStore()
+  const authToken = useAuthStore((s) => s.token)
+  const authUser = useAuthStore((s) => s.user)
 
   const [isLoading, setIsLoading] = useState(false)
   const [hasError, setHasError] = useState(false)
+  const [courseNotFound, setCourseNotFound] = useState(false)
 
   const audioRef = useRef<Taro.InnerAudioContext | null>(null)
   const whiteNoiseRef = useRef<Taro.InnerAudioContext | null>(null)
@@ -35,12 +39,54 @@ export function useAudioPlayer() {
   finalWhiteNoiseVolumeRef.current = whiteNoiseVolume
   finalWhiteNoiseRef.current = whiteNoise
 
+  /** 获取真实的 userId，无登录时返回 null */
+  const getUserId = useCallback((): string | null => {
+    return authUser?.id || null
+  }, [authUser])
+
   const getAudio = useCallback(() => {
     if (!audioRef.current) {
       audioRef.current = Taro.createInnerAudioContext()
+
+      audioRef.current.onTimeUpdate(() => {
+        const audio = audioRef.current
+        if (audio) setCurrentTime(audio.currentTime)
+      })
+
+      audioRef.current.onCanplay(() => {
+        setIsLoading(false)
+        const audio = audioRef.current
+        if (audio && audio.duration && audio.duration > 0) {
+          setDuration(audio.duration)
+        }
+      })
+
+      audioRef.current.onWaiting(() => {
+        setIsLoading(true)
+      })
+
+      audioRef.current.onError(() => {
+        setIsLoading(false)
+        setHasError(true)
+      })
+
+      audioRef.current.onEnded(() => {
+        const course = currentCourseRef.current
+        if (!isLoopingRef.current && course && !hasCheckedInRef.current) {
+          addCheckIn(course.id, Math.floor(currentTimeRef.current))
+          hasCheckedInRef.current = true
+          setIsPlaying(false)
+          const uid = getUserId()
+          if (uid) {
+            CourseAPI.completeCourse(uid, course.id).catch(() => {})
+          }
+          // 上报播放行为（用于协同过滤推荐）
+          CourseAPI.recordPlay(course.id, Math.floor(currentTimeRef.current)).catch(() => {})
+        }
+      })
     }
     return audioRef.current
-  }, [])
+  }, [addCheckIn, getUserId, setIsLoading, setHasError, setIsPlaying, setCurrentTime, setDuration])
 
   const getNoise = useCallback(() => {
     if (!whiteNoiseRef.current) {
@@ -174,6 +220,17 @@ export function useAudioPlayer() {
       clearTimeout(sleepTimerRef.current)
       sleepTimerRef.current = null
     }
+    // Save progress before reset
+    const course = currentCourseRef.current
+    const audio = audioRef.current
+    if (course && audio && audio.currentTime > 0) {
+      const uid = getUserId()
+      if (uid) {
+        CourseAPI.updateProgress(uid, course.id, {
+          position: Math.floor(audio.currentTime),
+        }).catch(() => {})
+      }
+    }
     try { getAudio().stop() } catch {}
     try { getNoise().stop() } catch {}
     getAudio().destroy()
@@ -182,16 +239,12 @@ export function useAudioPlayer() {
     whiteNoiseRef.current = null
     usePlayerStore.getState().reset()
     setSleepTimerStore(0)
-  }, [getAudio, getNoise, setSleepTimerStore])
+  }, [getAudio, getNoise, setSleepTimerStore, getUserId])
 
+  // 初始化：处理路由参数
   useEffect(() => {
-    const audio = Taro.createInnerAudioContext()
-    const noise = Taro.createInnerAudioContext()
-    noise.loop = true
-    audioRef.current = audio
-    whiteNoiseRef.current = noise
-
     const params = Taro.getCurrentInstance()?.router?.params || {}
+    let cancelled = false
 
     if (params.courseId) {
       const course = meditationCourses.find((c: any) => c.id === params.courseId)
@@ -199,6 +252,28 @@ export function useAudioPlayer() {
         setCurrentCourse(course)
         currentCourseRef.current = course
         playCourse(course)
+      } else {
+        // 本地缓存未找到（可能被归档），尝试从 API 获取
+        CourseAPI.getCourseById(params.courseId)
+          .then((apiCourse) => {
+            if (cancelled) return
+            if (apiCourse) {
+              const mapped: any = {
+                ...apiCourse,
+                tags: Array.isArray(apiCourse.tags) ? apiCourse.tags : (() => { try { return JSON.parse(apiCourse.tags as any) } catch { return [] } })(),
+                instructor: apiCourse.instructor?.name || '静心',
+                category: apiCourse.category,
+              }
+              setCurrentCourse(mapped)
+              currentCourseRef.current = mapped
+              playCourse(mapped)
+            } else {
+              setCourseNotFound(true)
+            }
+          })
+          .catch(() => {
+            if (!cancelled) setCourseNotFound(true)
+          })
       }
     } else if (params.noiseId) {
       const noiseItem = whiteNoises.find(n => n.id === params.noiseId)
@@ -208,50 +283,12 @@ export function useAudioPlayer() {
       }
     }
 
-    audio.onTimeUpdate(() => {
-      setCurrentTime(audio.currentTime)
-    })
-
-    audio.onCanplay(() => {
-      setIsLoading(false)
-      if (audio.duration && audio.duration > 0) {
-        setDuration(audio.duration)
-      }
-    })
-
-    audio.onWaiting(() => {
-      setIsLoading(true)
-    })
-
-    audio.onError(() => {
-      setIsLoading(false)
-      setHasError(true)
-    })
-
-    audio.onEnded(() => {
-      const course = currentCourseRef.current
-      if (!isLoopingRef.current && course && !hasCheckedInRef.current) {
-        addCheckIn(course.id, Math.floor(currentTimeRef.current))
-        hasCheckedInRef.current = true
-        setIsPlaying(false)
-        CourseAPI.completeCourse('local', course.id).catch(() => {})
-      }
-    })
-
     return () => {
-      const course = currentCourseRef.current
-      if (course && audio.currentTime > 0) {
-        CourseAPI.updateProgress('local', course.id, {
-          position: Math.floor(audio.currentTime),
-        }).catch(() => {})
-      }
+      cancelled = true
       if (sleepTimerRef.current) {
         clearTimeout(sleepTimerRef.current)
       }
-      audio.stop()
-      audio.destroy()
-      noise.stop()
-      noise.destroy()
+      // getAudio/getNoise already cleanup on unmount via handleReset
     }
   }, [])
 
@@ -259,7 +296,7 @@ export function useAudioPlayer() {
     // State
     currentCourse, isPlaying, currentTime, duration,
     volume, isLooping, whiteNoise, whiteNoiseVolume, sleepTimer,
-    isLoading, hasError,
+    isLoading, hasError, courseNotFound,
 
     // Actions
     playCourse, playWhiteNoise, togglePlay, seek, skip,

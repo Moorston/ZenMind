@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, primaryKey } from 'drizzle-orm/sqlite-core'
+import { sqliteTable, text, integer, primaryKey, index } from 'drizzle-orm/sqlite-core'
 import { courses } from './courses'
 
 export const progress = sqliteTable('progress', {
@@ -10,6 +10,7 @@ export const progress = sqliteTable('progress', {
   updatedAt: text('updated_at').notNull().default(new Date().toISOString()),
 }, (table) => ({
   pk: primaryKey({ columns: [table.userId, table.courseId] }),
+  userIdx: index('idx_progress_user').on(table.userId),
 }))
 
 export type Progress = typeof progress.$inferSelect

@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common'
 import { SeriesController } from './series.controller'
 import { SeriesService } from './series.service'
-import { CoursesModule } from '@/modules/courses/courses.module'
+import { SeriesRepository } from '@/repositories/series.repository'
 
 @Module({
-  imports: [CoursesModule],
   controllers: [SeriesController],
-  providers: [SeriesService],
+  providers: [SeriesService, SeriesRepository],
   exports: [SeriesService],
 })
 export class SeriesModule {}

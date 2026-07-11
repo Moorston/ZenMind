@@ -30,6 +30,8 @@ export function RegisterScreen() {
   const canSubmit = nickname.length > 0 &&
     password.length >= 6 &&
     password === confirmPassword &&
+    code.length === 6 &&
+    /^\d{6}$/.test(code) &&
     (useEmail ? isEmailValid : isPhoneValid)
 
   const handleSendCode = () => {
@@ -60,6 +62,7 @@ export function RegisterScreen() {
           identifier: useEmail ? email : phone,
           password,
           type: useEmail ? 'email' : 'phone',
+          code,
         },
       })
       login({

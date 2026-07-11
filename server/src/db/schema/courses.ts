@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core'
+import { sqliteTable, text, integer, index } from 'drizzle-orm/sqlite-core'
 import { instructors } from './instructors'
 import { series } from './series'
 
@@ -17,8 +17,14 @@ export const courses = sqliteTable('courses', {
   instructorId: text('instructor_id').references(() => instructors.id, { onDelete: 'set null' }),
   seriesId: text('series_id').references(() => series.id, { onDelete: 'cascade' }),
   orderInSeries: integer('order_in_series').default(0),
+  isDeleted: integer('is_deleted', { mode: 'boolean' }).notNull().default(false),
   createdAt: text('created_at').notNull().default(new Date().toISOString()),
-})
+}, (table) => ({
+  categoryIdx: index('idx_courses_category').on(table.category),
+  levelIdx: index('idx_courses_level').on(table.level),
+  instructorIdx: index('idx_courses_instructor').on(table.instructorId),
+  deletedIdx: index('idx_courses_deleted').on(table.isDeleted),
+}))
 
 export type Course = typeof courses.$inferSelect
 export type NewCourse = typeof courses.$inferInsert

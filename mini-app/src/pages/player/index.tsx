@@ -1,16 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { View, Text } from '@tarojs/components'
 import { SafeImage } from '@/components/ui/safe-image'
 import Taro from '@tarojs/taro'
 import {
   Play, Pause, SkipBack, SkipForward,
-  Volume2, VolumeX, Repeat, Clock, X
+  Volume2, VolumeX, Repeat, Clock, X, Users
 } from 'lucide-react-taro'
 import { Button } from '@/components/ui/button'
 import { Slider } from '@/components/ui/slider'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useAudioPlayer } from '@/lib/hooks/use-audio-player'
+import { useRoom } from '@/hooks/useRoom'
+import { useAuthStore } from '@/store/auth'
 import {
   getNoiseEmoji, getNoiseColor
 } from '@/store/meditation'
@@ -71,13 +73,32 @@ export default function Player() {
   const {
     currentCourse, isPlaying, currentTime, duration,
     volume, isLooping, whiteNoise, sleepTimer,
-    isLoading, hasError,
+    isLoading, hasError, courseNotFound,
     togglePlay, skip, changeVolume, toggleMute, toggleLoop,
     setSleepTimerMinutes, formatTime, handleReset,
   } = useAudioPlayer()
 
   const [showTimer, setShowTimer] = useState(false)
   const [timerValue, setTimerValue] = useState(15)
+  const params = Taro.getCurrentInstance()?.router?.params || {}
+  const roomId = params.roomId as string | undefined
+  const { user } = useAuthStore()
+  const room = useRoom(roomId || null)
+
+  // Connect to room if roomId is present
+  useEffect(() => {
+    if (roomId && user?.id) {
+      room.connect(user.id)
+    }
+    return () => { room.disconnect() }
+  }, [roomId, user?.id])
+
+  // Sync playback to room when play state changes
+  useEffect(() => {
+    if (roomId) {
+      room.sendPlaybackSync(currentTime, isPlaying)
+    }
+  }, [isPlaying, currentTime])
 
   const handleClose = () => {
     handleReset()
@@ -109,14 +130,21 @@ export default function Player() {
         <Text className="block text-muted-foreground text-sm">
           {whiteNoise ? t('player.header.whiteNoise') : t('player.header.meditationCourse')}
         </Text>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setShowTimer(!showTimer)}
-          className="text-muted-foreground"
-        >
-          <Clock size={24} color="#9090a0" />
-        </Button>
+        {roomId ? (
+          <View className="flex items-center gap-1">
+            <Users size={16} color="#7c6aef" />
+            <Text className="block text-xs text-primary">{room.participants.length + 1}</Text>
+          </View>
+        ) : (
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setShowTimer(!showTimer)}
+            className="text-muted-foreground"
+          >
+            <Clock size={24} color="#9090a0" />
+          </Button>
+        )}
       </View>
 
       {/* Sleep Timer Panel */}
@@ -137,6 +165,18 @@ export default function Player() {
         {isLoading && !currentCourse ? (
           <View className="mb-8">
             <Skeleton className="w-64 h-64 rounded-full" />
+          </View>
+        ) : courseNotFound ? (
+          <View className="mb-8 flex flex-col items-center">
+            <Text className="block text-6xl">📭</Text>
+            <Text className="block text-base text-foreground text-center mt-4 font-medium">课程已下架</Text>
+            <Text className="block text-sm text-muted-foreground text-center mt-2">该课程已不再可用，请浏览其他课程</Text>
+            <Button
+              className="mt-6 bg-primary text-white px-6"
+              onClick={() => Taro.switchTab({ url: '/pages/discover/index' })}
+            >
+              <Text className="block">浏览课程</Text>
+            </Button>
           </View>
         ) : hasError ? (
           <View className="mb-8">

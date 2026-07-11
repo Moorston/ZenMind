@@ -1,0 +1,7 @@
+export { BaseRepository } from './base.repository'
+export { CoursesRepository } from './courses.repository'
+export { SeriesRepository } from './series.repository'
+export { InstructorsRepository } from './instructors.repository'
+export { ProgressRepository } from './progress.repository'
+export { UsersRepository } from './users.repository'
+export { SessionsRepository } from './sessions.repository'

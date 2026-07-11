@@ -5,11 +5,36 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toast';
 import { useUserStore, useCoursesStore } from '@/store/meditation';
+import { useAuthStore } from '@/store/auth';
 import { useLanguageStore } from '@/store/language';
 import { canUseDOM } from '@/lib/platform';
 import Taro from '@tarojs/taro';
 import '@/app.css';
 import { Preset } from './presets';
+
+// 管理后台路由白名单
+const ADMIN_ROUTES = [
+  '/pages/admin/index',
+  '/pages/admin/users/index',
+  '/pages/admin/courses/index',
+  '/pages/admin/courses/edit',
+]
+
+// 注册全局路由守卫：管理后台页面需要 admin 或 editor 角色
+Taro.addInterceptor((chain) => {
+  const { requestParams } = chain
+  const url = requestParams.url?.split('?')[0] || ''
+
+  if (ADMIN_ROUTES.some(route => url.startsWith(route))) {
+    const { isLoggedIn, user } = useAuthStore.getState()
+    if (!isLoggedIn || !user || !['admin', 'editor'].includes(user.role)) {
+      Taro.showToast({ title: '无访问权限', icon: 'none' })
+      return Promise.resolve({ errMsg: 'interceptor:fail', data: null } as any)
+    }
+  }
+
+  return chain.proceed(requestParams)
+})
 
 const updateTabBar = () => {
   try {

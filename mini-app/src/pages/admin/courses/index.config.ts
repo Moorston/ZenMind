@@ -1,0 +1,7 @@
+export default definePageConfig({
+  navigationBarTitleText: '课程管理',
+  navigationBarBackgroundColor: '#0a0a1a',
+  navigationBarTextStyle: 'white',
+  backgroundColor: '#0a0a1a',
+  enablePullDownRefresh: true,
+})

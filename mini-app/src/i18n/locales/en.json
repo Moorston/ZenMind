@@ -70,9 +70,17 @@
       "cta": "Set Now"
     },
     "recommendation": {
-      "title": "Today's Pick",
+      "title": "For You",
       "viewAll": "View All",
-      "start": "Start Meditation"
+      "start": "Start Meditation",
+      "fallbackReason": "Recommended",
+      "reason": {
+        "collaborative": "Users like you enjoyed",
+        "timeBased": "Time-based pick",
+        "trending": "Trending",
+        "similar": "Similar courses",
+        "fallback": "Recommended"
+      }
     },
     "quickStart": {
       "title": "Quick Start"
@@ -395,7 +403,55 @@
     "registerSuccess": "Registration successful",
     "logout": "Log Out",
     "logoutConfirm": "Are you sure you want to log out?",
-    "logoutSuccess": "Logged out"
+    "logoutSuccess": "Logged out",
+    "wechatLogin": "WeChat Login",
+    "wechatLoginFailed": "WeChat login failed",
+    "wechatLoginSuccess": "WeChat login successful",
+    "or": "or",
+    "otherLogin": "Other login methods"
+  },
+  "community": {
+    "title": "Community",
+    "create": "New Post",
+    "comments": "Comments",
+    "noComments": "No comments yet",
+    "commentPlaceholder": "Write a comment...",
+    "empty": "No posts yet. Share your meditation experience!",
+    "createFirst": "Create first post",
+    "postType": "Post Type",
+    "contentPlaceholder": "Share your meditation experience...",
+    "submit": "Post"
+  },
+  "rooms": {
+    "title": "Group Meditation",
+    "create": "Create Room",
+    "join": "Join",
+    "empty": "No rooms available",
+    "createFirst": "Create the first room"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "totalUsers": "Total Users",
+    "totalCourses": "Total Courses",
+    "totalSessions": "Completed Sessions",
+    "totalMinutes": "Total Minutes",
+    "activeToday": "Active Today",
+    "quickActions": "Management",
+    "manageUsers": "User Management",
+    "manageCourses": "Course Management",
+    "pushBroadcast": "Push Broadcast",
+    "users": {
+      "title": "User Management",
+      "total": "{{total}} users"
+    },
+    "courses": {
+      "title": "Course Management",
+      "create": "New Course",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteConfirm": "Delete course \"{{title}}\"? This cannot be undone.",
+      "empty": "No courses yet"
+    }
   },
   "store": {
     "defaultUsername": "Meditator"

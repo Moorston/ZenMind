@@ -86,4 +86,55 @@ export namespace CoursesAPI {
   export async function getInstructors() {
     return Network.request<{ data: Instructor[] }>({ url: '/api/instructors' })
   }
+
+  export async function updateProgress(
+    userId: string,
+    courseId: string,
+    data: { position: number; completed: boolean }
+  ) {
+    return Network.request<{ data: any }>({
+      url: `/api/progress/${userId}/${courseId}`,
+      method: 'PUT',
+      data,
+    })
+  }
+
+  export async function markCompleted(userId: string, courseId: string) {
+    return Network.request<{ data: any }>({
+      url: `/api/progress/${userId}/${courseId}/complete`,
+      method: 'POST',
+    })
+  }
+
+  export interface RecommendedCourse extends Course {
+    reason: string
+    reasonType: 'collaborative' | 'time-based' | 'trending' | 'similar' | 'fallback'
+  }
+
+  export async function getPersonalizedRecommendations(preference?: string) {
+    const qs = preference ? `?preference=${encodeURIComponent(preference)}` : ''
+    return Network.request<{ data: RecommendedCourse[] }>({
+      url: `/api/recommendations/personalized${qs}`,
+    })
+  }
+
+  export async function getSimilarCourses(courseId: string) {
+    return Network.request<{ data: RecommendedCourse[] }>({
+      url: `/api/recommendations/similar/${courseId}`,
+    })
+  }
+
+  export async function getTrendingCourses() {
+    return Network.request<{ data: RecommendedCourse[] }>({
+      url: '/api/recommendations/trending',
+    })
+  }
+
+  export async function recordPlay(courseId: string, playedSeconds: number) {
+    return Network.request<{ data: any }>({
+      url: '/api/recommendations/play',
+      method: 'POST',
+      data: { courseId, playedSeconds },
+    })
+  }
 }

@@ -2,8 +2,18 @@ import { useEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, Platform } from 'react-native'
 import { RootNavigator } from '@/navigation/RootNavigator'
+import * as Notifications from 'expo-notifications'
+
+// Configure notification handler for foreground notifications
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: true,
+    shouldSetBadge: false,
+  }),
+})
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true)

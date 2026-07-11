@@ -70,9 +70,17 @@
       "cta": "立即设置"
     },
     "recommendation": {
-      "title": "今日推荐",
+      "title": "为你推荐",
       "viewAll": "查看全部",
-      "start": "开始冥想"
+      "start": "开始冥想",
+      "fallbackReason": "为你推荐",
+      "reason": {
+        "collaborative": "相似用户喜欢",
+        "timeBased": "时段推荐",
+        "trending": "热门课程",
+        "similar": "相似课程",
+        "fallback": "为你推荐"
+      }
     },
     "quickStart": {
       "title": "快速开始"
@@ -395,7 +403,55 @@
     "registerSuccess": "注册成功",
     "logout": "退出登录",
     "logoutConfirm": "确定要退出登录吗？",
-    "logoutSuccess": "已退出登录"
+    "logoutSuccess": "已退出登录",
+    "wechatLogin": "微信一键登录",
+    "wechatLoginFailed": "微信登录失败",
+    "wechatLoginSuccess": "微信登录成功",
+    "or": "或",
+    "otherLogin": "其他方式登录"
+  },
+  "community": {
+    "title": "社区",
+    "create": "发帖",
+    "comments": "评论",
+    "noComments": "暂无评论",
+    "commentPlaceholder": "输入评论...",
+    "empty": "还没有帖子，快来分享你的冥想心得吧",
+    "createFirst": "发布第一条帖子",
+    "postType": "帖子类型",
+    "contentPlaceholder": "分享你的冥想心得...",
+    "submit": "发布"
+  },
+  "rooms": {
+    "title": "多人冥想",
+    "create": "创建房间",
+    "join": "加入",
+    "empty": "暂无房间",
+    "createFirst": "创建第一个房间"
+  },
+  "admin": {
+    "dashboard": "管理后台",
+    "totalUsers": "总用户",
+    "totalCourses": "总课程",
+    "totalSessions": "完成冥想",
+    "totalMinutes": "总冥想分钟",
+    "activeToday": "今日活跃",
+    "quickActions": "管理功能",
+    "manageUsers": "用户管理",
+    "manageCourses": "课程管理",
+    "pushBroadcast": "广播推送",
+    "users": {
+      "title": "用户管理",
+      "total": "共 {{total}} 人"
+    },
+    "courses": {
+      "title": "课程管理",
+      "create": "新增课程",
+      "edit": "编辑",
+      "delete": "删除",
+      "deleteConfirm": "确定要删除课程\"{{title}}\"吗？此操作不可恢复。",
+      "empty": "暂无课程"
+    }
   },
   "store": {
     "defaultUsername": "冥想者"

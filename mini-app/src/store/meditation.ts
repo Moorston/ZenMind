@@ -29,17 +29,10 @@ export interface WhiteNoise {
 }
 
 /**
- * WARNING: 以下为前端占位数据，使用 Unsplash / SoundHelix 仅用于开发调试。
+ * 前端占位数据 — 与后端 seed.ts 保持一致的图片/音频 URL
  *
- * 生产环境流程：
- *   1. 上传真实文件: npx ts-node server/src/seed-media.ts ./media
- *      (脚本自动上传到 TOS 并更新数据库 URL)
- *   2. 确保后端 API 返回正确的 audioUrl / coverUrl
- *   3. 前端通过 getCourses() → toMeditationCourse() 读取 TOS URL
- *
- * 何时删除占位数据：
- *   - 所有课程的 audioUrl 和 coverUrl 在数据库中已有 TOS URL 后
- *   - 删除此数组或留空数组，getCourses() / getCourseById() 会自动 fallback
+ * 生产环境: 前端通过 getCourses() → toMeditationCourse() 读取后端 API 返回的 TOS URL
+ * 占位数据仅在后端未初始化时作为 fallback
  */
 export const meditationCourses: MeditationCourse[] = [
   {
@@ -48,8 +41,8 @@ export const meditationCourses: MeditationCourse[] = [
     description: '学习腹式呼吸，让身心放松',
     category: 'beginner',
     duration: 5,
-    coverUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    coverUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3',
     tags: ['呼吸', '入门'],
     instructor: '静心'
   },
@@ -59,8 +52,8 @@ export const meditationCourses: MeditationCourse[] = [
     description: '从头到脚扫描身体，释放紧张',
     category: 'beginner',
     duration: 10,
-    coverUrl: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+    coverUrl: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=400',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/10/25/audio_84700d300b.mp3',
     tags: ['身体扫描', '放松'],
     instructor: '静心'
   },
@@ -71,7 +64,7 @@ export const meditationCourses: MeditationCourse[] = [
     category: 'sleep',
     duration: 20,
     coverUrl: 'https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/08/02/audio_884fe92c21.mp3',
     tags: ['睡眠', '晚安'],
     instructor: '梦溪'
   },
@@ -81,8 +74,8 @@ export const meditationCourses: MeditationCourse[] = [
     description: '4-7-8 呼吸法，帮助入眠',
     category: 'sleep',
     duration: 5,
-    coverUrl: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+    coverUrl: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=400',
+    audioUrl: 'https://cdn.pixabay.com/audio/2023/03/06/audio_86568e3e5e.mp3',
     tags: ['呼吸', '睡眠'],
     instructor: '梦溪'
   },
@@ -92,8 +85,8 @@ export const meditationCourses: MeditationCourse[] = [
     description: '释放焦虑，找回内心平静',
     category: 'relax',
     duration: 10,
-    coverUrl: 'https://images.unsplash.com/photo-1490730141103-6cac27abb37f?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+    coverUrl: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/10/25/audio_84700d300b.mp3',
     tags: ['焦虑', '减压'],
     instructor: '清风'
   },
@@ -103,8 +96,8 @@ export const meditationCourses: MeditationCourse[] = [
     description: '缓解工作和生活中的压力',
     category: 'relax',
     duration: 15,
-    coverUrl: 'https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
+    coverUrl: 'https://images.unsplash.com/photo-1474557157379-8aa74a6ef541?w=400',
+    audioUrl: 'https://cdn.pixabay.com/audio/2023/03/06/audio_86568e3e5e.mp3',
     tags: ['压力', '放松'],
     instructor: '清风'
   },
@@ -115,7 +108,7 @@ export const meditationCourses: MeditationCourse[] = [
     category: 'focus',
     duration: 5,
     coverUrl: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3',
     tags: ['专注', '清晨'],
     instructor: '明月'
   },
@@ -125,8 +118,8 @@ export const meditationCourses: MeditationCourse[] = [
     description: '提升注意力和工作效率',
     category: 'focus',
     duration: 20,
-    coverUrl: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3',
+    coverUrl: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/10/25/audio_84700d300b.mp3',
     tags: ['专注', '深度'],
     instructor: '明月'
   }
@@ -137,28 +130,28 @@ export const whiteNoises: WhiteNoise[] = [
     id: 'rain',
     name: '雨声',
     icon: 'CloudRain',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/01/20/audio_d1718ab41b.mp3',
     color: '#3b82f6'
   },
   {
     id: 'waves',
     name: '海浪',
     icon: 'Waves',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/11/22/audio_42a045aa18.mp3',
     color: '#06b6d4'
   },
   {
     id: 'forest',
     name: '森林',
     icon: 'TreePine',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3',
+    audioUrl: 'https://cdn.pixabay.com/audio/2023/01/17/audio_2eb7d34e14.mp3',
     color: '#22c55e'
   },
   {
     id: 'fire',
     name: '篝火',
     icon: 'Flame',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3',
+    audioUrl: 'https://cdn.pixabay.com/audio/2022/08/02/audio_884fe92c21.mp3',
     color: '#f97316'
   }
 ]

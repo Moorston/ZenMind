@@ -26,7 +26,8 @@ function getAvatarEmoji(userId: string) {
 export function UserProfileScreen() {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
-  const { userId } = route.params as { userId: string };
+  const params = route.params as { userId?: string };
+  const userId = params?.userId;
 
   const { user } = useAuthStore();
   const currentUserId = user?.id;
@@ -83,6 +84,10 @@ export function UserProfileScreen() {
   }
 
   useEffect(() => {
+    if (!userId) {
+      navigation.goBack();
+      return;
+    }
     fetchData();
   }, [fetchData]);
 

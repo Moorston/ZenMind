@@ -45,7 +45,17 @@ export function RoomsListScreen() {
       Alert.alert('提示', '请先登录')
       return
     }
-    // 导航到播放器，携带 roomId 参数激活房间模式
+    if (room.status === 'playing') {
+      Alert.alert(
+        '房间播放中',
+        '该房间已在播放中，加入将同步到当前进度。是否继续？',
+        [
+          { text: '取消', style: 'cancel' },
+          { text: '加入', onPress: () => navigation.navigate('Player', { roomId: room.id }) },
+        ]
+      )
+      return
+    }
     navigation.navigate('Player', { roomId: room.id })
   }
 

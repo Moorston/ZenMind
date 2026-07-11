@@ -26,8 +26,12 @@ export function CommunityFeedScreen() {
   const pageSize = 20
 
   const fetchPosts = useCallback(async (tab: TabKey, pageNum: number, append = false) => {
-    if (pageNum === 1) setLoading(true)
-    else setLoadingMore(true)
+    if (pageNum === 1) {
+      setPosts([]) // 清空旧数据，避免 Tab 切换时短暂显示错误内容
+      setLoading(true)
+    } else {
+      setLoadingMore(true)
+    }
 
     try {
       let res

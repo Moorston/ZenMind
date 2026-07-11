@@ -13,8 +13,7 @@ type TabKey = 'discover' | 'following'
 
 export function CommunityFeedScreen() {
   const navigation = useNavigation<any>()
-  const { isLoggedIn, user } = useAuthStore()
-  const currentUserId = user?.id
+  const { isLoggedIn, userId: currentUserId } = useAuthStore()
 
   const [activeTab, setActiveTab] = useState<TabKey>('discover')
   const [posts, setPosts] = useState<Post[]>([])
@@ -78,8 +77,20 @@ export function CommunityFeedScreen() {
   }, [currentUserId])
 
   useEffect(() => {
-    // 仅首次加载，后续 Tab 切换由 switchTab 处理
+    // 仅首次加载
     fetchPosts('discover', 1)
+
+    // 从 CreatePostScreen 返回时清除缓存并刷新
+    const unsubscribe = navigation.addListener('focus', () => {
+      if (tabCache.current.discover.posts.length > 0) {
+        tabCache.current = {
+          discover: { posts: [], page: 0, hasMore: true },
+          following: { posts: [], page: 0, hasMore: true },
+        }
+        fetchPosts(activeTab, 1)
+      }
+    })
+    return unsubscribe
   }, [])
 
   const handleLoadMore = () => {

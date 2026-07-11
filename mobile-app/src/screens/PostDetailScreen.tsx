@@ -14,8 +14,7 @@ export function PostDetailScreen() {
   const route = useRoute<any>()
   const postId: string = route.params?.postId
 
-  const { isLoggedIn, user } = useAuthStore()
-  const currentUserId = user?.id
+  const { isLoggedIn, userId: currentUserId, nickname: currentNickname } = useAuthStore()
 
   const [post, setPost] = useState<PostDetailType | null>(null)
   const [comments, setComments] = useState<Comment[]>([])
@@ -70,7 +69,7 @@ export function PostDetailScreen() {
       userId: currentUserId,
       content,
       createdAt: new Date().toISOString(),
-      authorNickname: user?.nickname || '我',
+      authorNickname: currentNickname || '我',
     }
     setComments(prev => [...prev, optimisticComment])
     setCommentText('')

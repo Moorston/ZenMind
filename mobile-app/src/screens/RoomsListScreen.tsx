@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import {
   View, Text, StyleSheet, ScrollView,
   TouchableOpacity, ActivityIndicator, Alert, TextInput,
-  Modal, FlatList,
+  Modal, RefreshControl,
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { RoomsAPI, type Room } from '@/api/rooms'
@@ -11,8 +11,7 @@ import { useAuthStore } from '@/store/useAuthStore'
 
 export function RoomsListScreen() {
   const navigation = useNavigation<any>()
-  const { isLoggedIn, user } = useAuthStore()
-  const currentUserId = user?.id
+  const { isLoggedIn, userId: currentUserId } = useAuthStore()
 
   const [rooms, setRooms] = useState<Room[]>([])
   const [loading, setLoading] = useState(true)
@@ -22,6 +21,7 @@ export function RoomsListScreen() {
   const [courses, setCourses] = useState<Course[]>([])
   const [coursesLoading, setCoursesLoading] = useState(false)
   const [creating, setCreating] = useState(false)
+  const [refreshing, setRefreshing] = useState(false)
 
   const fetchRooms = useCallback(async () => {
     setLoading(true)
@@ -39,6 +39,12 @@ export function RoomsListScreen() {
   useEffect(() => {
     fetchRooms()
   }, [fetchRooms])
+
+  const handleRefresh = async () => {
+    setRefreshing(true)
+    await fetchRooms()
+    setRefreshing(false)
+  }
 
   const handleJoin = (room: Room) => {
     if (!isLoggedIn) {
@@ -148,6 +154,14 @@ export function RoomsListScreen() {
           style={styles.roomList}
           contentContainerStyle={styles.roomListContent}
           showsVerticalScrollIndicator={false}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={handleRefresh}
+              tintColor="#7c6aef"
+              colors={['#7c6aef']}
+            />
+          }
         >
           {rooms.map((room) => {
             const status = getStatusLabel(room.status)

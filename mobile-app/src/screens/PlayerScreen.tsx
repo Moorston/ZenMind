@@ -35,14 +35,14 @@ export function PlayerScreen() {
 
   // Room mode
   const roomId = params.roomId as string | undefined
-  const { user } = useAuthStore()
+  const { userId: currentUserId } = useAuthStore()
   const room = useRoom(roomId || null)
   const lastSyncTimeRef = useRef(0)
 
   // Connect to room if roomId is present
   useEffect(() => {
-    if (roomId && user?.id) {
-      room.connect(user.id)
+    if (roomId && currentUserId) {
+      room.connect(currentUserId)
     }
     return () => { room.disconnect() }
   }, [roomId, user?.id])

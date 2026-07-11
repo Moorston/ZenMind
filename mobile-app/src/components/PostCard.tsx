@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
 export type PostType = 'reflection' | 'checkin' | 'share'
@@ -61,6 +62,15 @@ export function PostCard({
 }: PostCardProps) {
   const badgeColor = TYPE_COLORS[type]
   const badgeLabel = TYPE_LABELS[type]
+  const lastLikeTimeRef = useRef(0)
+
+  const handleLike = () => {
+    if (!onLike) return
+    const now = Date.now()
+    if (now - lastLikeTimeRef.current < 500) return // 500ms 防抖
+    lastLikeTimeRef.current = now
+    onLike()
+  }
 
   return (
     <TouchableOpacity
@@ -106,7 +116,7 @@ export function PostCard({
         <TouchableOpacity
           style={styles.actionBtn}
           activeOpacity={0.6}
-          onPress={onLike}
+          onPress={handleLike}
         >
           <Text style={styles.actionIcon}>{'❤️'}</Text>
           <Text style={styles.actionCount}>{likesCount}</Text>

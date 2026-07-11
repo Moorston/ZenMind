@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 import { RoomsAPI, type Room } from '@/api/rooms'
 import { CoursesAPI, type Course } from '@/api/courses'
 import { useAuthStore } from '@/store/useAuthStore'
+import { Skeleton } from '@/components/Skeleton'
 
 export function RoomsListScreen() {
   const navigation = useNavigation<any>()
@@ -140,8 +141,19 @@ export function RoomsListScreen() {
       </View>
 
       {loading ? (
-        <View style={styles.center}>
-          <ActivityIndicator size="large" color="#7c6aef" />
+        <View style={{ padding: 16 }}>
+          {[1, 2, 3].map(i => (
+            <View key={i} style={{ backgroundColor: '#1a1a2e', borderRadius: 16, padding: 16, marginBottom: 12 }}>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 12 }}>
+                <Skeleton width="50%" height={16} />
+                <Skeleton width={60} height={22} borderRadius={12} />
+              </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Skeleton width={80} height={14} />
+                <Skeleton width={60} height={32} borderRadius={16} />
+              </View>
+            </View>
+          ))}
         </View>
       ) : rooms.length === 0 ? (
         <View style={styles.center}>

@@ -8,6 +8,7 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { CommunityAPI, type PostDetail as PostDetailType, type Comment } from '@/api/community'
 import { useAuthStore } from '@/store/useAuthStore'
 import PostCard from '@/components/PostCard'
+import { PostCardSkeleton } from '@/components/Skeleton'
 
 export function PostDetailScreen() {
   const navigation = useNavigation<any>()
@@ -34,12 +35,16 @@ export function PostDetailScreen() {
   const loadData = async () => {
     setLoading(true)
     try {
-      const [postRes, commentsRes] = await Promise.all([
+      const [postResult, commentsResult] = await Promise.allSettled([
         CommunityAPI.getPost(postId),
         CommunityAPI.getComments(postId),
       ])
-      if (postRes.data) setPost(postRes.data)
-      if (commentsRes.data) setComments(commentsRes.data)
+      if (postResult.status === 'fulfilled' && postResult.value.data) {
+        setPost(postResult.value.data)
+      }
+      if (commentsResult.status === 'fulfilled' && commentsResult.value.data) {
+        setComments(commentsResult.value.data)
+      }
     } catch (err) {
       console.error('[PostDetail] load failed:', err)
     } finally {
@@ -118,8 +123,18 @@ export function PostDetailScreen() {
 
   if (loading) {
     return (
-      <View style={styles.center}>
-        <ActivityIndicator size="large" color="#7c6aef" />
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
+            <Text style={styles.backText}>←</Text>
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>帖子详情</Text>
+          <View style={styles.backBtn} />
+        </View>
+        <View style={{ padding: 16 }}>
+          <PostCardSkeleton />
+          <PostCardSkeleton />
+        </View>
       </View>
     )
   }

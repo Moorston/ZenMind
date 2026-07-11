@@ -12,6 +12,7 @@ import {
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { CommunityAPI } from '@/api/community';
 import { useAuthStore } from '@/store/useAuthStore';
+import { ProfileCardSkeleton, PostCardSkeleton } from '@/components/Skeleton';
 
 const AVATAR_EMOJIS = ['🧘', '🌿', '🌸', '🍃', '🌙', '✨', '🦋', '🌊'];
 
@@ -46,6 +47,7 @@ export function UserProfileScreen() {
   const isOwnProfile = currentUserId === userId;
 
   const fetchData = useCallback(async () => {
+    if (!userId) return;
     try {
       const [profileRes, postsRes] = await Promise.all([
         CommunityAPI.getUserProfile(userId, currentUserId ?? undefined),
@@ -145,9 +147,20 @@ export function UserProfileScreen() {
 
   if (loading) {
     return (
-      <View style={styles.loadingContainer}>
+      <View style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor="#0a0a1a" />
-        <ActivityIndicator size="large" color="#7c6aef" />
+        <View style={styles.header}>
+          <TouchableOpacity style={styles.backButton} onPress={handleBack}>
+            <Text style={styles.backArrow}>{'<'}</Text>
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>{'用户主页'}</Text>
+          <View style={styles.headerPlaceholder} />
+        </View>
+        <View style={{ padding: 16 }}>
+          <ProfileCardSkeleton />
+          <PostCardSkeleton />
+          <PostCardSkeleton />
+        </View>
       </View>
     );
   }

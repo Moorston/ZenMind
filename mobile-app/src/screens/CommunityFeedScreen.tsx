@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 import { CommunityAPI, type Post } from '@/api/community'
 import { useAuthStore } from '@/store/useAuthStore'
 import PostCard from '@/components/PostCard'
+import { PostCardSkeleton } from '@/components/Skeleton'
 
 type TabKey = 'discover' | 'following'
 
@@ -193,8 +194,10 @@ export function CommunityFeedScreen() {
 
       {/* Content */}
       {loading ? (
-        <View style={styles.center}>
-          <ActivityIndicator size="large" color="#7c6aef" />
+        <View style={{ paddingHorizontal: 16, paddingTop: 8 }}>
+          <PostCardSkeleton />
+          <PostCardSkeleton />
+          <PostCardSkeleton />
         </View>
       ) : (
         <FlatList
